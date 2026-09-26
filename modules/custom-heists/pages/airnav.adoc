@@ -1,0 +1,12 @@
+= AirNav
+
+AirNav is a known specialist area in custom-heist tooling.
+
+Current reverse-engineering work can reproduce part of the octree-generation behavior, but AirNavConnector integration is not fully reproduced as an editor generation workflow.
+
+This affects systems such as Overkill weapon delivery that depend on AirNav.
+
+[WARNING]
+====
+Do not document Overkill weapon support as complete until the required AirNav generation/integration path is validated end to end.
+====

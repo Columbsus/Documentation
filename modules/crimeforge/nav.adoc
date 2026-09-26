@@ -1,0 +1,7 @@
+.CrimeForge
+* xref:index.adoc[Overview]
+* xref:create-mod.adoc[Create Mod]
+* xref:templates.adoc[Templates]
+* xref:validation.adoc[Validation]
+* xref:packaging.adoc[Packaging]
+* xref:asset-palette.adoc[Asset Palette]

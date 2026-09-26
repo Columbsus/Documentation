@@ -1,0 +1,7 @@
+= PDML
+
+PDML is the PAYDAY 3 runtime mod loader and integration layer.
+
+It is used for Blueprint/logic mods, HUD mods, custom heists, mod settings, shared APIs, and runtime initialization.
+
+This section documents the runtime contract between packaged mods and the game.

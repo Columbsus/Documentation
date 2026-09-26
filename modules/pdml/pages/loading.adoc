@@ -1,0 +1,8 @@
+= Mod Loading
+
+[NOTE]
+====
+This page is scaffolded for the next documentation pass.
+====
+
+This section will document the validated PAYDAY 3 modkit workflow for mod loading.

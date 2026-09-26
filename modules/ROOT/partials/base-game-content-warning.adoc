@@ -1,0 +1,6 @@
+[WARNING]
+====
+Do not redistribute PAYDAY 3 base-game content.
+
+Use installed cooked content as reference/dependency data and package only content you are permitted to distribute.
+====

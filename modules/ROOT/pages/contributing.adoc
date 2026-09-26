@@ -1,0 +1,30 @@
+= Contributing
+
+Documentation contributions are welcome.
+
+== Before writing
+
+Read the repository `README.md` for the project-wide writing rules.
+
+The most important rule is simple: document what the toolchain actually does today.
+
+Do not turn assumptions, planned features, reverse-engineering hypotheses, or unverified paths into instructions.
+
+== Page style
+
+A task page should normally contain:
+
+. A short explanation of what the task accomplishes.
+. Prerequisites.
+. Numbered steps.
+. The expected result.
+. Relevant warnings or known limitations.
+. Links to deeper reference material.
+
+Use `NOTE`, `TIP`, `IMPORTANT`, `CAUTION`, and `WARNING` blocks when the information belongs directly beside a procedure.
+
+== Images
+
+Put images in the `images` family of the module that owns the page.
+
+Reference them using Antora resource IDs rather than filesystem-relative paths.

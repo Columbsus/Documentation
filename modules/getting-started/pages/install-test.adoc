@@ -1,0 +1,61 @@
+= Install and Test
+
+The final step is to load the packaged mod in PAYDAY 3.
+
+== Runtime prerequisites
+
+Install/configure the current PDML/runtime setup required by the modkit release.
+
+Some simple replacement workflows may differ from PDML-driven logic mods, but PDML is the runtime integration layer used by the broader modding toolchain.
+
+== Install the packaged mod
+
+Use the destination documented by the current PDML/CrimeForge release or the destination CrimeForge provides after packaging.
+
+[NOTE]
+====
+This guide intentionally does not hard-code a runtime installation path until that path is part of the finalized public PDML distribution contract.
+
+Follow the path reported/documented by the version of PDML and CrimeForge you are using.
+====
+
+== Launch PAYDAY 3
+
+Start the game with the modding runtime installed.
+
+Verify that PDML initializes successfully before diagnosing the individual mod.
+
+Then verify that your newly packaged mod is discovered/loaded.
+
+== If the game does not load the mod
+
+Check, in this order:
+
+. The package completed without cook errors.
+. The mod is in the location expected by the current runtime.
+. PDML/runtime initialization succeeded.
+. The package/mount structure matches the selected mod type.
+. Required dependencies are present.
+. The game and modkit versions are compatible.
+
+See xref:troubleshooting:index.adoc[Troubleshooting] for error-oriented guides.
+
+== You now have the complete pipeline
+
+You have gone through the fundamental workflow:
+
+[source,text]
+----
+Create
+  -> Author
+  -> Validate
+  -> Cook
+  -> Package
+  -> Install
+  -> Load
+  -> Test
+----
+
+That same pipeline is the foundation for more advanced PAYDAY 3 mods.
+
+Next: xref:next-steps.adoc[Next Steps].

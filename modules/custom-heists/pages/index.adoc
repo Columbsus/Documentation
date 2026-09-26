@@ -1,0 +1,12 @@
+= Custom Heists
+
+CrimeForge includes a custom-heist template and PAYDAY-specific tooling for authoring new heists.
+
+This area is more advanced than a basic mod. Complete xref:getting-started:index.adoc[Getting Started] first.
+
+[IMPORTANT]
+====
+Custom-heist support is not uniform across every PAYDAY 3 subsystem.
+
+Individual pages identify supported, experimental, in-progress, and known-limitation areas.
+====

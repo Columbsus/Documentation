@@ -1,0 +1,59 @@
+= PAYDAY 3 Modding
+:description: Community documentation for creating PAYDAY 3 mods using the custom Unreal Engine modkit, CrimeForge, and PDML.
+
+Welcome to the PAYDAY 3 modding documentation.
+
+This documentation covers the community toolchain for creating mods with the custom PAYDAY 3 Unreal Engine {pd3-engine-version} development environment, CrimeForge, and PDML.
+
+== New to PAYDAY 3 modding?
+
+Start with xref:getting-started:index.adoc[Getting Started].
+
+The beginner guide takes you from an empty setup to a packaged mod and deliberately avoids requiring knowledge of PAYDAY 3 internals.
+
+== The toolchain
+
+[cols="1,3"]
+|===
+|Tool |Purpose
+
+|Custom PAYDAY 3 Editor / Modkit
+|Provides an Unreal Engine {pd3-engine-version} development environment compatible with the game's content and reflected types. Installed PAYDAY 3 cooked content can be exposed as read-only reference content without redistributing it with the modkit.
+
+|CrimeForge
+|Editor tooling for creating mod projects from templates, validating content, working with PAYDAY-specific authoring workflows, and packaging mods.
+
+|PDML
+|The runtime mod loader and integration layer used by Blueprint/logic mods, HUD mods, custom heists, mod settings, shared APIs, and other runtime functionality.
+|===
+
+== What can I make?
+
+The toolchain is intended to support several kinds of mods:
+
+* Asset replacements
+* Blueprint and logic mods
+* HUD and UI mods
+* Materials and textures
+* Custom heists
+* Mod settings
+* New/additive content as support is implemented and validated
+
+Some PAYDAY 3 systems still require additional reverse engineering or tooling. Pages covering those systems clearly identify known limitations instead of presenting incomplete functionality as supported.
+
+[IMPORTANT]
+====
+PAYDAY 3 base-game content is not part of your mod's source content.
+
+Cooked game assets exposed by the editor are there to provide references and development context. Do not redistribute base-game assets with your mod.
+====
+
+== Choose where to go next
+
+* xref:getting-started:index.adoc[Getting Started] - set up the tools and build your first mod.
+* xref:modkit:index.adoc[The Modkit] - understand the custom editor and cooked assets.
+* xref:crimeforge:index.adoc[CrimeForge] - learn the authoring and packaging tools.
+* xref:creating-mods:index.adoc[Creating Mods] - task-oriented guides.
+* xref:custom-heists:index.adoc[Custom Heists] - build PAYDAY 3 heists.
+* xref:pdml:index.adoc[PDML] - runtime mod loading and APIs.
+* xref:troubleshooting:index.adoc[Troubleshooting] - diagnose common problems.

@@ -1,0 +1,9 @@
+= CrimeForge
+
+CrimeForge is the PAYDAY-specific editor tooling layer.
+
+It provides mod creation templates, validation, packaging, and specialized authoring workflows.
+
+Current templates include basic mods, logic mods, and custom heists.
+
+See xref:create-mod.adoc[Create Mod] and xref:packaging.adoc[Packaging].

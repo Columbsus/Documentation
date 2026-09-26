@@ -1,0 +1,49 @@
+= Terminology
+
+This page defines terms used throughout the documentation.
+
+== Modkit
+
+The complete community development environment used to author PAYDAY 3 mods. Depending on context, this includes the custom Unreal Engine editor, the PAYDAY 3 project/stubs, CrimeForge, and supporting tooling.
+
+== Custom editor
+
+The customized Unreal Engine {pd3-engine-version} editor used by the modkit.
+
+== Cooked asset
+
+An asset that has already been cooked for the shipped game.
+
+In this modkit, supported installed PAYDAY 3 cooked assets can be made visible to the editor as read-only development/reference content.
+
+== Mod-owned asset
+
+An asset created by the mod author and belonging to the mod.
+
+This is different from PAYDAY 3 base-game content.
+
+== CrimeForge
+
+The editor tooling used for PAYDAY-specific mod creation workflows, templates, validation, packaging, and related authoring tools.
+
+== PDML
+
+The PAYDAY 3 runtime mod loader/integration layer.
+
+== PAL
+
+A packaging/asset-list mechanism used by the modding toolchain to control which content is included for a mod.
+
+== Proxy
+
+An editor-safe representation of a PAYDAY 3 gameplay object.
+
+For systems that cannot safely or practically be authored directly from cooked game objects, CrimeForge can use proxies/placeholders that are resolved to the appropriate runtime objects in-game.
+
+== Asset replacement
+
+A mod asset intended to replace content at an existing PAYDAY 3 asset path.
+
+== Additive content
+
+New content introduced by a mod rather than replacing an existing base-game asset.

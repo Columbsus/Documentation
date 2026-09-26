@@ -1,0 +1,32 @@
+= Install the Custom Editor
+
+The modkit uses a custom Unreal Engine {pd3-engine-version} editor compatible with the PAYDAY 3 development environment.
+
+== Install
+
+Use the current modkit/editor distribution method to install the custom editor.
+
+The editor distribution is separate from PAYDAY 3 itself. It should not contain redistributed PAYDAY 3 cooked game content.
+
+[IMPORTANT]
+====
+Use the editor build distributed for the current modkit release.
+
+A stock Epic Games Launcher engine build is not a drop-in replacement for custom engine changes required by the modkit.
+====
+
+== Verify the installation
+
+After installation, confirm that the custom editor can start before moving on.
+
+You do not need to create a blank Unreal project.
+
+The PAYDAY 3 modkit provides the project you will open in the next steps.
+
+== If you build the editor yourself
+
+Follow the build instructions supplied with the custom engine source/release.
+
+Do not mix binaries from different Unreal Engine versions or different modkit engine revisions.
+
+Next: xref:install-modkit.adoc[Install the Modkit].

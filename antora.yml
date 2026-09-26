@@ -1,0 +1,22 @@
+name: payday3-modding
+title: PAYDAY 3 Modding
+version: ~
+start_page: ROOT:index.adoc
+nav:
+  - modules/ROOT/nav.adoc
+  - modules/getting-started/nav.adoc
+  - modules/modkit/nav.adoc
+  - modules/crimeforge/nav.adoc
+  - modules/creating-mods/nav.adoc
+  - modules/custom-heists/nav.adoc
+  - modules/pdml/nav.adoc
+  - modules/advanced/nav.adoc
+  - modules/reference/nav.adoc
+  - modules/troubleshooting/nav.adoc
+asciidoc:
+  attributes:
+    page-pagination: ''
+    experimental: ''
+    icons: font
+    source-highlighter: highlight.js
+    pd3-engine-version: '5.5.4'

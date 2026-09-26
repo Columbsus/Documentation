@@ -1,0 +1,7 @@
+= The Modkit
+
+The PAYDAY 3 modkit provides the development environment used to author mods against PAYDAY 3's Unreal Engine {pd3-engine-version} runtime.
+
+It combines a compatible custom editor, a stubbed/reflected PAYDAY 3 project, CrimeForge, and supporting tooling.
+
+Start with xref:architecture.adoc[Architecture] or xref:cooked-assets.adoc[Cooked Assets].

@@ -1,0 +1,32 @@
+= Getting Started
+:description: A linear beginner guide to setting up the PAYDAY 3 modkit and creating a first mod.
+
+This guide walks through the complete beginner workflow for PAYDAY 3 modding.
+
+Follow the pages in order the first time through.
+
+== What you will do
+
+By the end of the guide, you will understand the toolchain, open the PAYDAY 3 modding project, create a mod with CrimeForge, package it, and test it with PAYDAY 3.
+
+You do not need to understand PAYDAY 3 reverse engineering or Unreal Engine internals before starting.
+
+== The path
+
+. xref:what-you-can-make.adoc[See what the toolchain can make.]
+. xref:how-it-works.adoc[Understand the custom editor, CrimeForge, and PDML.]
+. xref:requirements.adoc[Install the prerequisites.]
+. xref:install-editor.adoc[Install the custom editor.]
+. xref:install-modkit.adoc[Install the modkit.]
+. xref:project-setup.adoc[Connect the project to your PAYDAY 3 installation.]
+. xref:editor-tour.adoc[Learn the important editor areas.]
+. xref:first-mod.adoc[Create your first CrimeForge mod.]
+. xref:package-mod.adoc[Package it.]
+. xref:install-test.adoc[Load and test it in PAYDAY 3.]
+
+[NOTE]
+====
+This documentation describes the current community modkit workflow.
+
+PAYDAY 3 and the modding toolchain both change over time. Pages for experimental functionality are labelled accordingly.
+====

@@ -1,0 +1,11 @@
+= Troubleshooting
+
+Start with the stage that failed rather than changing multiple parts of the setup at once.
+
+For packaging failures, find the first relevant cook/compile error in the Output Log. For runtime failures, first verify that the modding runtime initializes, then diagnose the individual mod.
+
+* xref:mod-not-loading.adoc[Mod Does Not Load]
+* xref:packaging.adoc[Packaging & Cook Failures]
+* xref:blueprints.adoc[Blueprint Errors]
+* xref:plugins.adoc[Plugin & Module Errors]
+* xref:cooked-assets.adoc[Cooked Asset Problems]

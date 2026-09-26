@@ -1,0 +1,26 @@
+= Install the Modkit
+
+The modkit contains the PAYDAY 3 development project and the tooling used to author mods.
+
+== Install the project
+
+Obtain the current modkit release and extract or clone it to a writable development directory.
+
+Avoid placing the project inside the PAYDAY 3 installation directory.
+
+== Expected components
+
+A complete development setup includes the PAYDAY 3 project/stubs and the required modding plugins, including CrimeForge.
+
+Depending on the distribution, compiled plugin binaries may already be supplied. Source-based setups may require a project/plugin build before the editor can open successfully.
+
+== Do not copy game assets into the project
+
+[WARNING]
+====
+Do not populate the project by extracting PAYDAY 3 cooked assets into `Content`.
+
+The cooked-asset workflow uses the user's installed PAYDAY 3 content as read-only reference data. Your project should contain modkit content and assets you own or are permitted to redistribute.
+====
+
+Next: xref:project-setup.adoc[Set Up the Project].

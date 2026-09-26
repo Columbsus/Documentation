@@ -1,0 +1,71 @@
+= Create Your First Mod
+
+Now create a mod using CrimeForge.
+
+The goal of this page is to establish the correct project structure. It deliberately avoids a complicated gameplay change.
+
+== Open Create Mod
+
+Open CrimeForge's mod-creation tool from the editor.
+
+== Choose a template
+
+CrimeForge provides templates for different kinds of mods.
+
+For this first project, choose the basic/general-purpose mod template rather than the custom-heist template.
+
+[cols="1,3"]
+|===
+|Template |Use it for
+
+|Basic mod
+|A straightforward starting point for mod-owned content and common mod workflows.
+
+|Logic mod
+|Mods whose primary purpose is runtime/Blueprint logic and PDML integration.
+
+|Custom heist
+|A starting structure for a new heist. Use this after completing the beginner guide.
+|===
+
+== Name the mod
+
+Give the mod a short, unique name.
+
+For this tutorial, you can use:
+
+[source,text]
+----
+MyFirstMod
+----
+
+Prefer names that are safe as Unreal identifiers and directory names.
+
+[CAUTION]
+====
+Treat the mod name and mount point as stable once you begin creating referenced assets.
+
+Renaming a mod later can invalidate paths and references.
+====
+
+== Create it
+
+Create the mod and allow CrimeForge to generate its required structure.
+
+After creation, locate the new mod content in the Content Browser.
+
+== Add test content
+
+Create a small mod-owned asset inside the new mod so that you have content to send through the packaging pipeline.
+
+For the first pass, the important result is not a complex gameplay feature. It is proving that:
+
+. CrimeForge created the mod.
+. Unreal recognizes its content.
+. The content can cook.
+. CrimeForge can package it.
+. The resulting mod can be placed into the runtime mod setup and tested.
+
+Once that pipeline works, move on to a real replacement, Blueprint mod, UI mod, or heist.
+
+Next: xref:package-mod.adoc[Package the Mod].

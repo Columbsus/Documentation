@@ -1,0 +1,41 @@
+= Set Up the Project
+
+Before the editor can provide PAYDAY-specific workflows, configure the modkit to use your local PAYDAY 3 installation.
+
+== Open the project
+
+Open the PAYDAY 3 modkit `.uproject` with the custom Unreal Engine {pd3-engine-version} editor.
+
+If Unreal asks you to select an engine installation, choose the custom editor build intended for this modkit release.
+
+== Configure the PAYDAY 3 game path
+
+Open the relevant CrimeForge/modkit project settings and point the game-path setting at your installed PAYDAY 3 game.
+
+CrimeForge uses the configured game installation for workflows that need access to the locally installed game's data.
+
+[IMPORTANT]
+====
+Point the setting at your own PAYDAY 3 installation.
+
+Do not copy base-game packages into the modkit repository.
+====
+
+== Additional data
+
+Some development builds of the tooling may require supporting reflection/mapping data supplied with the modkit release.
+
+Use the files supplied for the exact PAYDAY 3/modkit version you are targeting.
+
+[WARNING]
+====
+Do not publish private keys, AES keys, or other sensitive configuration in screenshots, documentation, repositories, or mod packages.
+====
+
+== Verify
+
+Restart the editor if the tooling asks you to.
+
+A correctly configured project should load the PAYDAY 3-specific editor tooling without requiring you to reconstruct the game project manually.
+
+Next: xref:editor-tour.adoc[Editor Tour].

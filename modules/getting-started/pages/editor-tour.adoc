@@ -1,0 +1,38 @@
+= Editor Tour
+
+You only need to know a few parts of the editor to create your first mod.
+
+== Content Browser
+
+The Content Browser contains your mod-owned content, modkit tooling content, and supported PAYDAY 3 reference content exposed by the custom environment.
+
+Do not assume that every visible asset is editable.
+
+xref:modkit:cooked-assets.adoc[Cooked Assets] explains how to recognize and work with reference content safely.
+
+== CrimeForge
+
+CrimeForge is the main PAYDAY-specific authoring surface.
+
+For the beginner workflow, the important actions are:
+
+* Create a mod.
+* Choose a template.
+* Validate the mod.
+* Package the mod.
+
+Later guides cover additional CrimeForge tooling.
+
+== Mod content
+
+Keep new content inside the mod created by CrimeForge unless a guide specifically tells you to target a base-game path for an asset replacement.
+
+This makes ownership and packaging boundaries much easier to understand.
+
+== Output Log
+
+Keep the Unreal Output Log available while learning the toolchain.
+
+Packaging, cook, asset-loading, and Blueprint problems frequently provide useful diagnostics there.
+
+Next: xref:first-mod.adoc[Create Your First Mod].

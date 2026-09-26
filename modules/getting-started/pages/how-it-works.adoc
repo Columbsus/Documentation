@@ -1,0 +1,75 @@
+= How the Toolchain Works
+
+PAYDAY 3 modding uses three major pieces that work together.
+
+== Custom PAYDAY 3 Unreal Editor
+
+PAYDAY 3 currently uses Unreal Engine {pd3-engine-version}. The modkit uses a compatible custom editor and a stubbed PAYDAY 3 C++ project with reflected game types.
+
+The editor provides the development environment in which you create your own assets and Blueprints.
+
+It can also expose supported cooked assets from your installed copy of PAYDAY 3 as read-only reference content.
+
+[IMPORTANT]
+====
+The modkit does not need to redistribute PAYDAY 3's base-game cooked assets.
+
+The user's own installed game provides that content.
+====
+
+== CrimeForge
+
+CrimeForge handles PAYDAY-specific editor workflows.
+
+Its responsibilities include:
+
+* Creating mods from templates.
+* Managing mod structure.
+* PAYDAY-specific authoring tools.
+* Validation.
+* Packaging.
+* Custom-heist tooling.
+
+For systems where directly authoring a cooked gameplay object is unsuitable, CrimeForge can use editor-safe proxies/placeholders and resolve them to PAYDAY 3 objects at runtime.
+
+== PDML
+
+PDML is the runtime side of the toolchain.
+
+It provides the loading and integration layer for functionality such as:
+
+* Blueprint/logic mods.
+* HUD mods.
+* Custom heists.
+* Mod settings.
+* Shared runtime APIs.
+* Mod initialization.
+
+== From editor to game
+
+A simplified workflow looks like this:
+
+[source,text]
+----
+Your mod-owned assets
+        |
+        v
+Custom PAYDAY 3 Editor
+        |
+        v
+CrimeForge
+  create / validate / package
+        |
+        v
+Packaged mod
+        |
+        v
+PDML + PAYDAY 3
+        |
+        v
+Runtime mod
+----
+
+Asset replacements may use game-compatible asset paths, while additive/runtime features can require PDML integration.
+
+xref:modkit:cooked-assets.adoc[Cooked Assets] explains the distinction in more detail.

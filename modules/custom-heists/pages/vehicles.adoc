@@ -1,0 +1,5 @@
+= Vehicles
+
+Vehicle workflows are supported by the newer custom editor/modkit work.
+
+This page is reserved for the validated authoring procedure, required actors/data, runtime behavior, and packaging checks.

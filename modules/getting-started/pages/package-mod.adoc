@@ -1,0 +1,47 @@
+= Package the Mod
+
+CrimeForge packages the Unreal content into the form expected by the PAYDAY 3 modding runtime.
+
+== Before packaging
+
+Save all modified assets.
+
+Resolve Blueprint compile errors before starting a package.
+
+If CrimeForge provides validation for the selected mod type, run it first and resolve blocking errors.
+
+== Package
+
+Select the mod in CrimeForge and run its package/build action.
+
+CrimeForge handles the PAYDAY-specific cooking and packaging workflow rather than requiring beginners to manually construct UnrealPak/IoStore commands.
+
+A successful modern PAYDAY 3 package may contain Unreal IoStore-related output such as `.pak`, `.utoc`, and `.ucas` files depending on the mod/package type.
+
+== Watch the Output Log
+
+Packaging can fail because of:
+
+* Blueprint compiler errors.
+* Missing references.
+* Content excluded from cook.
+* Plugin/module load failures.
+* Invalid mod configuration.
+* Commandlet-incompatible editor plugins.
+
+Do not treat the final error line as the entire diagnosis. Search upward for the first relevant cook, compile, or validation error.
+
+== Verify the result
+
+After CrimeForge reports success, inspect the generated package/output location shown by the tool.
+
+The package should contain your mod's intended content, not copied PAYDAY 3 base-game content.
+
+[WARNING]
+====
+Do not manually add PAYDAY 3 cooked assets to the package to fix a missing-reference problem.
+
+That usually means the mod's references or packaging configuration need to be corrected.
+====
+
+Next: xref:install-test.adoc[Install and Test].
