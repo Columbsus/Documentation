@@ -212,7 +212,3 @@ build/site/
 ```
 
 They are regenerated from the AsciiDoc source whenever `npm run build` is run.
-
-## Roadmap
-
-See [ROADMAP.md](ROADMAP.md) for the current documentation coverage and planned sections.
