@@ -1,3 +1,0 @@
-* xref:index.adoc[PAYDAY 3 Modding]
-* xref:terminology.adoc[Terminology]
-* xref:contributing.adoc[Contributing]

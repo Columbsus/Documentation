@@ -8,6 +8,67 @@ Obtain the current modkit release and extract or clone it to a writable developm
 
 Avoid placing the project inside the PAYDAY 3 installation directory.
 
+[IMPORTANT]
+====
+The modkit does *not* include a generated JMAP.
+
+After downloading the modkit, you must extract the current `AssetRegistry.bin` from your installed copy of PAYDAY 3 and run `GenerateJMAP.bat` before using the project. This updates the modkit's generated mapping data so it matches the version of PAYDAY 3 currently installed on your system.
+====
+
+== Generate the JMAP
+
+Do this after downloading or updating the modkit, and repeat it after PAYDAY 3 receives an update that changes the game's assets.
+
+=== 1. Prepare a clean PAYDAY 3 installation
+
+Before generating the JMAP, temporarily remove or disable all PAYDAY 3 mods and UE4SS.
+
+`GenerateJMAP.bat` should be run against the unmodified game so the generated data matches the stock PAYDAY 3 installation.
+
+[WARNING]
+====
+Do not generate the JMAP while UE4SS or other mods are installed and active in PAYDAY 3.
+====
+
+=== 2. Extract `AssetRegistry.bin` with FModel
+
+Download and open https://fmodel.app/[FModel].
+
+Configure FModel to read your PAYDAY 3 installation, then locate the game's `AssetRegistry.bin` and export the file using FModel's raw file export/save functionality.
+
+Only `AssetRegistry.bin` is required for this step. You do not need to extract the game's cooked assets into the modkit project.
+
+Make sure the extracted `AssetRegistry.bin` comes from the same PAYDAY 3 installation and game version that you intend to mod.
+
+=== 3. Run `GenerateJMAP.bat`
+
+With the current `AssetRegistry.bin` available, run:
+
+[source,text]
+----
+GenerateJMAP.bat
+----
+
+Follow the prompts from the script and provide the extracted `AssetRegistry.bin` when requested.
+
+The script generates the JMAP data required by the modkit and updates it to match the installed game version.
+
+[NOTE]
+====
+The generated JMAP is local generated data. It is not included with the modkit download, so this step must be completed on a new modkit installation before the generated mappings are available.
+====
+
+=== 4. Regenerate after game updates
+
+When PAYDAY 3 is updated, repeat the process with a newly extracted `AssetRegistry.bin` from the updated game:
+
+. Make sure PAYDAY 3 has no mods or UE4SS installed or active.
+. Extract the new `AssetRegistry.bin` with FModel.
+. Run `GenerateJMAP.bat` again.
+. Use the regenerated data with the updated modkit/game version.
+
+This prevents the modkit from continuing to use mapping data generated from an older PAYDAY 3 build.
+
 == Expected components
 
 A complete development setup includes the PAYDAY 3 project/stubs and the required modding plugins, including CrimeForge.

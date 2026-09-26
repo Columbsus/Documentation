@@ -1,0 +1,2 @@
+* xref:terminology.adoc[Terminology]
+* xref:contributing.adoc[Contributing]

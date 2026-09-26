@@ -1,9 +1,8 @@
 name: payday3-modding
-title: PAYDAY 3 Modding
+title: PAYDAY 3 Modding Documentation
 version: ~
 start_page: ROOT:index.adoc
 nav:
-  - modules/ROOT/nav.adoc
   - modules/getting-started/nav.adoc
   - modules/modkit/nav.adoc
   - modules/crimeforge/nav.adoc
@@ -13,6 +12,7 @@ nav:
   - modules/advanced/nav.adoc
   - modules/reference/nav.adoc
   - modules/troubleshooting/nav.adoc
+  - modules/ROOT/nav-bottom.adoc
 asciidoc:
   attributes:
     page-pagination: ''

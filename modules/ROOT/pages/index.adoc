@@ -1,4 +1,4 @@
-= PAYDAY 3 Modding
+= PAYDAY 3 Modding Documentation
 :description: Community documentation for creating PAYDAY 3 mods using the custom Unreal Engine modkit, CrimeForge, and PDML.
 
 Welcome to the PAYDAY 3 modding documentation.
@@ -34,10 +34,9 @@ The toolchain is intended to support several kinds of mods:
 * Asset replacements
 * Blueprint and logic mods
 * HUD and UI mods
-* Materials and textures
+* Custom Materials and meshes
 * Custom heists
-* Mod settings
-* New/additive content as support is implemented and validated
+* New/additive content as support is implemented
 
 Some PAYDAY 3 systems still require additional reverse engineering or tooling. Pages covering those systems clearly identify known limitations instead of presenting incomplete functionality as supported.
 

@@ -1,32 +1,121 @@
 = Install the Custom Editor
 
-The modkit uses a custom Unreal Engine {pd3-engine-version} editor compatible with the PAYDAY 3 development environment.
+The PAYDAY 3 modkit uses a custom Unreal Engine {pd3-engine-version} editor with compatibility changes required by the PAYDAY 3 development environment.
 
-== Install
-
-Use the current modkit/editor distribution method to install the custom editor.
-
-The editor distribution is separate from PAYDAY 3 itself. It should not contain redistributed PAYDAY 3 cooked game content.
+The custom editor is distributed through the https://github.com/NadzW/UnrealEngine-PD3Compatibility[UnrealEngine-PD3Compatibility GitHub repository].
 
 [IMPORTANT]
 ====
-Use the editor build distributed for the current modkit release.
+A stock Unreal Engine installation from the Epic Games Launcher is not a drop-in replacement for this editor.
 
-A stock Epic Games Launcher engine build is not a drop-in replacement for custom engine changes required by the modkit.
+Use the editor build provided for the current modkit release.
 ====
+
+== GitHub access and the 404 page
+
+The custom editor repository is based on Unreal Engine source and is only visible to GitHub accounts that have access to Epic Games' Unreal Engine repositories.
+
+If the repository link opens a GitHub *404 - Page not found* page, the link may still be correct. GitHub hides restricted repositories from accounts that do not have permission to view them.
+
+Before downloading the custom editor, make sure your GitHub account is authorized for Unreal Engine source access.
+
+=== Become authorized for Unreal Engine source access
+
+Epic's official instructions are available at https://www.unrealengine.com/ue-on-github[Unreal Engine on GitHub].
+
+. Create or sign in to a personal https://github.com/[GitHub account].
+. Sign in to your https://www.epicgames.com/account/[Epic Games account].
+. Open your Epic Games account settings and go to *Apps & Accounts* or *Connections*, then open the *Accounts* section.
+. Find *GitHub* and select *Connect*.
+. If prompted, accept the Unreal Engine End User License Agreement and continue with *Link Account*.
+. On GitHub, select *Authorize EpicGames* when the Epic Games OAuth authorization page appears.
+. Check the email address associated with your GitHub account for an invitation to join the *@EpicGames* GitHub organization.
+. Accept the invitation by selecting *Join @EpicGames*.
+
+[IMPORTANT]
+====
+The GitHub organization invitation must be accepted within seven days. Linking the accounts without accepting the organization invitation is not enough to gain access to the Unreal Engine source repositories.
+====
+
+You can verify that authorization is working by opening https://github.com/EpicGames/UnrealEngine[EpicGames/UnrealEngine] while signed in to GitHub.
+
+If that repository opens normally, return to https://github.com/NadzW/UnrealEngine-PD3Compatibility[UnrealEngine-PD3Compatibility] and refresh the page.
+
+If *EpicGames/UnrealEngine* still shows a 404 page, check that:
+
+* You are signed in to the same GitHub account that you linked to Epic Games.
+* You accepted the *@EpicGames* organization invitation.
+* The invitation has not expired.
+* You are using a personal GitHub account. GitHub Enterprise managed user accounts cannot join the external *@EpicGames* organization.
+
+If the invitation expired or the account link did not complete correctly, disconnect and reconnect the GitHub account from your Epic Games account, then accept the new invitation.
+
+== Download the editor
+
+Open the https://github.com/NadzW/UnrealEngine-PD3Compatibility[custom editor repository] and use the release that matches the current PAYDAY 3 modkit.
+
+There are two supported ways to install it:
+
+* xref:install-editor.adoc#_install_using_the_installer[Install using the installer], recommended for most users.
+* xref:install-editor.adoc#_manual_installation[Manual installation], useful if you want to manage the editor files yourself.
+
+== Install using the installer
+
+The installer is the recommended installation method.
+
+. Open the repository's *Releases* section.
+. Download the installer from the latest compatible release.
+. Run the installer.
+. Choose an installation directory with enough free disk space.
+. Allow the installer to download or extract the custom editor files.
+. Wait for installation to complete.
+
+Keep the custom editor in its own directory. Do not install it over an Epic Games Launcher Unreal Engine installation.
+
+After installation, the editor executable should be available beneath the installed engine directory at:
+
+[source,text]
+----
+Engine\Binaries\Win64\UnrealEditor.exe
+----
+
+== Manual installation
+
+Use manual installation if you do not want to use the installer or need direct control over where the custom editor is stored.
+
+. Open the repository's *Releases* section.
+. Download the manual editor package for the release that matches the current modkit.
+. Create a dedicated folder for the PAYDAY 3 custom editor.
+. Extract the complete package into that folder.
+. Keep the directory structure from the archive intact.
+. Locate `Engine\Binaries\Win64\UnrealEditor.exe` inside the extracted editor.
+. Start the editor once to confirm that the installation is valid.
+
+Do not copy individual engine DLLs, executables, plugins, or other files into another Unreal Engine installation. The editor should be kept as a complete matching build.
 
 == Verify the installation
 
-After installation, confirm that the custom editor can start before moving on.
+Before installing or opening the PAYDAY 3 modkit, confirm that:
 
-You do not need to create a blank Unreal project.
+* `UnrealEditor.exe` starts successfully.
+* The editor reports the expected Unreal Engine version for the current modkit.
+* The installation is separate from stock Epic Games Launcher engine versions.
+* You have not mixed files from different custom editor releases.
 
-The PAYDAY 3 modkit provides the project you will open in the next steps.
+You do not need to create a blank Unreal project. The PAYDAY 3 modkit provides the project that will be opened with this editor.
 
-== If you build the editor yourself
+== Updating the custom editor
 
-Follow the build instructions supplied with the custom engine source/release.
+When a new compatibility build is released, use the update instructions provided with that release.
 
-Do not mix binaries from different Unreal Engine versions or different modkit engine revisions.
+Do not assume that files from older and newer builds can be mixed safely. If an update requires a clean installation, install the new build into a fresh directory or remove the old build as instructed by the release notes.
+
+== Building the editor yourself
+
+If you prefer to build the custom editor from source, follow the source-build instructions provided by the https://github.com/NadzW/UnrealEngine-PD3Compatibility[UnrealEngine-PD3Compatibility repository].
+
+You must have working Epic Games GitHub authorization before you can access Unreal Engine source repositories and dependent private forks.
+
+Do not mix binaries produced from different Unreal Engine versions or different PAYDAY 3 compatibility revisions.
 
 Next: xref:install-modkit.adoc[Install the Modkit].

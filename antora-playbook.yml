@@ -1,5 +1,5 @@
 site:
-  title: PAYDAY 3 Modding
+  title: PAYDAY 3 Modding Documentation
   start_page: payday3-modding::index.adoc
 
 content:
@@ -11,6 +11,7 @@ ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
     snapshot: true
+  supplemental_files: ./supplemental-ui
 
 output:
   dir: ./build/site

@@ -7,8 +7,6 @@ Before installing the modkit, prepare the following.
 * A legitimate installed copy of PAYDAY 3.
 * The custom PAYDAY 3 Unreal Engine {pd3-engine-version} editor build used by the modkit.
 * The PAYDAY 3 modkit project.
-* CrimeForge.
-* PDML for runtime mods and features that depend on the loader.
 
 == Development tools
 
@@ -16,15 +14,6 @@ If you will compile the editor, project, plugins, or native modules, install a c
 
 Blueprint-only mod authors may not need to work directly with C++, but the distributed modkit/editor build must still contain the required compiled modules.
 
-== Storage
-
-Keep enough free space for:
-
-* The PAYDAY 3 installation.
-* The custom Unreal Engine/editor.
-* The modkit project.
-* Unreal build products and Derived Data Cache.
-* Packaged mod output.
 
 == Before continuing
 

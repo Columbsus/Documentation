@@ -1,0 +1,456 @@
+:root {
+  color-scheme: dark;
+  --pd3-green: #13d9a0;
+  --pd3-green-bright: #40e0b2;
+  --pd3-green-muted: #0fa37c;
+  --pd3-bg: #0d0f0f;
+  --pd3-surface: #141717;
+  --pd3-surface-raised: #1a1e1d;
+  --pd3-border: #2a302e;
+  --pd3-text: #e7ebe9;
+  --pd3-text-muted: #9ca6a2;
+}
+
+html,
+body {
+  background: var(--pd3-bg);
+  color: var(--pd3-text);
+}
+
+a {
+  color: var(--pd3-green);
+}
+
+a:hover,
+a:focus {
+  color: var(--pd3-green-bright);
+}
+
+.navbar {
+  background: #090b0b;
+  border-bottom: 1px solid var(--pd3-border);
+}
+
+.navbar-brand .navbar-item,
+.navbar-item,
+.navbar-link {
+  color: var(--pd3-text);
+}
+
+.navbar-item:hover,
+.navbar-link:hover {
+  background: var(--pd3-surface);
+  color: var(--pd3-green-bright);
+}
+
+.navbar-burger span {
+  background: var(--pd3-text);
+}
+
+.navbar-menu {
+  background: #090b0b;
+}
+
+.nav-container,
+.toc-menu,
+.doc,
+.toolbar,
+.body {
+  background: transparent;
+}
+
+.nav-panel-menu,
+.nav-menu {
+  background: var(--pd3-surface);
+  border-right-color: var(--pd3-border);
+}
+
+.nav-menu h3.title,
+.nav-menu .nav-link,
+.nav-menu .nav-text,
+.toc-menu a,
+.breadcrumbs a {
+  color: var(--pd3-text-muted);
+}
+
+.nav-menu a:hover,
+.toc-menu a:hover,
+.breadcrumbs a:hover {
+  color: var(--pd3-green-bright);
+}
+
+.nav-menu .is-current-page > .nav-link,
+.nav-menu .is-current-page > .nav-text,
+.toc-menu a.is-active {
+  color: var(--pd3-green);
+  font-weight: 600;
+}
+
+.doc h1,
+.doc h2,
+.doc h3,
+.doc h4,
+.doc h5,
+.doc h6 {
+  color: #f4f6f5;
+}
+
+.doc h1 {
+  border-bottom: 2px solid var(--pd3-green-muted);
+  padding-bottom: 0.35em;
+}
+
+.doc p,
+.doc li,
+.doc td,
+.doc th,
+.doc dt,
+.doc dd {
+  color: var(--pd3-text);
+}
+
+.doc table.tableblock,
+.doc table.tableblock td,
+.doc table.tableblock th {
+  border-color: var(--pd3-border);
+}
+
+.doc table.tableblock thead,
+.doc table.tableblock th {
+  background: var(--pd3-surface-raised);
+}
+
+.doc code,
+.doc pre,
+.doc .listingblock pre,
+.doc .literalblock pre {
+  background: #090b0b;
+  color: #dfe8e2;
+  border-color: var(--pd3-border);
+}
+
+.doc :not(pre) > code {
+  color: var(--pd3-green-bright);
+}
+
+.doc .admonitionblock > table td.icon {
+  background: var(--pd3-surface-raised);
+  border-left: 3px solid var(--pd3-green);
+}
+
+.doc .admonitionblock > table td.content {
+  background: var(--pd3-surface);
+  color: var(--pd3-text);
+  border-color: var(--pd3-border);
+}
+
+.doc .admonitionblock .icon i::before {
+  color: var(--pd3-green);
+}
+
+.pagination .page-previous,
+.pagination .page-next {
+  background: var(--pd3-surface);
+  border-color: var(--pd3-border);
+  color: var(--pd3-text);
+}
+
+.pagination a:hover {
+  border-color: var(--pd3-green-muted);
+  color: var(--pd3-green-bright);
+}
+
+.footer {
+  background: #090b0b;
+  border-top: 1px solid var(--pd3-border);
+  color: var(--pd3-text-muted);
+}
+
+.footer p {
+  margin: 0.25rem 0;
+}
+
+.footer-meta {
+  font-size: 0.85rem;
+  color: #727d78;
+}
+
+::selection {
+  background: var(--pd3-green-muted);
+  color: #080a09;
+}
+
+input,
+select,
+textarea,
+button {
+  background: var(--pd3-surface-raised);
+  border-color: var(--pd3-border);
+  color: var(--pd3-text);
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  border-color: var(--pd3-green);
+  outline-color: var(--pd3-green);
+}
+
+/* Complete PAYDAY dark UI pass */
+html, body, .body, main, .article, .doc, .content, .toolbar, .nav-container,
+.nav, .nav-panel-menu, .nav-panel-explore, .toc-menu, .toc.sidebar {
+  background-color: var(--pd3-bg) !important;
+  color: var(--pd3-text) !important;
+}
+
+.header, .navbar, .navbar-menu, .navbar-brand {
+  background-color: #090b0b !important;
+}
+
+.pd3-brand {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.navbar-end.pd3-navbar-end {
+  align-items: center;
+  gap: .15rem;
+}
+
+.navbar-dropdown {
+  background: var(--pd3-surface-raised) !important;
+  border: 1px solid var(--pd3-border) !important;
+  box-shadow: 0 .45rem 1.2rem rgba(0,0,0,.45) !important;
+}
+
+.navbar-dropdown .navbar-item {
+  background: transparent !important;
+  color: var(--pd3-text) !important;
+}
+
+.navbar-dropdown .navbar-item:hover,
+.navbar-dropdown .navbar-item:focus {
+  background: #222724 !important;
+  color: var(--pd3-green-bright) !important;
+}
+
+.navbar-link::after {
+  border-color: var(--pd3-text-muted) !important;
+}
+
+.navbar-link:hover::after {
+  border-color: var(--pd3-green) !important;
+}
+
+/* Search */
+.pd3-search-item {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.pd3-search-field {
+  position: relative;
+  width: min(22rem, 32vw);
+  overflow: visible;
+}
+#search-input {
+  width: 100%;
+  height: 2.2rem;
+  padding: 0 1rem 0 2.15rem;
+  border: 1px solid #353b38 !important;
+  border-radius: 1.1rem;
+  background: #151918 !important;
+  color: var(--pd3-text) !important;
+  box-shadow: none !important;
+  font: inherit;
+}
+#search-input::placeholder { color: #7e8984; }
+#search-input:focus {
+  border-color: var(--pd3-green) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 1px var(--pd3-green-muted) !important;
+}
+.pd3-search-icon {
+  position: absolute;
+  z-index: 2;
+  left: .78rem;
+  top: 50%;
+  width: .72rem;
+  height: .72rem;
+  border: 2px solid #8b9691;
+  border-radius: 50%;
+  transform: translateY(-58%);
+  pointer-events: none;
+}
+.pd3-search-icon::after {
+  content: '';
+  position: absolute;
+  width: .4rem;
+  height: 2px;
+  background: #8b9691;
+  right: -.34rem;
+  bottom: -.16rem;
+  transform: rotate(45deg);
+}
+.pd3-search-results {
+  position: absolute;
+  z-index: 1000;
+  top: calc(100% + .5rem);
+  left: 0;
+  right: 0;
+  max-height: 32rem;
+  overflow-y: auto;
+  background: #151918;
+  border: 1px solid var(--pd3-border);
+  border-radius: .35rem;
+  box-shadow: 0 .75rem 2rem rgba(0,0,0,.55);
+}
+.pd3-search-result {
+  display: block;
+  padding: .75rem .9rem;
+  border-bottom: 1px solid var(--pd3-border);
+  text-decoration: none !important;
+}
+.pd3-search-result:last-child { border-bottom: 0; }
+.pd3-search-result:hover { background: #202522; }
+.pd3-search-result-title {
+  display: block;
+  color: var(--pd3-green-bright);
+  font-weight: 600;
+  margin-bottom: .2rem;
+}
+.pd3-search-result-snippet {
+  display: block;
+  color: var(--pd3-text-muted);
+  font-size: .78rem;
+  line-height: 1.35;
+}
+.pd3-search-empty { padding: .8rem .9rem; color: var(--pd3-text-muted); }
+
+/* Remove the remaining white default UI surfaces */
+.doc code,
+.doc :not(pre) > code,
+.doc kbd,
+.doc .keyseq,
+.doc .menuseq,
+.doc .button,
+.doc .path,
+.doc .package,
+.doc .command {
+  background: #181c1b !important;
+  color: var(--pd3-green-bright) !important;
+  border-color: #303633 !important;
+  box-shadow: none !important;
+}
+
+.doc pre,
+.doc .listingblock pre,
+.doc .literalblock pre,
+.doc .listingblock .content,
+.doc .literalblock .content,
+.hljs {
+  background: #090b0b !important;
+  color: #dfe8e2 !important;
+}
+
+.doc .admonitionblock > table,
+.doc .admonitionblock > table tbody,
+.doc .admonitionblock > table tr,
+.doc .admonitionblock > table td {
+  background: var(--pd3-surface) !important;
+}
+
+.doc table,
+.doc table.tableblock,
+.doc table.tableblock tbody,
+.doc table.tableblock tr,
+.doc table.tableblock td {
+  background: #111413 !important;
+}
+.doc table.tableblock tr:nth-child(even) td { background: #151918 !important; }
+.doc table.tableblock th { background: #1a1e1d !important; }
+
+.breadcrumbs, .breadcrumbs ul, .breadcrumbs li,
+.toolbar, .toolbar .edit-this-page,
+.toc-menu, .toc-menu .toc-menu, .toc-menu h3,
+.pagination, .pagination .prev, .pagination .next {
+  background: transparent !important;
+  color: var(--pd3-text-muted) !important;
+}
+
+.nav-panel-explore .context,
+.nav-panel-explore .components,
+.nav-panel-explore .component,
+.nav-panel-explore .versions,
+.nav-panel-explore .version,
+.nav-panel-explore a,
+.nav .panels,
+.nav .context,
+.nav .context .version,
+.nav .context .component {
+  background: var(--pd3-surface) !important;
+  color: var(--pd3-text) !important;
+  border-color: var(--pd3-border) !important;
+}
+
+.nav .context .version::after,
+.nav .context .component::after { border-color: var(--pd3-text-muted) !important; }
+
+button, .button, input, select, textarea,
+.nav button, .toolbar button {
+  background-color: var(--pd3-surface-raised) !important;
+  color: var(--pd3-text) !important;
+  border-color: var(--pd3-border) !important;
+}
+
+hr, .doc h2, .doc h3, .doc h4,
+.doc .sect1 + .sect1,
+.pagination {
+  border-color: var(--pd3-border) !important;
+}
+
+/* Keep the accent green rather than bright white for selected navigation. */
+.nav-menu .is-current-page > .nav-link,
+.nav-menu .is-current-page > .nav-text,
+.nav-menu .nav-link.is-current-page,
+.toc-menu a.is-active {
+  color: var(--pd3-green) !important;
+}
+
+/* Footer */
+.footer, footer.footer {
+  background: #090b0b !important;
+  color: var(--pd3-text-muted) !important;
+}
+
+@media screen and (max-width: 1023.5px) {
+  .navbar-menu { border-top: 1px solid var(--pd3-border); }
+  .pd3-search-field { width: 100%; }
+  .pd3-search-item { padding: .65rem .75rem !important; }
+  .navbar-dropdown { box-shadow: none !important; border: 0 !important; }
+}
+
+/* Admonitions: keep the label, remove the accent strip. */
+.doc .admonitionblock > table,
+.doc .admonitionblock > table td.icon,
+.doc .admonitionblock > table td.content {
+  border-left: 0 !important;
+}
+
+/* Search: never highlight the rectangular navbar item around the rounded field. */
+.navbar-item.pd3-search-item,
+.navbar-item.pd3-search-item:hover,
+.navbar-item.pd3-search-item:focus,
+.navbar-item.pd3-search-item:focus-within,
+.navbar-item.pd3-search-item:active {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.pd3-search-field,
+.pd3-search-field:hover,
+.pd3-search-field:focus,
+.pd3-search-field:focus-within {
+  background: transparent !important;
+  box-shadow: none !important;
+}

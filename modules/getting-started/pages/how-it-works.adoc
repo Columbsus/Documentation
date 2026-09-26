@@ -28,13 +28,11 @@ Its responsibilities include:
 * PAYDAY-specific authoring tools.
 * Validation.
 * Packaging.
-* Custom-heist tooling.
 
-For systems where directly authoring a cooked gameplay object is unsuitable, CrimeForge can use editor-safe proxies/placeholders and resolve them to PAYDAY 3 objects at runtime.
 
 == PDML
 
-PDML is the runtime side of the toolchain.
+PAYDAY MODLOADER is the runtime side of the toolchain.
 
 It provides the loading and integration layer for functionality such as:
 
