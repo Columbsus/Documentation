@@ -102,4 +102,11 @@ Do not confuse the FModel `.usmap` mappings file with the JMAP generated for the
 
 The modkit does not ship with the generated JMAP. The next step explains how to extract `AssetRegistry.bin` with the FModel setup you have just configured and generate it locally.
 
+== FModel reference
+
+For additional information about FModel itself, see:
+
+* https://github.com/4sval/FModel/wiki/Getting-Started[FModel Getting Started]
+* https://github.com/4sval/FModel/wiki/Settings-Explanation[FModel Settings Explanation]
+
 Next: xref:install-modkit.adoc[Install the Modkit].
