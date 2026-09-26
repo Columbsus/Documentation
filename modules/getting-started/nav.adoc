@@ -4,6 +4,7 @@
 * xref:how-it-works.adoc[How the Toolchain Works]
 * xref:requirements.adoc[Requirements]
 * xref:install-editor.adoc[Install the Custom Editor]
+* xref:fmodel-setup.adoc[Set Up FModel]
 * xref:install-modkit.adoc[Install the Modkit]
 * xref:project-setup.adoc[Set Up the Project]
 * xref:editor-tour.adoc[Editor Tour]

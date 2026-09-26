@@ -32,11 +32,16 @@ Do not generate the JMAP while UE4SS or other mods are installed and active in P
 
 === 2. Extract `AssetRegistry.bin` with FModel
 
-Download and open https://fmodel.app/[FModel].
+Complete xref:fmodel-setup.adoc[Set Up FModel] first. FModel must have the PAYDAY 3 AES key and a current local mappings file configured so it can reliably read the game archives.
 
-Configure FModel to read your PAYDAY 3 installation, then locate the game's `AssetRegistry.bin` and export the file using FModel's raw file export/save functionality.
+Open FModel with your PAYDAY 3 installation selected, locate the game's `AssetRegistry.bin`, and export the file using FModel's raw file export/save functionality.
 
 Only `AssetRegistry.bin` is required for this step. You do not need to extract the game's cooked assets into the modkit project.
+
+[NOTE]
+====
+The FModel `.usmap` mappings file and the modkit JMAP are separate files with different purposes. The `.usmap` lets FModel deserialize PAYDAY 3 packages. `GenerateJMAP.bat` uses the game's current `AssetRegistry.bin` to generate the modkit's local JMAP after the modkit has been downloaded.
+====
 
 Make sure the extracted `AssetRegistry.bin` comes from the same PAYDAY 3 installation and game version that you intend to mod.
 
