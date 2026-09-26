@@ -1,8 +1,20 @@
 = Reflected Game Types
 
-[NOTE]
+The PAYDAY 3 modkit uses generated reflection data so the editor project can expose native game classes without requiring the original game source code.
+
+== JMAP and Suzie
+
+The JMAP dumped from a clean running PAYDAY 3 process during xref:getting-started:install-modkit.adoc[modkit installation] contains the reflected PAYDAY 3 type information used by the modkit.
+
+*Suzie* consumes this JMAP and generates the native class stubs used by the project. These generated classes provide the reflected native types that Blueprints and modkit tooling can reference in the editor.
+
+Because the generated classes are based on the current JMAP, the JMAP should be regenerated after PAYDAY 3 updates before updating the generated native class data.
+
+[IMPORTANT]
 ====
-This page is scaffolded for the next documentation pass.
+UE4SS UHT generation is not required for the PAYDAY 3 modkit.
+
+Do not generate a separate set of UE4SS UHT headers as part of normal modkit setup. Suzie and the JMAP provide the native class-generation workflow used by this project.
 ====
 
-This section will document the validated PAYDAY 3 modkit workflow for reflected game types.
+UE4SS remains useful for other runtime inspection, dumping, and reverse-engineering workflows where appropriate, but that is separate from the modkit's generated native class pipeline.

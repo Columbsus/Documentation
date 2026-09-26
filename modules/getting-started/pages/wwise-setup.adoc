@@ -1,0 +1,136 @@
+= Set Up Wwise
+:description: Install the matching Audiokinetic Wwise SDK and prepare the ThirdParty files required by the PAYDAY 3 modkit.
+
+The PAYDAY 3 modkit includes a modified Wwise Unreal integration, but it intentionally does not redistribute the Audiokinetic SDK binaries and other non-text `ThirdParty` files.
+
+You must obtain those files yourself from Audiokinetic and place them into the Wwise plugin included with the modkit.
+
+[IMPORTANT]
+====
+The Wwise plugin included with the modkit is a modified integration based on *Wwise 2023.1.15.8789.3579*.
+
+Use the matching Wwise 2023.1.15 SDK files. Do not install the latest Wwise SDK and assume it is compatible.
+====
+
+== What the modkit includes
+
+The modkit already contains the modified Wwise plugin source and redistributable text files required by the project.
+
+It does *not* include the Audiokinetic `ThirdParty` SDK payload, including the libraries and other non-text files that would normally be supplied with a complete Wwise Unreal integration.
+
+This means you should not replace the Wwise plugin in the modkit with a stock plugin downloaded from Audiokinetic. You only need to obtain the matching Wwise SDK and restore the missing `ThirdParty` content into the plugin that is already present.
+
+== Install the Audiokinetic Launcher
+
+Download and install the https://www.audiokinetic.com/download/[Audiokinetic Launcher].
+
+Sign in with an Audiokinetic account. If you do not already have one, create an account when prompted.
+
+Audiokinetic uses the Launcher to install specific Wwise versions, SDK packages, integrations, and platform files.
+
+== Install Wwise 2023.1.15
+
+In the Audiokinetic Launcher:
+
+. Open the *Wwise* page.
+. Choose *Install New Version*.
+. Select the Wwise 2023.1.15 release that matches the modkit integration.
+. Make sure the Wwise SDK and Windows x64 platform files are installed.
+. Complete the installation.
+
+The modkit integration is based on:
+
+[source,text]
+----
+Wwise 2023.1.15.8789.3579
+----
+
+[WARNING]
+====
+Do not use the Launcher's *Integrate Wwise into Project* action on the PAYDAY 3 modkit.
+
+The modkit already contains a modified Wwise integration. Running the normal integration process can replace or modify the plugin files that the modkit depends on.
+====
+
+== Locate the Wwise SDK
+
+After installing Wwise, locate its `SDK` directory.
+
+Under your *Audiokinetic installation root*, locate the matching Wwise SDK at a path similar to:
+
+[source,text]
+----
+<Audiokinetic installation root>\Wwise 2023.1.15.8789\SDK\
+----
+
+The exact path can differ depending on where Audiokinetic and Wwise were installed.
+
+The SDK directory contains the headers and platform libraries that are omitted from the modkit.
+
+== Copy the SDK folders into `ThirdParty`
+
+This final copy step is performed after you have downloaded and extracted the modkit on the next page.
+
+Locate the modified Wwise integration inside the modkit. For the Wwise 2023.1 integration, the SDK payload belongs in the `ThirdParty` directory under the bundled `Wwise` plugin:
+
+[source,text]
+----
+<ModkitRoot>\Plugins\Wwise\ThirdParty\
+----
+
+If the `ThirdParty` directory does not exist, create it.
+
+From the installed Wwise `SDK` directory, copy the following into the modkit's `ThirdParty` directory:
+
+* `include`
+* `x64_vc160`
+* `x64_vc170`
+
+For example, the resulting layout should resemble:
+
+[source,text]
+----
+<ModkitRoot>\Plugins\Wwise\ThirdParty\
+|-- include\
+|-- x64_vc160\
+`-- x64_vc170\
+----
+
+Copy `x64_vc160` and `x64_vc170` from the matching Wwise 2023.1.15 SDK into this directory. Do not rename the SDK directories.
+
+[NOTE]
+====
+Audiokinetic's engine-plugin installation documentation also lists `Mac` and any additional platform SDK folders when those platforms are being targeted.
+
+The PAYDAY 3 modkit workflow documented here is for Windows, so the matching Windows x64 SDK content is the important platform payload.
+====
+
+== Why this is required
+
+The text/source portion of the Wwise integration can exist in the modkit without the complete Audiokinetic SDK payload, but Unreal still needs the matching Wwise headers and libraries when compiling or linking the plugin.
+
+Without the correct `ThirdParty` content, you can encounter missing library, missing DLL, unresolved module, or plugin load errors when building or opening the modkit.
+
+The Wwise version matters because the bundled plugin has been modified against the 2023.1.15.8789.3579 integration. Mixing SDK files from another Wwise release can introduce API, binary, or build-script mismatches.
+
+== Existing UE4 guide
+
+The older PAYDAY 3 UE4 setup guide contains the same general process for restoring the Wwise `ThirdParty` SDK content:
+
+https://docs.google.com/document/d/1f6ComClQIJrvrdo5Yu-VmFC7ykKrs_8EyKiMkRRfbhc/edit?tab=t.0#heading=h.wjyyevobb0m0[PAYDAY 3 UE4 Wwise setup reference]
+
+The relevant idea is the section that copies the required SDK folders into the Wwise `ThirdParty` directory. Use the paths and Wwise version documented on this page for the current UE5 modkit rather than following old UE4 paths or versions verbatim.
+
+For Audiokinetic's own explanation of the engine-plugin layout and `ThirdParty` SDK copy, see https://www.audiokinetic.com/en/library/edge/?id=installation.html&source=UE4[Installing the Wwise Unreal Integration as an Engine Plug-in].
+
+== Before continuing
+
+At this point, make sure:
+
+* the Audiokinetic Launcher is installed;
+* Wwise 2023.1.15 and its SDK are installed;
+* you know where the Wwise `SDK` directory is located.
+
+After downloading the modkit on the next page, copy the required SDK folders into its bundled modified Wwise plugin before attempting to build or open the project.
+
+Next: xref:install-modkit.adoc[Install the Modkit].

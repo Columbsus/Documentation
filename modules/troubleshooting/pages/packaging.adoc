@@ -1,8 +1,16 @@
-= Packaging & Cook Failures
+= Forge & Cook Failures
 
-[NOTE]
-====
-This page is scaffolded for the next documentation pass.
-====
+CrimeForge calls its final cook/package operation *Forge*.
 
-This section will document the validated PAYDAY 3 modkit workflow for packaging & cook failures.
+When a Forge fails, start with the first meaningful error in the Output Log rather than the final summary line.
+
+Common causes include:
+
+* Blueprint compile errors.
+* Missing asset references.
+* Content excluded from cook.
+* Plugin or module load failures.
+* Invalid PAL or mod content selection.
+* Commandlet-incompatible editor plugins.
+
+A successful Forge should package only the assets intended for the selected mod.

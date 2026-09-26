@@ -1,40 +1,60 @@
 = Install and Test
 
-The final step is to load the packaged mod in PAYDAY 3.
+The final step is to install the forged mod and load it through PDML.
 
-== Runtime prerequisites
+== Runtime prerequisite
 
-Install/configure the current PDML/runtime setup required by the modkit release.
+PDML is the runtime mod loader used by CrimeForge mods.
 
-Some simple replacement workflows may differ from PDML-driven logic mods, but PDML is the runtime integration layer used by the broader modding toolchain.
+CrimeForge creates mods as Unreal plugins, and PDML discovers and handles those plugin-based mods when PAYDAY 3 starts.
 
-== Install the packaged mod
+== Install the forged mod
 
-Use the destination documented by the current PDML/CrimeForge release or the destination CrimeForge provides after packaging.
+Place the forged mod in:
 
-[NOTE]
+[source,text]
+----
+PAYDAY3/Mods/
+----
+
+For example:
+
+[source,text]
+----
+PAYDAY3/
+`-- Mods/
+    `-- MyFirstMod/
+        |-- MyFirstMod.uplugin
+        `-- ...
+----
+
+Use the folder produced by CrimeForge rather than moving only an individual `.pak` file out of it.
+
+[IMPORTANT]
 ====
-This guide intentionally does not hard-code a runtime installation path until that path is part of the finalized public PDML distribution contract.
+PDML mods belong in `PAYDAY3/Mods/`.
 
-Follow the path reported/documented by the version of PDML and CrimeForge you are using.
+Do not install normal CrimeForge/PDML mods into `PAYDAY3/Content/Paks/`.
+
+Keeping mods in the dedicated `Mods` directory separates community mods from the game's own cooked content and gives PDML a clean location to discover and manage them.
 ====
 
 == Launch PAYDAY 3
 
-Start the game with the modding runtime installed.
+Start the game with PDML installed.
 
 Verify that PDML initializes successfully before diagnosing the individual mod.
 
-Then verify that your newly packaged mod is discovered/loaded.
+Then verify that your newly forged mod is discovered and loaded.
 
 == If the game does not load the mod
 
 Check, in this order:
 
-. The package completed without cook errors.
-. The mod is in the location expected by the current runtime.
-. PDML/runtime initialization succeeded.
-. The package/mount structure matches the selected mod type.
+. The Forge completed without cook errors.
+. The complete mod folder is under `PAYDAY3/Mods/`.
+. PDML initialized successfully.
+. The plugin and mount structure matches the selected mod type.
 . Required dependencies are present.
 . The game and modkit versions are compatible.
 
@@ -46,13 +66,14 @@ You have gone through the fundamental workflow:
 
 [source,text]
 ----
-Create
+Create plugin mod
   -> Author
   -> Validate
-  -> Cook
-  -> Package
-  -> Install
-  -> Load
+  -> Forge
+     -> Cook selected assets
+     -> Package mod
+  -> Install to PAYDAY3/Mods/
+  -> PDML loads mod
   -> Test
 ----
 

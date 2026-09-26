@@ -8,75 +8,128 @@ Obtain the current modkit release and extract or clone it to a writable developm
 
 Avoid placing the project inside the PAYDAY 3 installation directory.
 
+== Complete the Wwise `ThirdParty` setup
+
+Before building or opening the modkit, complete xref:wwise-setup.adoc[Set Up Wwise].
+
+The modkit contains a modified Wwise integration based on *Wwise 2023.1.15.8789.3579*, but the Audiokinetic SDK libraries and other non-text `ThirdParty` files are not distributed with it.
+
+Copy the required `include` and matching Windows `x64_*` SDK folders from your Wwise 2023.1.15 installation into:
+
+[source,text]
+----
+<ModkitRoot>\Plugins\Wwise\ThirdParty\
+----
+
+Do not replace the bundled modified Wwise plugin with the stock Audiokinetic integration. Only restore the missing `ThirdParty` SDK payload as described on the Wwise setup page.
+
 [IMPORTANT]
 ====
 The modkit does *not* include a generated JMAP.
 
-After downloading the modkit, you must extract the current `AssetRegistry.bin` from your installed copy of PAYDAY 3 and run `GenerateJMAP.bat` before using the project. This updates the modkit's generated mapping data so it matches the version of PAYDAY 3 currently installed on your system.
+After downloading the modkit, there are two separate pieces of game data that must be refreshed for your installed PAYDAY 3 version:
+
+* `AssetRegistry.bin`, which is extracted from the game and placed in the modkit root so the editor can discover and load cooked PAYDAY 3 assets.
+* The JMAP, which is dumped from a clean running PAYDAY 3 process by `GenerateJMAP.bat` and is then used by Suzie to generate the modkit's native class stubs.
+
+`AssetRegistry.bin` is *not* an input to `GenerateJMAP.bat`.
 ====
+
+== Add the current `AssetRegistry.bin`
+
+Complete xref:fmodel-setup.adoc[Set Up FModel] first. FModel must have the PAYDAY 3 AES key and a current local mappings file configured so it can reliably read the game archives.
+
+Open FModel with your PAYDAY 3 installation selected, locate the game's `AssetRegistry.bin`, and export the file using FModel's raw file export/save functionality.
+
+Copy the extracted file to the root of the modkit:
+
+[source,text]
+----
+<ModkitRoot>/AssetRegistry.bin
+----
+
+The editor uses this asset registry to know which cooked PAYDAY 3 assets exist and which cooked packages it can resolve and load through the modkit's cooked-asset workflow.
+
+[NOTE]
+====
+`AssetRegistry.bin` is an asset catalogue used by the editor. It is separate from both the FModel `.usmap` mapping file and the modkit JMAP.
+====
+
+You do not need to extract the game's cooked assets into the modkit `Content` directory. The editor references the installed game's cooked content rather than requiring redistributed copies of those assets.
+
+Make sure `AssetRegistry.bin` comes from the same PAYDAY 3 version that you intend to mod.
 
 == Generate the JMAP
 
-Do this after downloading or updating the modkit, and repeat it after PAYDAY 3 receives an update that changes the game's assets.
+The JMAP is generated from the *running game*, not from `AssetRegistry.bin`.
+
+Do this after downloading or updating the modkit, and repeat it after PAYDAY 3 updates so the reflected native game data stays in sync with the installed game version.
 
 === 1. Prepare a clean PAYDAY 3 installation
 
 Before generating the JMAP, temporarily remove or disable all PAYDAY 3 mods and UE4SS.
 
-`GenerateJMAP.bat` should be run against the unmodified game so the generated data matches the stock PAYDAY 3 installation.
+The JMAP should be dumped from an unmodified PAYDAY 3 process so the generated reflection data represents the stock game rather than classes or objects introduced or altered by runtime mods.
 
 [WARNING]
 ====
 Do not generate the JMAP while UE4SS or other mods are installed and active in PAYDAY 3.
 ====
 
-=== 2. Extract `AssetRegistry.bin` with FModel
+=== 2. Start PAYDAY 3
 
-Complete xref:fmodel-setup.adoc[Set Up FModel] first. FModel must have the PAYDAY 3 AES key and a current local mappings file configured so it can reliably read the game archives.
+Launch PAYDAY 3 with the clean setup and leave the game running.
 
-Open FModel with your PAYDAY 3 installation selected, locate the game's `AssetRegistry.bin`, and export the file using FModel's raw file export/save functionality.
-
-Only `AssetRegistry.bin` is required for this step. You do not need to extract the game's cooked assets into the modkit project.
-
-[NOTE]
-====
-The FModel `.usmap` mappings file and the modkit JMAP are separate files with different purposes. The `.usmap` lets FModel deserialize PAYDAY 3 packages. `GenerateJMAP.bat` uses the game's current `AssetRegistry.bin` to generate the modkit's local JMAP after the modkit has been downloaded.
-====
-
-Make sure the extracted `AssetRegistry.bin` comes from the same PAYDAY 3 installation and game version that you intend to mod.
+`GenerateJMAP.bat` works against the live PAYDAY 3 process and runs the JMAP dumper on the running game.
 
 === 3. Run `GenerateJMAP.bat`
 
-With the current `AssetRegistry.bin` available, run:
+With PAYDAY 3 running, run:
 
 [source,text]
 ----
 GenerateJMAP.bat
 ----
 
-Follow the prompts from the script and provide the extracted `AssetRegistry.bin` when requested.
-
-The script generates the JMAP data required by the modkit and updates it to match the installed game version.
+Follow any prompts printed by the script while it connects to the running game and dumps the current JMAP.
 
 [NOTE]
 ====
-The generated JMAP is local generated data. It is not included with the modkit download, so this step must be completed on a new modkit installation before the generated mappings are available.
+The generated JMAP is local generated data. It is not included with the modkit download, so this step must be completed on a new modkit installation before the current reflected game data is available.
 ====
 
-=== 4. Regenerate after game updates
+== Generate native classes with Suzie
 
-When PAYDAY 3 is updated, repeat the process with a newly extracted `AssetRegistry.bin` from the updated game:
+The modkit uses *Suzie* to generate the native PAYDAY 3 class definitions used by the project.
 
+Suzie consumes the generated JMAP and turns that reflected game data into the native class stubs exposed to the modkit. These generated types allow Blueprints and editor tooling to reference PAYDAY 3 native classes without requiring the original game source code.
+
+[IMPORTANT]
+====
+You do *not* need to run UE4SS UHT generation for the modkit.
+
+The modkit's native class generation workflow is handled by Suzie using the JMAP. UE4SS UHT-generated headers are not required to set up or update the modkit.
+====
+
+UE4SS can still be useful for other runtime inspection, dumping, and reverse-engineering workflows, but its UHT generator is separate from the class-generation path used by this modkit.
+
+== After PAYDAY 3 updates
+
+When PAYDAY 3 receives an update, refresh both pieces of game-derived data:
+
+. Make sure the installed game is on the version you intend to mod.
+. Use FModel to extract the updated `AssetRegistry.bin`.
+. Replace the existing `AssetRegistry.bin` in the modkit root with the new file.
 . Make sure PAYDAY 3 has no mods or UE4SS installed or active.
-. Extract the new `AssetRegistry.bin` with FModel.
-. Run `GenerateJMAP.bat` again.
-. Use the regenerated data with the updated modkit/game version.
+. Launch the clean game.
+. Run `GenerateJMAP.bat` against the running game to dump a new JMAP.
+. Use the regenerated JMAP with Suzie so the generated native class data matches the updated game.
 
-This prevents the modkit from continuing to use mapping data generated from an older PAYDAY 3 build.
+Keeping both files current is important for different reasons: `AssetRegistry.bin` keeps cooked-asset discovery in sync, while the JMAP keeps reflected native types in sync.
 
 == Expected components
 
-A complete development setup includes the PAYDAY 3 project/stubs and the required modding plugins, including CrimeForge.
+A complete development setup includes the PAYDAY 3 project/stubs and the required modding plugins, including CrimeForge and Suzie.
 
 Depending on the distribution, compiled plugin binaries may already be supplied. Source-based setups may require a project/plugin build before the editor can open successfully.
 

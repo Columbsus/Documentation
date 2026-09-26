@@ -23,12 +23,14 @@ CrimeForge handles PAYDAY-specific editor workflows.
 
 Its responsibilities include:
 
+* Creating mods as Unreal plugins.
 * Creating mods from templates.
 * Managing mod structure.
 * PAYDAY-specific authoring tools.
 * Validation.
-* Packaging.
+* Forging mods.
 
+CrimeForge calls its final cook/package operation *Forge*. Forge cooks the content that belongs to the selected mod and packages only the assets that mod should include.
 
 == PDML
 
@@ -36,12 +38,15 @@ PAYDAY MODLOADER is the runtime side of the toolchain.
 
 It provides the loading and integration layer for functionality such as:
 
-* Blueprint/logic mods.
+* CrimeForge plugin mods.
+* Blueprint and logic mods.
 * HUD mods.
 * Custom heists.
 * Mod settings.
 * Shared runtime APIs.
 * Mod initialization.
+
+PDML mods are installed under `PAYDAY3/Mods/`, keeping community mods separate from the base game's `PAYDAY3/Content/Paks/` directory.
 
 == From editor to game
 
@@ -52,14 +57,20 @@ A simplified workflow looks like this:
 Your mod-owned assets
         |
         v
+CrimeForge plugin mod
+        |
+        v
 Custom PAYDAY 3 Editor
         |
         v
 CrimeForge
-  create / validate / package
+ create / validate / Forge
         |
         v
-Packaged mod
+Forged mod plugin
+        |
+        v
+PAYDAY3/Mods/
         |
         v
 PDML + PAYDAY 3
@@ -68,6 +79,6 @@ PDML + PAYDAY 3
 Runtime mod
 ----
 
-Asset replacements may use game-compatible asset paths, while additive/runtime features can require PDML integration.
+Asset replacements may still target game-compatible asset paths inside the mod, while additive/runtime features can require PDML integration.
 
 xref:modkit:cooked-assets.adoc[Cooked Assets] explains the distinction in more detail.

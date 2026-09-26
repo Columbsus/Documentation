@@ -3,5 +3,5 @@
 * xref:create-mod.adoc[Create Mod]
 * xref:templates.adoc[Templates]
 * xref:validation.adoc[Validation]
-* xref:packaging.adoc[Packaging]
+* xref:packaging.adoc[Forge]
 * xref:asset-palette.adoc[Asset Palette]

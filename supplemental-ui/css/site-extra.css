@@ -454,3 +454,32 @@ hr, .doc h2, .doc h3, .doc h4,
   background: transparent !important;
   box-shadow: none !important;
 }
+
+
+/* Sticky top toolbar readability */
+.toolbar {
+  background: rgba(9, 11, 11, 0.96) !important;
+  border-bottom: 1px solid var(--pd3-border) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 40 !important;
+}
+
+.toolbar .toolbar-wrapper,
+.toolbar .breadcrumbs,
+.toolbar .edit-this-page {
+  background: transparent !important;
+}
+
+.toolbar a,
+.toolbar .breadcrumbs a,
+.toolbar .breadcrumbs li,
+.toolbar .edit-this-page a {
+  color: var(--pd3-text-muted) !important;
+}
+
+.toolbar a:hover,
+.toolbar .breadcrumbs a:hover,
+.toolbar .edit-this-page a:hover {
+  color: var(--pd3-green-bright) !important;
+}

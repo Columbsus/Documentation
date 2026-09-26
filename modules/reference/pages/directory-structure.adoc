@@ -1,8 +1,34 @@
 = Directory Structure
 
-[NOTE]
-====
-This page is scaffolded for the next documentation pass.
-====
+The normal runtime layout for PDML mods keeps community mods outside PAYDAY 3's base cooked-content directory.
 
-This section will document the validated PAYDAY 3 modkit workflow for directory structure.
+== PAYDAY 3 root
+
+[source,text]
+----
+PAYDAY3/
+|-- Content/
+|   `-- Paks/
+|       `-- ... base game cooked content ...
+|
+`-- Mods/
+    |-- MyMod/
+    |   |-- MyMod.uplugin
+    |   `-- ... forged mod files ...
+    |
+    `-- AnotherMod/
+        |-- AnotherMod.uplugin
+        `-- ...
+----
+
+== Content/Paks
+
+`PAYDAY3/Content/Paks/` is part of the game's own cooked content layout.
+
+Normal CrimeForge/PDML mods should not be installed here.
+
+== Mods
+
+`PAYDAY3/Mods/` is the dedicated PDML mod directory.
+
+CrimeForge creates mods as Unreal plugins and Forge produces the content intended for that mod. Install the complete forged mod folder here so PDML can discover and handle it.

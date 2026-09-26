@@ -1,8 +1,31 @@
 = Templates
 
-[NOTE]
-====
-This page is scaffolded for the next documentation pass.
-====
+CrimeForge currently provides three main mod templates.
 
-This section will document the validated PAYDAY 3 modkit workflow for templates.
+image::crimeforge-new-mod-window.png[CrimeForge template selection, width=1000]
+
+== Blank
+
+Use *Blank* when you want a general-purpose mod plugin and do not need a specialized starting layout.
+
+This is the normal starting point for a first mod.
+
+== Logic Mod
+
+Use *Logic Mod* when the mod's primary purpose is Blueprint/runtime behavior.
+
+It creates a plugin mod with the basic assets needed for a logic-focused workflow.
+
+== Custom Heist
+
+Use *Custom Heist* when you want a plugin mod structured for heist development.
+
+This template includes the basic assets needed for custom-heist work and is the best starting point for new heists.
+
+== Choosing the right one
+
+If you are unsure, start with:
+
+* *Blank* for a normal first mod
+* *Logic Mod* for Blueprint-heavy runtime work
+* *Custom Heist* for heist development

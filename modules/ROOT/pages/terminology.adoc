@@ -24,11 +24,19 @@ This is different from PAYDAY 3 base-game content.
 
 == CrimeForge
 
-The editor tooling used for PAYDAY-specific mod creation workflows, templates, validation, packaging, and related authoring tools.
+The editor tooling used for PAYDAY-specific mod creation workflows, templates, validation, forging, and related authoring tools. CrimeForge creates mods as Unreal plugins.
 
 == PDML
 
-The PAYDAY 3 runtime mod loader/integration layer.
+The PAYDAY 3 runtime mod loader/integration layer. PDML discovers and handles CrimeForge plugin mods installed under `PAYDAY3/Mods/`.
+
+== Forge
+
+CrimeForge's name for the cook and package operation. Forge cooks the assets that belong to the selected mod and packages only the content that mod should include.
+
+== PDML mod directory
+
+`PAYDAY3/Mods/` is the dedicated runtime location for normal CrimeForge/PDML mods. It is separate from PAYDAY 3's own `PAYDAY3/Content/Paks/` directory.
 
 == PAL
 

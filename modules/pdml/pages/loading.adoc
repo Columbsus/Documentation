@@ -1,8 +1,44 @@
 = Mod Loading
 
-[NOTE]
+CrimeForge mods are authored and forged as Unreal plugins. PDML is responsible for discovering and handling those plugin mods at runtime.
+
+== Install location
+
+Place the complete forged mod folder under:
+
+[source,text]
+----
+PAYDAY3/Mods/
+----
+
+For example:
+
+[source,text]
+----
+PAYDAY3/
+`-- Mods/
+    |-- ExampleMod/
+    |   |-- ExampleMod.uplugin
+    |   `-- ...
+    `-- AnotherMod/
+        |-- AnotherMod.uplugin
+        `-- ...
+----
+
+PDML can then enumerate the dedicated mod directory and process the mod plugin structure.
+
+[IMPORTANT]
 ====
-This page is scaffolded for the next documentation pass.
+Do not move only the packaged archive files into `PAYDAY3/Content/Paks/` for a normal PDML mod.
+
+Keep the forged CrimeForge mod intact under `PAYDAY3/Mods/` unless a specific workflow explicitly documents otherwise.
 ====
 
-This section will document the validated PAYDAY 3 modkit workflow for mod loading.
+== Why use a separate Mods directory?
+
+Using `PAYDAY3/Mods/`:
+
+* Separates mod files from shipped game content.
+* Gives PDML a predictable discovery location.
+* Keeps each CrimeForge plugin mod together as one unit.
+* Makes installing, removing, and troubleshooting mods cleaner.

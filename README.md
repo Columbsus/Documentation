@@ -1,84 +1,218 @@
 # PAYDAY 3 Modding Documentation
 
-Antora documentation for the community PAYDAY 3 modding toolchain:
+Community documentation for PAYDAY 3 modding with the custom Unreal Engine editor, CrimeForge, PDML, and the supporting modkit toolchain.
 
-- Custom PAYDAY 3 Unreal Engine 5.5.4 editor/modkit
-- CrimeForge
-- PDML
-- Custom heist tooling
+The documentation is written in AsciiDoc and built with [Antora](https://antora.org/).
 
-## First-time setup
+## What this repository covers
 
-Antora reads local content through Git, so initialize the repository before the first build:
+The site documents the current PAYDAY 3 modding workflow, including:
+
+- Installing the custom PAYDAY 3 Unreal Engine editor
+- Setting up FModel and PAYDAY 3 mappings
+- Setting up the Wwise integration required by the modkit
+- Installing and updating the PAYDAY 3 modkit
+- Generating the JMAP used by Suzie
+- Working with cooked PAYDAY 3 assets in the editor
+- Creating plugin-based mods with CrimeForge
+- Forging mods with CrimeForge
+- Loading and managing mods with PDML
+- Creating custom heists
+- Advanced asset, reflection, Blueprint, and runtime workflows
+- Troubleshooting common editor, cook, Forge, and runtime problems
+
+The documentation follows the toolchain as it exists today. Planned features, reverse-engineering theories, and unverified workflows should not be presented as finished instructions.
+
+## Contributing
+
+Contributions are welcome.
+
+If you find incorrect information, an outdated workflow, a missing screenshot, or a section that could be clearer, open an issue or submit a pull request.
+
+You do not need to write an entire finished guide before contributing. A small correction or a rough first pass at a missing page is still useful.
+
+Before submitting a pull request:
+
+1. Build the documentation locally.
+2. Check that the pages you changed render correctly.
+3. Verify that links and cross-references work.
+4. Make sure instructions describe a workflow you have actually tested.
+5. Do not include PAYDAY 3 base-game files or other content that cannot be redistributed.
+
+For an overview of AsciiDoc syntax, see the [Asciidoctor documentation](https://docs.asciidoctor.org/asciidoc/latest/).
+
+## Development setup
+
+### Requirements
+
+You need:
+
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/)
+- npm
+
+### Install dependencies
+
+Clone the repository, open a terminal in the repository root, and run:
 
 ```powershell
-git init
-git add .
-git commit -m "Initial PAYDAY 3 modding documentation"
 npm install
+```
+
+If `package-lock.json` is present and you want a clean reproducible install, you can use:
+
+```powershell
+npm ci
+```
+
+### Build the documentation
+
+Run:
+
+```powershell
 npm run build
 ```
 
-Open:
+Antora writes the generated site to:
 
 ```text
-build/site/index.html
+build/site/
 ```
 
-For subsequent installs/builds:
+Open the generated homepage in a browser:
 
 ```powershell
-npm install
-npm run build
+start .\build\site\index.html
 ```
 
-Once a committed `package-lock.json` exists, CI and local clean installs can be switched to `npm ci`.
+The `build/` directory is generated output. Do not edit the generated HTML directly.
+
+## Editing documentation
+
+Documentation source files live under `modules/`.
+
+For example:
+
+```text
+modules/
+├── ROOT/
+├── getting-started/
+├── modkit/
+├── crimeforge/
+├── creating-mods/
+├── custom-heists/
+├── pdml/
+├── advanced/
+├── reference/
+└── troubleshooting/
+```
+
+Each module normally contains:
+
+```text
+<module>/
+├── nav.adoc
+├── pages/
+├── images/
+└── partials/
+```
+
+Edit `.adoc` files under `pages/` to change documentation content.
+
+Edit `nav.adoc` to add, remove, or reorder pages in the sidebar.
+
+Store screenshots and diagrams in the `images/` directory for the module that owns the page.
+
+## Site UI
+
+Custom site styling and header behavior live under:
+
+```text
+supplemental-ui/
+├── css/
+├── js/
+└── partials/
+```
+
+The PAYDAY 3 dark theme is implemented in:
+
+```text
+supplemental-ui/css/site-extra.css
+```
+
+Search behavior is implemented in:
+
+```text
+supplemental-ui/js/docs-search.js
+scripts/build-search.js
+```
 
 ## Repository layout
 
-Documentation is split into Antora modules by subject:
+The main documentation areas are:
 
-- `ROOT` - landing page, terminology, contribution information
-- `getting-started` - linear beginner guide
-- `modkit` - custom editor and cooked-asset environment
-- `crimeforge` - authoring, templates, validation and packaging
-- `creating-mods` - task-oriented mod creation guides
-- `custom-heists` - custom heist authoring
-- `pdml` - runtime loader and APIs
-- `advanced` - internals and reverse-engineering-oriented topics
-- `reference` - reference material
-- `troubleshooting` - error-oriented help
+- `ROOT` for the landing page, terminology, and contribution information
+- `getting-started` for the linear beginner setup and first-mod workflow
+- `modkit` for the custom editor, cooked assets, reflection data, and modkit internals
+- `crimeforge` for mod creation, templates, Forge, validation, and editor tooling
+- `creating-mods` for task-oriented modding guides
+- `custom-heists` for heist authoring workflows
+- `pdml` for the runtime loader, mod structure, settings, dependencies, and APIs
+- `advanced` for reverse-engineering and lower-level Unreal topics
+- `reference` for paths, commands, terminology, and API reference material
+- `troubleshooting` for symptom and error-oriented help
 
-## Writing rules
+## Writing guidelines
 
-1. Prefer a reproducible procedure over unexplained instructions.
-2. Never tell users to redistribute PAYDAY 3 base-game content.
-3. Clearly distinguish cooked reference content from mod-owned source content.
-4. Mark experimental or incomplete functionality explicitly.
-5. Do not document guessed paths, class names, or APIs as facts.
-6. Put warnings immediately before the operation that can cause a problem.
-7. Keep the Getting Started guide linear and beginner-friendly.
-8. Put deep technical explanations in the relevant concept/reference page and link to them.
+Keep documentation practical and reproducible.
+
+1. Document what the current toolchain actually does.
+2. Prefer numbered procedures for setup and task pages.
+3. Explain why a required step exists when that context prevents common mistakes.
+4. Clearly distinguish mod-owned source content from PAYDAY 3 cooked content.
+5. Never instruct users to redistribute PAYDAY 3 base-game assets.
+6. Mark experimental, incomplete, and known-limitation workflows clearly.
+7. Do not document guessed paths, class names, APIs, or runtime behavior as fact.
+8. Keep the Getting Started section linear and beginner-friendly.
+9. Move deeper implementation details into the relevant Modkit, Advanced, or Reference page and link to them.
+10. Use the term **Forge** for CrimeForge's cook/package action.
+11. Use `PAYDAY3/Mods/` as the normal install location for CrimeForge/PDML mods unless a specific workflow explicitly states otherwise.
 
 ## Status labels
 
-Use these consistently:
+Use these consistently when a page needs to describe implementation status:
 
-- **Supported** - part of the intended current workflow.
-- **Experimental** - implemented but still being validated.
-- **In progress** - actively being developed and not ready to rely on.
-- **Known limitation** - an understood capability gap.
+- **Supported**: part of the intended current workflow
+- **Experimental**: implemented but still being validated
+- **In progress**: actively being developed and not ready to rely on
+- **Known limitation**: an understood capability gap
 
 ## Screenshots
 
 Store screenshots in the `images/` directory belonging to the module that uses them.
 
-Prefer descriptive names such as:
+Prefer descriptive file names such as:
 
 ```text
-crimeforge-create-mod-window.png
-crimeforge-package-window.png
-pdml-mod-settings.png
+crimeforge-new-mod-window.png
+crimeforge-dashboard.png
+pdml-information-window.png
 ```
 
-Do not commit screenshots containing private filesystem paths, account names, API keys, AES keys, or other sensitive information.
+Crop screenshots to the UI that matters where possible, but keep enough surrounding context for the reader to understand where the control lives.
+
+Do not include account credentials, private tokens, personal information, or other secrets in screenshots.
+
+## Generated files
+
+Do not manually edit files under:
+
+```text
+build/site/
+```
+
+They are regenerated from the AsciiDoc source whenever `npm run build` is run.
+
+## Roadmap
+
+See [ROADMAP.md](ROADMAP.md) for the current documentation coverage and planned sections.

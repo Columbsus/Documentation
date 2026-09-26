@@ -2,8 +2,32 @@
 
 CrimeForge is the PAYDAY-specific editor tooling layer.
 
-It provides mod creation templates, validation, packaging, and specialized authoring workflows.
+It provides mod creation templates, validation, forging, and specialized authoring workflows.
 
-Current templates include basic mods, logic mods, and custom heists.
+CrimeForge creates mods as Unreal plugins. This keeps each mod in its own content namespace and gives PDML a predictable structure to discover and load at runtime.
 
-See xref:create-mod.adoc[Create Mod] and xref:packaging.adoc[Packaging].
+CrimeForge uses the term *Forge* for its cook/package step. Forge cooks the assets selected for the mod and packages only the content that mod should ship with.
+
+image::crimeforge-dashboard.png[CrimeForge mod manager, width=900]
+
+== The CrimeForge mod manager
+
+The main CrimeForge panel gives you a card for each mod.
+
+Each card exposes the most common actions:
+
+* *Information* opens the mod's descriptor and metadata.
+* *CONFIG* opens mod-specific configuration.
+* *FORGE* runs the cook/package step for that mod.
+
+The panel also includes tools such as *Create Mod*, *Import Legacy Mod*, and selection helpers.
+
+== Templates
+
+Current templates include:
+
+* Blank
+* Logic Mod
+* Custom Heist
+
+See xref:create-mod.adoc[Create Mod], xref:templates.adoc[Templates], and xref:packaging.adoc[Forge].

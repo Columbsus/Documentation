@@ -1,8 +1,70 @@
 = Create Mod
 
-[NOTE]
+Use CrimeForge's *Create Mod* action to create a new PDML-compatible mod plugin.
+
+image::crimeforge-new-mod-window.png[CrimeForge New Mod window, width=1000]
+
+== Open the New Mod window
+
+Open the CrimeForge panel and click *Create Mod*.
+
+CrimeForge opens the *New Mod* window, where you choose a template and enter the mod's plugin details.
+
+== Choose a template
+
+Select the template that matches the type of mod you want to create:
+
+* *Blank* for a general-purpose plugin mod.
+* *Logic Mod* for a Blueprint logic-oriented mod.
+* *Custom Heist* for a heist plugin with the basic assets needed for heist work.
+
+== Choose the output location
+
+The path field at the bottom of the template list controls where the new plugin mod is created.
+
+By default this should point at the modkit's `Mods` development folder.
+
+== Enter the mod name
+
+Enter a short, stable plugin name in *Mod Name*.
+
+[CAUTION]
 ====
-This page is scaffolded for the next documentation pass.
+The plugin name is the mod reference and mount point.
+
+As the UI warns, it should be treated as permanent once you release the mod.
 ====
 
-This section will document the validated PAYDAY 3 modkit workflow for create mod.
+== Descriptor data
+
+Use the *Descriptor Data* section to fill in basic metadata such as:
+
+* Author
+* Description
+
+The *Advanced* section can be expanded for additional settings when needed.
+
+== Create the mod
+
+Click *Create Mod*.
+
+CrimeForge generates a new Unreal plugin for the mod. After creation, the mod appears in the CrimeForge mod manager and its plugin content becomes available in the project.
+
+== Editing mod properties later
+
+You can edit a created mod's properties from its *Information* action in the main CrimeForge panel.
+
+image::crimeforge-mod-properties.png[CrimeForge mod properties window, width=800]
+
+This window exposes metadata such as:
+
+* Icon
+* Version
+* Version Name
+* Sem Version
+* Friendly Name
+* Description
+* Created By
+* Links and dependency information
+
+For a hands-on beginner flow, return to xref:getting-started:first-mod.adoc[Create Your First Mod].

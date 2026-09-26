@@ -1,8 +1,16 @@
-= Packaging & Testing
+= Forge & Testing
 
-[NOTE]
-====
-This page is scaffolded for the next documentation pass.
-====
+Custom heists use the same CrimeForge Forge pipeline as other CrimeForge mods.
 
-This section will document the validated PAYDAY 3 modkit workflow for packaging & testing.
+Forge cooks and packages the assets that belong to the heist mod, producing a plugin-based mod that PDML can load.
+
+Install the complete forged heist mod under:
+
+[source,text]
+----
+PAYDAY3/Mods/
+----
+
+Then launch PAYDAY 3 through the normal PDML runtime setup and test the heist in-game.
+
+Additional heist-specific validation and packaging details will be documented as those workflows are finalized.

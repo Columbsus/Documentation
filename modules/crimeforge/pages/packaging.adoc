@@ -1,8 +1,60 @@
-= Packaging
+= Forge
 
-[NOTE]
+CrimeForge uses *Forge* as the name of its cook and package operation.
+
+image::crimeforge-dashboard.png[CrimeForge mod cards with Forge action, width=900]
+
+== What Forge does
+
+When you Forge a mod, CrimeForge:
+
+. Determines which authored assets belong to the selected mod.
+. Cooks those assets for PAYDAY 3.
+. Packages only the content that should be included with that mod.
+. Produces the plugin-based mod output expected by PDML.
+
+This avoids cooking or shipping unrelated project content.
+
+== Using the Forge action
+
+From the CrimeForge mod manager, find the mod's card and click *FORGE*.
+
+The manager UI keeps the forging action per mod, which makes it easy to build only the mod you are actively working on.
+
+== Plugin-based mods
+
+CrimeForge mods are Unreal plugins rather than loose files placed directly into the game's base content directory.
+
+A CrimeForge mod typically has a structure similar to:
+
+[source,text]
+----
+MyMod/
+|-- MyMod.uplugin
+`-- Content/
+    `-- ...
+----
+
+The exact forged files can vary by mod type.
+
+== Runtime destination
+
+Install the complete forged mod folder under:
+
+[source,text]
+----
+PAYDAY3/Mods/
+----
+
+PDML scans and handles mods from this dedicated directory.
+
+[IMPORTANT]
 ====
-This page is scaffolded for the next documentation pass.
+Do not treat `PAYDAY3/Content/Paks/` as the normal install directory for CrimeForge/PDML mods.
+
+The dedicated `PAYDAY3/Mods/` directory keeps community mods separate from PAYDAY 3's own cooked content and gives PDML a clean mod-management boundary.
 ====
 
-This section will document the validated PAYDAY 3 modkit workflow for packaging.
+== Forge versus package
+
+In general Unreal terminology, Forge performs the cook/package stage of the build process. In CrimeForge documentation and UI, use the word *Forge* when referring to this action.

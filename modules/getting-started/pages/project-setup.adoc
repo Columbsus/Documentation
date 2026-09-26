@@ -12,6 +12,14 @@ If Unreal asks you to select an engine installation, choose the custom editor bu
 
 Open the relevant CrimeForge/modkit project settings and point the game-path setting at your installed PAYDAY 3 game.
 
+image::crimeforge-project-settings.png[CrimeForge project settings for PAYDAY 3, width=1200]
+
+The key settings shown here are:
+
+* *PAYDAY 3 Game Path* points CrimeForge at your local game install.
+* *Copy Mods To Game* copies forged mods to the game automatically after a successful forge.
+* *Launch Game After Packing* controls whether the game is launched after the forge step. The current UI still uses the word *Packing* here.
+
 CrimeForge uses the configured game installation for workflows that need access to the locally installed game's data.
 
 [IMPORTANT]
@@ -23,7 +31,7 @@ Do not copy base-game packages into the modkit repository.
 
 == Additional data
 
-Some development builds of the tooling may require supporting reflection/mapping data supplied with the modkit release.
+Some development builds of the tooling may require supporting reflection or mapping data supplied with the modkit release.
 
 Use the files supplied for the exact PAYDAY 3/modkit version you are targeting.
 

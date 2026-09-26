@@ -8,6 +8,7 @@ Before installing the modkit, prepare the following.
 * The custom PAYDAY 3 Unreal Engine {pd3-engine-version} editor build used by the modkit.
 * The PAYDAY 3 modkit project.
 * https://fmodel.app/[FModel] for browsing the installed game archives and extracting setup data.
+* An Audiokinetic account and the Audiokinetic Launcher so you can obtain the Wwise 2023.1.15 SDK files required by the modkit.
 
 == Development tools
 
@@ -20,4 +21,4 @@ Blueprint-only mod authors may not need to work directly with C++, but the distr
 
 Launch PAYDAY 3 normally at least once and make sure the base game installation works.
 
-Then continue to xref:install-editor.adoc[Install the Custom Editor]. FModel is configured immediately afterwards in xref:fmodel-setup.adoc[Set Up FModel].
+Then continue to xref:install-editor.adoc[Install the Custom Editor]. FModel is configured immediately afterwards in xref:fmodel-setup.adoc[Set Up FModel], followed by xref:wwise-setup.adoc[Set Up Wwise].

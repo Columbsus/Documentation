@@ -1,8 +1,17 @@
 = Mod Does Not Load
 
-[NOTE]
-====
-This page is scaffolded for the next documentation pass.
-====
+If a forged CrimeForge mod does not load, verify the runtime layout before debugging the mod itself.
 
-This section will document the validated PAYDAY 3 modkit workflow for mod does not load.
+. Confirm the Forge completed successfully.
+. Confirm the complete mod folder is under `PAYDAY3/Mods/`.
+. Confirm the mod's `.uplugin` file is present in that folder.
+. Confirm PDML initializes successfully.
+. Confirm the mod's required dependencies are installed.
+. Confirm the modkit and game versions are compatible.
+
+[IMPORTANT]
+====
+Do not move a normal PDML mod into `PAYDAY3/Content/Paks/` as a troubleshooting step.
+
+PDML expects CrimeForge plugin mods under the dedicated `PAYDAY3/Mods/` directory.
+====

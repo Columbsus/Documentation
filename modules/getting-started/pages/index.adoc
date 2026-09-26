@@ -7,7 +7,7 @@ Follow the pages in order the first time through.
 
 == What you will do
 
-By the end of the guide, you will understand the toolchain, open the PAYDAY 3 modding project, create a mod with CrimeForge, package it, and test it with PAYDAY 3.
+By the end of the guide, you will understand the toolchain, open the PAYDAY 3 modding project, create a plugin mod with CrimeForge, Forge it, install it under `PAYDAY3/Mods/`, and test it with PAYDAY 3.
 
 You do not need to understand PAYDAY 3 reverse engineering or Unreal Engine internals before starting.
 
@@ -18,11 +18,12 @@ You do not need to understand PAYDAY 3 reverse engineering or Unreal Engine inte
 . xref:requirements.adoc[Install the prerequisites.]
 . xref:install-editor.adoc[Install the custom editor.]
 . xref:fmodel-setup.adoc[Set up FModel for PAYDAY 3.]
+. xref:wwise-setup.adoc[Set up the Wwise SDK required by the modkit.]
 . xref:install-modkit.adoc[Install the modkit and generate its local JMAP.]
 . xref:project-setup.adoc[Connect the project to your PAYDAY 3 installation.]
 . xref:editor-tour.adoc[Learn the important editor areas.]
 . xref:first-mod.adoc[Create your first CrimeForge mod.]
-. xref:package-mod.adoc[Package it.]
+. xref:package-mod.adoc[Forge it.]
 . xref:install-test.adoc[Load and test it in PAYDAY 3.]
 
 [NOTE]

@@ -1,47 +1,67 @@
-= Package the Mod
+= Forge the Mod
 
-CrimeForge packages the Unreal content into the form expected by the PAYDAY 3 modding runtime.
+CrimeForge uses the term *Forge* for the final cook and packaging step.
 
-== Before packaging
+Forging a mod cooks the mod-owned content and packages only the assets that the mod is supposed to include. You do not need to manually construct UnrealPak or IoStore commands.
+
+== Before forging
 
 Save all modified assets.
 
-Resolve Blueprint compile errors before starting a package.
+Resolve Blueprint compile errors before starting a forge.
 
 If CrimeForge provides validation for the selected mod type, run it first and resolve blocking errors.
 
-== Package
+== Forge
 
-Select the mod in CrimeForge and run its package/build action.
+Select the mod in CrimeForge and run the *Forge* action.
 
-CrimeForge handles the PAYDAY-specific cooking and packaging workflow rather than requiring beginners to manually construct UnrealPak/IoStore commands.
+CrimeForge handles the PAYDAY-specific cook and package pipeline. The resulting output contains only the content selected for that mod rather than the entire project.
 
-A successful modern PAYDAY 3 package may contain Unreal IoStore-related output such as `.pak`, `.utoc`, and `.ucas` files depending on the mod/package type.
+Depending on the mod and the current runtime format, forged output can contain Unreal package files such as `.pak`, `.utoc`, and `.ucas`.
+
+== CrimeForge mods are plugins
+
+CrimeForge creates mods as Unreal plugins.
+
+This gives each mod its own content root and keeps its authored assets separate from the base PAYDAY 3 project. PDML understands this plugin-based mod structure and handles the mod at runtime.
+
+A simplified structure looks like this:
+
+[source,text]
+----
+MyMod/
+|-- MyMod.uplugin
+`-- Content/
+    `-- ...
+----
+
+The exact forged output can contain additional files depending on the mod type and CrimeForge version.
 
 == Watch the Output Log
 
-Packaging can fail because of:
+A forge can fail because of:
 
 * Blueprint compiler errors.
 * Missing references.
 * Content excluded from cook.
-* Plugin/module load failures.
+* Plugin or module load failures.
 * Invalid mod configuration.
 * Commandlet-incompatible editor plugins.
 
-Do not treat the final error line as the entire diagnosis. Search upward for the first relevant cook, compile, or validation error.
+Do not treat the final error line as the entire diagnosis. Search upward for the first relevant cook, compile, validation, or forge error.
 
 == Verify the result
 
-After CrimeForge reports success, inspect the generated package/output location shown by the tool.
+After CrimeForge reports a successful forge, inspect the output location shown by the tool.
 
-The package should contain your mod's intended content, not copied PAYDAY 3 base-game content.
+The forged mod should contain your intended mod content, not copied PAYDAY 3 base-game content.
 
 [WARNING]
 ====
-Do not manually add PAYDAY 3 cooked assets to the package to fix a missing-reference problem.
+Do not manually add PAYDAY 3 cooked assets to the forged mod to fix a missing-reference problem.
 
-That usually means the mod's references or packaging configuration need to be corrected.
+That usually means the mod's references, PAL selection, or forge configuration need to be corrected.
 ====
 
 Next: xref:install-test.adoc[Install and Test].

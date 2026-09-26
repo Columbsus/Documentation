@@ -1,6 +1,6 @@
 = Next Steps
 
-Once the first mod packages and loads successfully, choose the area that matches what you want to build.
+Once the first mod Forges and loads successfully, choose the area that matches what you want to build.
 
 == Learn the environment
 

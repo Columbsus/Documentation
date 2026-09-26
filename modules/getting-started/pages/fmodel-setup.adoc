@@ -93,14 +93,20 @@ After configuring the archive directory, AES key, and local mappings file:
 
 If FModel can list the archives but fails to deserialize many assets, first check that the local mapping option is enabled and that the selected `.usmap` matches your installed PAYDAY 3 version.
 
-== FModel mappings and the modkit JMAP are different
+== FModel mappings, `AssetRegistry.bin`, and the modkit JMAP are different
 
-Do not confuse the FModel `.usmap` mappings file with the JMAP generated for the PAYDAY 3 modkit.
+These three files serve different purposes in the PAYDAY 3 modding workflow:
 
-* The `.usmap` file is used by tools such as FModel to understand Unreal Engine property layouts.
-* The modkit JMAP is generated locally after installing the modkit by running `GenerateJMAP.bat` with the current game's `AssetRegistry.bin`.
+* The FModel `.usmap` file supplies Unreal property layout information so FModel can deserialize many cooked PAYDAY 3 packages.
+* `AssetRegistry.bin` is extracted from the game with FModel and placed in the *modkit root*. The editor uses it to discover which cooked PAYDAY 3 assets exist and which cooked packages can be resolved and loaded.
+* The modkit JMAP is dumped from a *running PAYDAY 3 process* by `GenerateJMAP.bat`. Suzie consumes that JMAP to generate the native PAYDAY 3 class stubs used by the modkit.
 
-The modkit does not ship with the generated JMAP. The next step explains how to extract `AssetRegistry.bin` with the FModel setup you have just configured and generate it locally.
+[IMPORTANT]
+====
+`GenerateJMAP.bat` does not use `AssetRegistry.bin` to generate the JMAP. They are separate parts of the setup process.
+====
+
+The modkit does not ship with the generated JMAP. The next step explains how to place the current `AssetRegistry.bin` in the modkit root, dump the JMAP from a clean running game, and use it with Suzie.
 
 == FModel reference
 
