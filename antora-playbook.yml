@@ -1,5 +1,6 @@
 site:
   title: PAYDAY 3 Modding Documentation
+  url: https://PAYDAY3-Modding.github.io/Documentation/
   start_page: payday3-modding::index.adoc
 
 content:
