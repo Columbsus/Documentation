@@ -1,33 +1,83 @@
 = CrimeForge
 
-CrimeForge is the PAYDAY-specific editor tooling layer.
+CrimeForge is the PAYDAY-specific mod management and authoring layer built into the modkit.
 
-It provides mod creation templates, validation, forging, and specialized authoring workflows.
+It handles the common workflow around creating mod plugins, managing their metadata and packaging configuration, validating them, and Forging them into PDML-compatible mods.
 
-CrimeForge creates mods as Unreal plugins. This keeps each mod in its own content namespace and gives PDML a predictable structure to discover and load at runtime.
+CrimeForge creates mods as Unreal plugins under the modkit's `Mods` directory. This gives every mod its own content namespace and keeps mod development separate from PAYDAY 3's mounted `/Game/...` content.
 
-CrimeForge uses the term *Forge* for its cook/package step. Forge cooks the assets selected for the mod and packages only the content that mod should ship with.
+image::crimeforge-dashboard.png[CrimeForge mod manager, width=1000]
 
-image::crimeforge-dashboard.png[CrimeForge mod manager, width=900]
+== Main workflow
 
-== The CrimeForge mod manager
+A normal CrimeForge workflow is:
 
-The main CrimeForge panel gives you a card for each mod.
+[source,text]
+----
+Create Mod
+   |
+   v
+Author mod content
+   |
+   v
+Configure PAL / replacements
+   |
+   v
+Validate
+   |
+   v
+Forge
+   |
+   v
+PAYDAY3/Mods/<ModName>/
+   |
+   v
+PDML
+----
 
-Each card exposes the most common actions:
+CrimeForge uses the word *Forge* for its cook and package operation.
 
-* *Information* opens the mod's descriptor and metadata.
-* *CONFIG* opens mod-specific configuration.
-* *FORGE* runs the cook/package step for that mod.
+== Mod manager
 
-The panel also includes tools such as *Create Mod*, *Import Legacy Mod*, and selection helpers.
+The main CrimeForge window lists the mod plugins available in the project's `Mods` directory.
 
-== Templates
+From here you can:
 
-Current templates include:
+* search the installed development mods,
+* select mods using the card checkboxes and selection controls,
+* create a new mod,
+* import a legacy UE4 mod,
+* open a mod's information,
+* open a mod's configuration,
+* and Forge a mod.
 
-* Blank
-* Logic Mod
-* Custom Heist
+Clicking a mod's icon navigates the Content Browser directly to that plugin's content root.
 
-See xref:create-mod.adoc[Create Mod], xref:templates.adoc[Templates], and xref:packaging.adoc[Forge].
+See xref:managing-mods.adoc[Managing Mods] for the full manager workflow.
+
+== Current templates
+
+CrimeForge currently includes three creation templates:
+
+* *Blank*
+* *Logic Mod*
+* *Custom Heist*
+
+Additional specialized templates, such as HUD and audio mod templates, are planned for the future but are not part of the current workflow.
+
+See xref:templates.adoc[Templates].
+
+== Forge and PDML
+
+CrimeForge mods are built as Unreal plugins. Forge cooks and packages only the content that belongs to the selected mod, then produces the plugin-based output expected by PDML.
+
+The normal runtime location is:
+
+[source,text]
+----
+PAYDAY3/Mods/
+----
+
+This is intentionally separate from PAYDAY 3's own `Content/Paks` directory.
+
+See xref:packaging.adoc[Forge].

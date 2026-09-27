@@ -1,31 +1,48 @@
 = Templates
 
-CrimeForge currently provides three main mod templates.
+CrimeForge templates create the initial plugin structure and PAYDAY-specific assets needed for common mod types.
 
 image::crimeforge-new-mod-window.png[CrimeForge template selection, width=1000]
 
 == Blank
 
-Use *Blank* when you want a general-purpose mod plugin and do not need a specialized starting layout.
+Use *Blank* for a general-purpose mod.
 
-This is the normal starting point for a first mod.
+The template creates the new mod plugin and its standard CrimeForge assets, including:
+
+* `PAL_<ModName>`
+* `DA_<ModName>`
+
+This is the normal starting point when a more specialized template is not required.
 
 == Logic Mod
 
-Use *Logic Mod* when the mod's primary purpose is Blueprint/runtime behavior.
+Use *Logic Mod* when the mod's main purpose is Blueprint/runtime behavior through PDML.
 
-It creates a plugin mod with the basic assets needed for a logic-focused workflow.
+In addition to the normal mod structure, CrimeForge creates a Blueprint derived from PDML's `ModActorBase` and names it:
+
+[source,text]
+----
+BP_<ModName>
+----
+
+The mod data asset is populated with the discovered Mod Actor so PDML can use the generated logic mod structure.
 
 == Custom Heist
 
-Use *Custom Heist* when you want a plugin mod structured for heist development.
+Use *Custom Heist* when creating a new heist.
 
-This template includes the basic assets needed for custom-heist work and is the best starting point for new heists.
+The template creates the normal mod structure plus the initial heist content, including:
 
-== Choosing the right one
+* a `PD3HeistDataAsset`,
+* a level named `LVL_<ModName>`,
+* the generated heist added to the mod data asset's `Heist` array,
+* and the heist data asset's `LevelPath` set to the generated level.
 
-If you are unsure, start with:
+This provides the basic CrimeForge/PDML registration structure before the heist itself is authored.
 
-* *Blank* for a normal first mod
-* *Logic Mod* for Blueprint-heavy runtime work
-* *Custom Heist* for heist development
+== Future templates
+
+Additional specialized templates are planned, including templates for areas such as HUD mods and audio mods.
+
+They are not part of the current CrimeForge release and should not be assumed to exist until they are added to the tool.

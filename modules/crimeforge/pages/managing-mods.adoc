@@ -1,0 +1,57 @@
+= Managing Mods
+
+The CrimeForge mod manager is the main place for working with mod plugins in the editor.
+
+image::crimeforge-dashboard.png[CrimeForge mod manager, width=1000]
+
+== Mod cards
+
+Each discovered mod is shown as a card.
+
+The card gives you access to the common actions for that mod:
+
+* *Information* opens the mod's information and metadata.
+* *CONFIG* opens the mod-specific configuration.
+* *FORGE* validates, cooks, and packages that mod.
+
+Click the mod icon to navigate the Content Browser directly to that plugin's content root.
+
+== Search
+
+Use *Search Mods...* to filter the mod cards when the project contains a larger number of mods.
+
+== Selection
+
+Mod cards include selection checkboxes, and the manager includes selection helpers such as *Check All*.
+
+These controls let CrimeForge keep selection separate from opening a plugin's content or information.
+
+== Create Mod
+
+Use *Create Mod* to generate a new CrimeForge plugin from one of the available templates.
+
+See xref:create-mod.adoc[Create Mod].
+
+== Import Legacy Mod
+
+Use *Import Legacy Mod* to migrate an older UE4-style PAYDAY 3 logic mod into the current plugin-based CrimeForge structure.
+
+See xref:import-legacy.adoc[Import Legacy Mod].
+
+== Mods are plugins
+
+User mods created by CrimeForge live under:
+
+[source,text]
+----
+<ModkitRoot>/Mods/<ModName>/
+----
+
+The modkit also contains the official PDML development plugin under `Mods/PDML/` so user mods can access PDML's API in the editor.
+
+[WARNING]
+====
+Do not modify or Forge the bundled PDML plugin.
+
+Create your own plugin alongside it and use the official PDML API from your mod.
+====

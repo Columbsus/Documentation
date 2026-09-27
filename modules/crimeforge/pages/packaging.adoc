@@ -2,59 +2,138 @@
 
 CrimeForge uses *Forge* as the name of its cook and package operation.
 
-image::crimeforge-dashboard.png[CrimeForge mod cards with Forge action, width=900]
+image::crimeforge-dashboard.png[CrimeForge mod cards with Forge action, width=1000]
 
 == What Forge does
 
 When you Forge a mod, CrimeForge:
 
-. Determines which authored assets belong to the selected mod.
-. Cooks those assets for PAYDAY 3.
-. Packages only the content that should be included with that mod.
-. Produces the plugin-based mod output expected by PDML.
+. Runs the mod preflight/validation.
+. Resolves the content that belongs to the selected mod.
+. Cooks that content for PAYDAY 3.
+. Packages only the content that should ship with the mod.
+. Produces the plugin-based output expected by PDML.
 
 This avoids cooking or shipping unrelated project content.
 
-== Using the Forge action
+== Start a Forge
 
-From the CrimeForge mod manager, find the mod's card and click *FORGE*.
+Find the mod in the CrimeForge manager and click *FORGE*.
 
-The manager UI keeps the forging action per mod, which makes it easy to build only the mod you are actively working on.
+Forge operates on that mod plugin and its configured content rather than packaging the whole modkit project.
 
-== Plugin-based mods
+== Plugin-only Forge
 
-CrimeForge mods are Unreal plugins rather than loose files placed directly into the game's base content directory.
+If the mod only contains content under its own plugin root, CrimeForge can use the normal plugin Forge path.
 
-A CrimeForge mod typically has a structure similar to:
+This keeps the cook focused on the selected plugin.
 
-[source,text]
-----
-MyMod/
-|-- MyMod.uplugin
-`-- Content/
-    `-- ...
-----
+== External /Game replacement Forge
 
-The exact forged files can vary by mod type.
+Replacement mods can also contain uncooked replacement assets that need to occupy original `/Game/...` paths.
 
-== Runtime destination
+These assets are added to the mod PAL's *Explicit Assets* list.
 
-Install the complete forged mod folder under:
+When CrimeForge detects external `/Game/...` replacement content, Forge uses a two-stage cook:
+
+. The plugin content is cooked through the normal plugin pass.
+. The external `/Game/...` replacement assets are cooked through the additional project cook pass.
+. The resulting cooked content is combined into the single forged mod output.
+
+Plugin-only mods skip the extra replacement pass.
+
+See xref:pal.adoc[PAL & Explicit Assets].
+
+== Packaged output
+
+Depending on the mod and current PAYDAY 3 packaging format, the forged output can contain Unreal container files such as:
+
+* `.pak`
+* `.utoc`
+* `.ucas`
+
+These remain part of the complete CrimeForge plugin mod rather than files that should normally be moved individually into the game's `Content/Paks` directory.
+
+== First Forge setup
+
+On a new engine/modkit setup, the first Forge can perform additional one-time tooling preparation.
+
+CrimeForge uses its `CrimeForge.Automation` tooling and custom `PackagePlugin` automation command for the Forge pipeline.
+
+If the required automation build is missing or stale, CrimeForge can build/register the automation tooling before continuing.
+
+When using a source-built engine, CrimeForge also checks for the required `UnrealPak` executable and can build it automatically if it is missing.
+
+Subsequent Forge runs can reuse that prepared tooling until it needs to be rebuilt.
+
+== Chunk IDs
+
+The mod's PAL Chunk ID must avoid values used by PAYDAY 3 and its DLC.
+
+A value greater than `100` is recommended.
+
+See xref:pal.adoc[PAL & Explicit Assets].
+
+== Copy Mods To Game
+
+CrimeForge Project Settings includes *Copy Mods To Game*.
+
+When enabled, a successful Forge copies the complete forged plugin mod into:
 
 [source,text]
 ----
 PAYDAY3/Mods/
 ----
 
-PDML scans and handles mods from this dedicated directory.
+This allows PDML to discover the mod without manually copying the forged output after every build.
+
+== Launch Game After Packing
+
+CrimeForge also includes *Launch Game After Packing*.
+
+When enabled, CrimeForge can launch PAYDAY 3 after the Forge completes so the mod can be tested.
+
+[NOTE]
+====
+The launch behavior still needs additional validation for the Epic Games Store and Xbox/Microsoft Store versions of PAYDAY 3.
+====
+
+== Runtime destination
+
+The normal PDML mod location is:
+
+[source,text]
+----
+PAYDAY3/Mods/
+----
 
 [IMPORTANT]
 ====
 Do not treat `PAYDAY3/Content/Paks/` as the normal install directory for CrimeForge/PDML mods.
 
-The dedicated `PAYDAY3/Mods/` directory keeps community mods separate from PAYDAY 3's own cooked content and gives PDML a clean mod-management boundary.
+The dedicated `PAYDAY3/Mods/` directory keeps community mods separate from PAYDAY 3's own cooked content and gives PDML a clean discovery and management boundary.
 ====
+
+== Troubleshooting a Forge
+
+A Forge can fail because of either CrimeForge validation or normal Unreal cooking/packaging problems.
+
+Useful places to check include:
+
+* CrimeForge preflight errors,
+* PAL and Asset Manager setup,
+* unresolved explicit assets,
+* stale template placeholders,
+* external replacement configuration,
+* Blueprint compile errors,
+* missing references,
+* plugin/module load errors,
+* and Unreal cook failures.
+
+When Unreal Automation Tool fails, look upward in the log for the first relevant validation, compile, cook, or packaging error rather than relying only on the final failure line.
 
 == Forge versus package
 
-In general Unreal terminology, Forge performs the cook/package stage of the build process. In CrimeForge documentation and UI, use the word *Forge* when referring to this action.
+In general Unreal terminology, Forge performs the cook/package stage of the build process.
+
+In CrimeForge documentation and UI, use the word *Forge* for this action.
