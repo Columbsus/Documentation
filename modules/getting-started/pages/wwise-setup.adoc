@@ -107,6 +107,8 @@ The PAYDAY 3 modkit workflow documented here is for Windows, so the matching Win
 
 == Why this is required
 
+The Wwise setup is required for more than compiling the bundled plugin. The modkit also relies on the modified Wwise integration when working with PAYDAY 3 cooked audio assets.
+
 The text/source portion of the Wwise integration can exist in the modkit without the complete Audiokinetic SDK payload, but Unreal still needs the matching Wwise headers and libraries when compiling or linking the plugin.
 
 Without the correct `ThirdParty` content, you can encounter missing library, missing DLL, unresolved module, or plugin load errors when building or opening the modkit.

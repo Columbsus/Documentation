@@ -1,8 +1,61 @@
 = Custom Unreal Editor
 
+The PAYDAY 3 modkit requires the custom Unreal Engine {pd3-engine-version} editor from:
+
+https://github.com/NadzW/UnrealEngine-PD3Compatibility[UnrealEngine-PD3Compatibility]
+
+A stock Unreal Engine installation does not include the PAYDAY-specific cooked-content and compatibility changes used by this modkit.
+
+For installation instructions, see xref:getting-started:install-editor.adoc[Install the Custom Editor].
+
+== Why a custom editor is required
+
+PAYDAY 3 ships cooked game content intended for the retail runtime, not editable source assets intended for the Unreal Editor.
+
+The custom editor adds the compatibility work needed to make supported retail PAYDAY 3 content useful in the modkit.
+
+The exact patch set changes as compatibility work develops. The engine repository and its commit history are the source of truth for the current implementation.
+
+Current areas of custom-engine work include:
+
+* loading cooked content in the editor,
+* loading PAYDAY 3's external containers,
+* mounting the retail game content,
+* using a premade PAYDAY 3 `AssetRegistry.bin`,
+* preserving mounted assets during Asset Registry refresh,
+* populating dependencies for cooked PAYDAY 3 assets,
+* opening supported cooked levels,
+* showing thumbnails for loaded cooked assets,
+* support for cooked Blueprint class references and actions,
+* transient inspection/editing support for mounted cooked assets,
+* cooked material instance support,
+* cooked skeleton and animation support,
+* cooked font support,
+* mesh uncooking,
+* Blueprint uncooking/replacement workflows,
+* reflection and unversioned-property compatibility work,
+* packaging fixes for uncooked replacement assets,
+* and experimental cooked material baking work.
+
 [NOTE]
 ====
-This page is scaffolded for the next documentation pass.
+Not every cooked asset type is fully supported.
+
+The compatibility layer is actively improved as unsupported assets and crashes are discovered.
 ====
 
-This section will document the validated PAYDAY 3 modkit workflow for custom unreal editor.
+== Game configuration
+
+The editor needs the local PAYDAY 3 game path and AES key configured in Project Settings.
+
+Together with the current `AssetRegistry.bin` and JMAP/Suzie setup, this allows supported cooked game assets to appear under their original `/Game/...` paths.
+
+Cooked audio assets additionally require the modkit's modified Wwise plugin to have the matching Audiokinetic `ThirdParty` SDK files installed. See xref:getting-started:wwise-setup.adoc[Set Up Wwise].
+
+== Installed content remains external
+
+The custom editor reads the game content from the user's own PAYDAY 3 installation.
+
+It does not turn the modkit into a redistributable copy of PAYDAY 3's source project.
+
+Base-game cooked assets remain game-owned content and should not be committed to the modkit repository or shipped inside community mods.

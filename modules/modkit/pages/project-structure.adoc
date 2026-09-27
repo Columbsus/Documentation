@@ -1,8 +1,95 @@
 = Project Structure
 
-[NOTE]
+The PAYDAY 3 modkit is a normal Unreal project with additional files and folders used by the cooked-content, reflection, CrimeForge, and PDML workflows.
+
+image::modkit-root.png[PAYDAY 3 modkit root folder, width=1050]
+
+The exact contents of generated folders can vary after the project has been opened or built, but the following entries are the important parts of the modkit layout.
+
+== Important root folders
+
+[cols="1,3"]
+|===
+|Path |Purpose
+
+|`Content/`
+|Project content. `Content/DynamicClasses` also contains the JMAP consumed by Suzie.
+
+|`Mods/`
+|Development location for CrimeForge-created mod plugins. CrimeForge creates new mods here automatically. The official PDML development plugin is also included here.
+
+|`Plugins/`
+|Editor/project plugins used by the modkit, including the PAYDAY-specific tooling and the modified Wwise integration.
+
+|`Config/`
+|Unreal project configuration.
+
+|`Source/`
+|Native source belonging to the modkit project.
+
+|`Tools/`
+|Supporting modkit tools.
+
+|`Binaries/`
+|Built project binaries.
+
+|`Build/`
+|Unreal build metadata and project build files.
+|===
+
+Generated Unreal folders such as `DerivedDataCache/`, `Intermediate/`, and `Saved/` are created locally as part of normal editor/build use.
+
+IDE metadata such as `.idea/` and `.vs/` may also exist depending on the tools used on that machine.
+
+== Important root files
+
+[cols="1,3"]
+|===
+|File |Purpose
+
+|`PAYDAY3.uproject`
+|The Unreal project opened with the custom PAYDAY 3 editor.
+
+|`PAYDAY3.sln`
+|Visual Studio solution generated for native project/plugin development.
+
+|`AssetRegistry.bin`
+|The current PAYDAY 3 Asset Registry extracted from the game and placed in the modkit root. The editor uses it to discover the game's cooked assets.
+
+|`GenerateJMAP.bat`
+|Runs the JMAP dumping workflow against a clean running PAYDAY 3 instance.
+
+|`.gitignore`
+|Keeps generated/local files out of source control.
+|===
+
+== The Mods folder
+
+image::modkit-mods-folder.png[PAYDAY 3 modkit Mods folder, width=1050]
+
+CrimeForge creates user mods automatically inside:
+
+[source,text]
+----
+<ModkitRoot>/Mods/
+----
+
+Each mod is an Unreal plugin with its own content namespace.
+
+The modkit also ships with:
+
+[source,text]
+----
+<ModkitRoot>/Mods/PDML/
+----
+
+The PDML plugin is included so user mods can access PDML functions and APIs in the editor.
+
+[WARNING]
 ====
-This page is scaffolded for the next documentation pass.
+`Mods/PDML/` is not a template for modification.
+
+Do not edit or Forge PDML. User-created mods should be separate plugins alongside it in `Mods/`.
 ====
 
-This section will document the validated PAYDAY 3 modkit workflow for project structure.
+Other folders visible in a developer's local `Mods` directory can be local projects and are not necessarily part of the stock modkit.

@@ -1,8 +1,109 @@
 = Architecture
 
-[NOTE]
-====
-This page is scaffolded for the next documentation pass.
-====
+The modkit is built around the user's own PAYDAY 3 installation rather than a redistributed copy of the game project.
 
-This section will document the validated PAYDAY 3 modkit workflow for architecture.
+There are three main data paths to understand: cooked content, reflected native classes, and mod authoring/runtime loading.
+
+== Cooked content path
+
+[source,text]
+----
+PAYDAY 3 installation
+        |
+        | game path + AES key
+        v
+Custom PAYDAY 3 editor
+        |
+        | AssetRegistry.bin in modkit root
+        v
+Cooked PAYDAY 3 assets exposed under /Game/...
+----
+
+The custom editor mounts the installed PAYDAY 3 containers and uses the supplied `AssetRegistry.bin` to discover the game's cooked assets.
+
+Supported assets then appear in the Content Browser at their original `/Game/...` paths.
+
+These assets remain game-owned cooked content. They are not copied into the modkit and should not be redistributed with a mod.
+
+=== Cooked audio support
+
+Cooked audio assets also depend on the modkit's modified Wwise integration.
+
+The Wwise plugin is included with the modkit, but its Audiokinetic `ThirdParty` SDK files must be supplied by the user as described in xref:getting-started:wwise-setup.adoc[Set Up Wwise].
+
+Without the required matching Wwise files, cooked audio asset support is not fully available even if the rest of the cooked-content setup is correct.
+
+== Reflected native class path
+
+[source,text]
+----
+Clean running PAYDAY 3
+        |
+        | GenerateJMAP.bat
+        v
+JMAP in Content/DynamicClasses
+        |
+        | project startup
+        v
+Suzie
+        |
+        v
+Generated + registered PAYDAY 3 runtime classes
+        |
+        v
+Blueprints, Data Assets and other editor references
+----
+
+Suzie runs when the project starts.
+
+It reads the JMAP from `Content/DynamicClasses`, generates the native PAYDAY 3 runtime classes needed by the editor, and registers those classes so mod assets can reference them.
+
+The generated files are local-only and are regenerated when the project starts. They are not committed to the modkit repository.
+
+See xref:reflected-types.adoc[Reflected Game Types].
+
+== Mod authoring path
+
+[source,text]
+----
+CrimeForge
+    |
+    | Create Mod
+    v
+<ModkitRoot>/Mods/<ModName>/
+    |
+    | author content
+    v
+Forge
+    |
+    v
+Plugin-based PDML mod
+    |
+    v
+PAYDAY3/Mods/
+    |
+    v
+PDML
+----
+
+CrimeForge creates user mods as Unreal plugins inside the modkit's `Mods` directory.
+
+When the mod is Forged, CrimeForge cooks and packages only the content that belongs to that mod. The resulting plugin mod is installed under the game's `PAYDAY3/Mods/` directory for PDML to discover and handle.
+
+== Bundled PDML development plugin
+
+The modkit includes the official PDML plugin mod under:
+
+[source,text]
+----
+<ModkitRoot>/Mods/PDML/
+----
+
+This gives mod authors access to PDML's Blueprint functions and API while working in the editor.
+
+[WARNING]
+====
+Do not modify, Forge, or redistribute the bundled PDML project as part of your own mod.
+
+Use the official PDML supplied with the modkit. It is present so your mod can reference PDML's API during development.
+====

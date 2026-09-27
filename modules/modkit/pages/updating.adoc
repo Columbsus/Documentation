@@ -1,8 +1,86 @@
 = Updating the Modkit
 
-[NOTE]
+The recommended development workflow is to clone or fork the modkit Git repository and pull changes when the modkit is updated.
+
+This makes it easier to keep your local project current while keeping your own CrimeForge-created mods under the project's `Mods` directory.
+
+== Updating the modkit repository
+
+If you cloned the modkit repository, pull the latest changes from the branch you are using.
+
+If you maintain your own fork, update your fork from the upstream modkit repository and then pull those changes into your local clone.
+
+Review incoming changes before overwriting any local project configuration or work.
+
+== User mods
+
+CrimeForge creates user mods automatically under:
+
+[source,text]
+----
+<ModkitRoot>/Mods/
+----
+
+Keep your own mods as separate plugin folders inside this directory.
+
+The modkit's official PDML plugin also lives in `Mods/PDML/`.
+
+[WARNING]
 ====
-This page is scaffolded for the next documentation pass.
+Do not modify or Forge the bundled PDML plugin.
+
+PDML is included so your mods can use its functions and API in the editor. Always use the official PDML version supplied by the modkit.
 ====
 
-This section will document the validated PAYDAY 3 modkit workflow for updating the modkit.
+== After a PAYDAY 3 game update
+
+When PAYDAY 3 updates, refresh the game-derived data used by the modkit.
+
+=== 1. Update AssetRegistry.bin
+
+Use FModel to extract a fresh `AssetRegistry.bin` from the updated game.
+
+Replace the old file at:
+
+[source,text]
+----
+<ModkitRoot>/AssetRegistry.bin
+----
+
+This keeps the editor's view of the game's cooked assets aligned with the current game version.
+
+=== 2. Generate a fresh JMAP
+
+Run `GenerateJMAP.bat` against a clean running PAYDAY 3 instance with no mods or UE4SS active.
+
+Make sure the resulting current JMAP is available in:
+
+[source,text]
+----
+<ModkitRoot>/Content/DynamicClasses/
+----
+
+=== 3. Restart the project
+
+On the next project startup, Suzie reads the current JMAP and regenerates/registers the native PAYDAY 3 runtime classes locally.
+
+No UE4SS UHT generation step is required.
+
+== Why both files must be refreshed
+
+The two files track different parts of the game:
+
+* `AssetRegistry.bin` tracks cooked asset discovery.
+* the JMAP tracks reflected native game classes.
+
+Updating only one can leave the editor with stale information for the other side of the cooked-content workflow.
+
+== Custom editor updates
+
+The custom editor is developed separately from the modkit project and receives compatibility fixes as new cooked-asset cases are found.
+
+Keep the editor version required by the current modkit branch/release.
+
+The current custom editor source and update history are available at:
+
+https://github.com/NadzW/UnrealEngine-PD3Compatibility[UnrealEngine-PD3Compatibility]
