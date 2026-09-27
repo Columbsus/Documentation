@@ -5,3 +5,5 @@
 * xref:blueprints.adoc[Blueprint Errors]
 * xref:plugins.adoc[Plugin & Module Errors]
 * xref:cooked-assets.adoc[Cooked Asset Problems]
+* xref:SBZAssetManager.adoc[SBZAssetManager Crash in Editor]
+* xref:ubs-crash.adoc[UnversionedPropertySerialization Crash in Editor]

@@ -1,0 +1,16 @@
+= SBZAssetManager Crash in Editor
+
+This crash is due to the JMAP not being generated properly in the modkit. 
+
+Go to 
+* (modkit Directory)/Content/DynamicClasses/
+
+If the .jmap file is smaller than 100MB then the .jmap did not generate properly.
+
+[IMPORTANT]
+====
+An impoper .jmap can be caused by the UE4SS gui console. Remove the dwmapi.dll from the game directory and rerun the GenerateJmap.bat.
+
+The dwmapi.dll is located in your game directory at PAYDAY3/PAYDAY3/Binaries/Win64/
+====
+

@@ -1,0 +1,13 @@
+= UnversionedPropertySerialization Crash in Editor
+
+This crash is due to the JMAP in the modkit being outdated compared to the game assets. 
+
+Regenerate the jmap with the GenerateJmap.bat
+
+[IMPORTANT]
+====
+If you have UE4SS, make sure the remove the dwmapi.dll from the game directory before running GenerateJmap.bat.
+
+The dwmapi.dll is located in your game directory at PAYDAY3/PAYDAY3/Binaries/Win64/
+====
+
