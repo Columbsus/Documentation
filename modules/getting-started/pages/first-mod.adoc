@@ -56,6 +56,8 @@ Create the mod and allow CrimeForge to generate its required structure.
 
 After creation, locate the new mod content in the Content Browser.
 
+You can click on the icon of your mod in CrimeForge to open up the Content Browser to your mod's content directory.
+
 == Add test content
 
 Create a small mod-owned asset inside the new mod so that you have content to send through the pipeline.
