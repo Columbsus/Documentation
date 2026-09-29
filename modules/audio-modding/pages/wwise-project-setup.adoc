@@ -1,0 +1,10 @@
+= Wwise Project Setup
+
+[NOTE]
+====
+This page is a placeholder for a future documentation pass.
+
+The workflow will be documented after it has been validated with the current PAYDAY 3 modkit and Wwise integration.
+====
+
+This page will document how to create and configure a Wwise project for PAYDAY 3 audio modding.
