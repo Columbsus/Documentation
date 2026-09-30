@@ -3,3 +3,5 @@
 This section contains task-oriented guides for building PAYDAY 3 mods after you have completed the beginner setup.
 
 Start with the mod type closest to what you want to change. For runtime-heavy mods, also read xref:pdml:index.adoc[PDML].
+
+If your mod exposes player-configurable options, see xref:pdml:settings.adoc[Mod Settings] for toggles, floats, colors, keybinds, strings, and multiple choice settings.
