@@ -361,6 +361,64 @@ GetKeybindSettingValue
 
 You normally do not need to poll these chords yourself. PDML exposes keybind activity through the mod loader dispatcher described below.
 
+[[react-to-setting-changes]]
+== React to setting changes
+
+Settings can be changed at any time from the PDML settings menu. If your mod needs to update immediately when the player changes a setting, bind to the Mod Loader's `OnSettingsChanged` dispatcher.
+
+Get the PDML Mod Loader reference with `GetModLoaderManager`, then bind an event to:
+
+[source,text]
+----
+OnSettingsChanged
+----
+
+The dispatcher does not provide a specific setting value. When it fires, call the appropriate settings getter again and apply the latest value to your mod.
+
+A typical Blueprint setup is:
+
+[source,text]
+----
+GetModLoaderManager
+  -> Bind Event to OnSettingsChanged
+
+OnSettingsChangedEvent
+  -> Get<Type>SettingValue
+       Config Name = <Your Config Name>
+       Unique Name = <Your Setting Unique ID>
+  -> Apply the returned value
+----
+
+For example, a HUD widget using a color setting called `CrosshairColor` can refresh itself like this:
+
+[source,text]
+----
+GetModLoaderManager
+  -> Bind Event to OnSettingsChanged
+
+OnSettingsChangedEvent
+  -> GetColorSettingValue
+       Config Name = <Your Config Name>
+       Unique Name = CrosshairColor
+  -> Set Brush Color
+----
+
+If a widget uses several settings, it is usually simplest to create a function such as `RefreshSettings` that reads all settings used by that widget. Call it once when the widget is initialized and again from `OnSettingsChanged`.
+
+[source,text]
+----
+Construct / Initialize
+  -> RefreshSettings
+
+GetModLoaderManager
+  -> Bind Event to OnSettingsChanged
+
+OnSettingsChangedEvent
+  -> RefreshSettings
+----
+
+This keeps the widget synchronized with the saved PDML values without duplicating the setting application logic.
+
 [[react-to-keybind-input]]
 == React to keybind input
 
@@ -441,8 +499,9 @@ A complete custom-settings workflow is:
 . Set the default values and any type-specific options.
 . In your Blueprint, call `GetCategoryNameFromModName` to obtain the Config Name.
 . Use the appropriate `Get...SettingValue` function with the Config Name and setting Unique ID.
+. Bind to the Mod Loader's `OnSettingsChanged` dispatcher when your mod needs to react immediately to settings changed in the PDML menu.
+. Re-fetch the values your mod uses when `OnSettingsChanged` fires, then refresh the affected UI or gameplay logic.
 . For keybind settings, bind to the Mod Loader's `OnKeybindDown` dispatcher and filter by the setting Unique ID.
-. Apply the returned values to your mod's UI or gameplay logic.
 
 == Example: configurable HUD crosshair
 
@@ -479,6 +538,7 @@ The HUD widget can then:
 * call `GetFloatSettingValue` for `CrosshairScale` to control size,
 * call `GetColorSettingValue` for `CrosshairColor` to set the brush color,
 * call `GetChoiceSettingValue` for `CrosshairStyle` to select a visual style,
+* bind to `OnSettingsChanged` and re-fetch those values whenever the player changes the settings,
 * and listen to `OnKeybindDown` for `GrowCrosshair` to apply held/down input using the player's configured primary or secondary chord.
 
-PDML handles the settings UI, saved values, and keybind configuration, while the mod only needs to register the settings and use their Unique IDs at runtime.
+PDML handles the settings UI, saved values, change notifications, and keybind configuration, while the mod only needs to register the settings and use their Unique IDs at runtime.
