@@ -239,42 +239,19 @@ The value getters use two identifiers:
 
 To obtain the Config Name, call:
 
-[source,text]
-----
-GetCategoryNameFromModName
-----
+image::GetCategoryNameFromModName-Node.png[Get Category Name Node, width=450]
 
 and pass the same mod name used by your mod metadata when PDML registers the settings.
 
 A typical lookup is:
 
-[source,text]
-----
-Mod Name
-  -> GetCategoryNameFromModName
-  -> Config Name
-
-Setting Unique ID
-  -> Unique Name
-
-Config Name + Unique Name
-  -> Get<Type>SettingValue
-----
+image::TypicalLoopup-NodeSetup.png[Basic Universal Setup, width=600]
 
 === Toggle example
 
 For a toggle with the Unique ID `ShowHealthBar`:
 
-[source,text]
-----
-GetCategoryNameFromModName
-  Mod Name = <Your Mod Name>
-
-GetToggleSettingValue
-  Config Name = returned Category Name
-  Unique Name = ShowHealthBar
-  -> Value
-----
+image::BoolSetting-NodeSetup.png[Bool Setup, width=600]
 
 Use the returned Boolean directly for visibility or other gameplay/UI logic.
 
@@ -282,25 +259,13 @@ Use the returned Boolean directly for visibility or other gameplay/UI logic.
 
 For a float setting with the Unique ID `HUDScale`:
 
-[source,text]
-----
-GetFloatSettingValue
-  Config Name = <Your Config Name>
-  Unique Name = HUDScale
-  -> Value
-----
+image::FloatSetting-NodeSetup.png[Float Setup, width=600]
 
 === Color example
 
 For a color setting with the Unique ID `CrosshairColor`:
 
-[source,text]
-----
-GetColorSettingValue
-  Config Name = <Your Config Name>
-  Unique Name = CrosshairColor
-  -> Value
-----
+image::ColorSetting-NodeSetup.png[Color Setup, width=600]
 
 The returned value is a Linear Color and can be applied directly to compatible UMG and material color inputs.
 
@@ -308,25 +273,13 @@ The returned value is a Linear Color and can be applied directly to compatible U
 
 For a string setting with the Unique ID `CustomLabel`:
 
-[source,text]
-----
-GetStringSettingValue
-  Config Name = <Your Config Name>
-  Unique Name = CustomLabel
-  -> Value
-----
+image::StringSetting-NodeSetup.png[String Setup, width=600]
 
 === Multiple choice example
 
 For a multiple choice setting with the Unique ID `ReticleStyle`:
 
-[source,text]
-----
-GetChoiceSettingValue
-  Config Name = <Your Config Name>
-  Unique Name = ReticleStyle
-  -> Value
-----
+image::ChoiceSetting-NodeSetup.png[Choice Setup, width=600]
 
 `Value` is the selected choice index.
 
@@ -347,17 +300,7 @@ Use `GetKeybindSettingValue` when you need the player's currently configured cho
 
 It provides the primary and secondary Input Chords separately, along with success outputs for each lookup.
 
-[source,text]
-----
-GetKeybindSettingValue
-  Config Name = <Your Config Name>
-  Unique Name = OpenMenu
-
-  -> Primary Keybind
-  -> Secondary Keybind
-  -> Primary Successful
-  -> Secondary Successful
-----
+image::KeybindSetting-NodeSetup.png[Keybind Setup, width=600]
 
 You normally do not need to poll these chords yourself. PDML exposes keybind activity through the mod loader dispatcher described below.
 
