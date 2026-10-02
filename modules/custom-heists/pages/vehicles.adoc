@@ -3,3 +3,29 @@
 Vehicle workflows are supported by the newer custom editor/modkit work.
 
 This page is reserved for the validated authoring procedure, required actors/data, runtime behavior, and packaging checks.
+
+[NOTE]
+====
+This page is a current work in progress.
+====
+
+
+== Blueprints/Pawns
+
+* All vehicles are located in the `/Vehicle` folder. Each folder has Static and non-static BP's.
+* _Mockup includes Escape van/helicopter, and police vehicles.
+
+=== Vehicle seeds
+
+Use `Set seed` on vehicles to change their data. -10000 to 10000 will allow for all types of Vehicles. Seeds widely change the aesthetics, like sedans can change colours and turn into taxis.
+
+=== Escape vehicles
+
+Escape vehicles have the capability of opening and closing doors via `Door states per type` then setting the door and if it's opened or closed. Or use Blueprint node `set door state`(?). For escape van, you want to use the back doors to open it.
+
+=== Traffic
+
+* `SBZTrafficVolume` is used to stop traffic.
+* In `SBZWorld` settings, the traffic manager data asset controls how many, of what bp, spawn in the heist. See xref:world-settings.adoc[World Settings].
+* Use `SBZTrafficSpline`, not `SBZSpline`, to control the movement of cars, each vehicle has a `Set and Drive *` that controls how that pawn moves.
+

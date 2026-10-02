@@ -1,0 +1,31 @@
+= Life Actions
+
+Life actions encompass a wide range of actions that AI do around the heist resulting in an animation of some sort. 
+
+Examples of Life actions include:
+
+- Throwing a civilian into the eye scanner causes the civilian to do a life action where they bend down to scan their eyes
+- Idle sitting or walking during stealth heists from guards or civilians
+- Holding a prop while idle (ie, a phone)
+- Two civilians talking
+
+
+[NOTE]
+====
+This page is a current work in progress.
+====
+
+== Giving a life action
+
+* A BP on the physical level, with a a life action that references this blueprint (typically for movement)
+
+
+* Within the PawnSpawn, set the Action to `SBZAIAction Life Action`, set gameplay effect class to whatever animation you want.
+
+=== Patrols
+
+Spawn `SBZPatrol Points` around the level. Set pawn spawn action to `SBZAIAction Patrol`. Set Action order to `SBZAIOrder Patrol`, then set Start point to start of patrol. Inside each patrol point, you set what the next patrol point is, if it randomizes, and how long the person waits at the location.
+
+=== Life action settings
+
+see xref:world-settings.adoc[World Settings] for adding the life action data asset which loads life action animations.

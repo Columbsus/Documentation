@@ -1,0 +1,38 @@
+= Bags
+
+All Bags are located in `Prototype/Blueprints/Bags`
+
+== Bag files
+
+Within this, there are 3 types of files.
+
+[cols=`1,3`]
+|===
+|File |Purpose
+
+|`BP_Interactable(BAG)`
+|The item before it is a bag (aka the money bundle)
+
+|`BP_(BAG)`
+|The bag itself
+
+|`DA_(BAG)`
+|Holds the information pertinent to the bag for spawners and other classes.
+|===
+
+== Spawning bags
+
+Bags spawn via `SBZBag Spawner`.
+
+== Bag trigger volumes
+
+`SBZBag Trigger Volume` is used both for respawning, securing, or destroying bags. Setting trigger mode to secure and destroy will secure the bag itself. Destroy can be used for things such as equipment for setting up thermite. Teleport is used along with the `SBZ Respawn Point` to teleport bags, set the Bag Teleport Point to a `SBZRespawn Point` to have it teleport to there automatically (used for if it goes out of bounds)
+
+* Using the filters, you can filter exact bags. Just hit the + on the filter type and add in the DA of the bag you only want to be able to trigger this volume.
+* You can use the Target to set the max amount of bags that can be secured. For things such as equipment this is useful combined with the `disabled on complete` checkbox so that no other bags can be accidentally thrown into the volume
+
+Use `set progress` on an objective to track secured bags.
+
+== Bag drop points
+
+`SBZBag Drop point` are used for cops, they drop the bags at this location. No setup needed, just place it somewhere in the level

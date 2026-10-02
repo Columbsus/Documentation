@@ -1,8 +1,39 @@
 = AI & Navigation
 
+There are 3 parts to Navigation in Payday.
+
+[cols=`1,3`]
+|===
+|Actor |Purpose
+
+|`NavMeshBoundsVolume`
+|Will generate navigation for AI to move.
+
+|`SBZRoomVolume`
+|Tells AI where a room is.
+
+|`SBZRoomConnectorVolumes`
+|Connects the rooms together.
+|===
+
+Rooms are important because AI try their best to get into the same room the player is in.
+
 [NOTE]
 ====
-This page is scaffolded for the next documentation pass.
+Rooms aren't exclusive to inside buildings.
 ====
 
-This section will document the validated PAYDAY 3 modkit workflow for ai & navigation.
+=== Navigation generators
+
+Navigation Generators, you can be very generous with. Make the volume engulf the entire area you want the enemies to move in. You can use the Brush tools to also change the shape of the volume or use multiple volumes to do things such as when you need nav mesh to go between different elevations.
+
+=== Rooms
+
+* `SBZRooms` have a few parts to it. They both need to fill the entire area you want AI to navigate in, and between rooms you need to use a Connector Volume. Inside a connector volume you need to manually signify what 2 rooms this connector is connecting.
+* If you have a big area, it's recommended to break up the room into smaller rooms. Remember a room needs to be about the size you want cops to engage the player at as cops navigate to the room the player is located in.
+* Each room has a Room type, which signifies what security level you are at, if you are in a public, private, or secure area.
+
+[TIP]
+====
+Press `P` in engine to show the Navigation. Navigation will show up as a green glow above the surfaces where navigation is.
+====

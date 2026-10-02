@@ -1,8 +1,42 @@
 = Create Your First Heist
 
-[NOTE]
+== Creating your First Heist
+
+In crimeforge, we've provided a basic heist template. You can create a mod with the template via:
+
+- Clicking the Dallas mask on the top of the editor
+- Clickin `Create mod`
+- Clicking `Heist Template`
+
+Then write the name of your mod. 
+
+If you wish to create your own heist without a template, you can follow the information below with a blank mod template as well.
+
+== Inside this template
+
+See xref:crimeforge:templates.adoc[Templates] for the standard template assets.
+
+=== DA_HEIST_(modname)
+
+The most important file in the template, this Data asset holds all of the basic information you would see for the heist when in the menu's and in some of the heist as well. Here is where you will signify what your heist is called, its description, time of day, and location. Some other things are also the heist banner image as well.
+
+[IMPORTANT]
 ====
-This page is scaffolded for the next documentation pass.
+For the current moment in time, if you experience any issues loading into the heist itself and get a `failed to fetch data` you may need to change the of your LVL_(modname) to match the name of a Vanilla Payday 3 Heist codename.
+
+Refer to ______ to see all vanilla codenames
 ====
 
-This section will document the validated PAYDAY 3 modkit workflow for create your first heist.
+== Launching your Heist
+
+See xref:crimeforge:packaging.adoc[Forge] for the full Forge workflow before continuing.
+
+Once in game, simply go to start a solo mode heist then change the filter till it says `Custom Heists`. 
+
+In here you should now see your heist listed, assuming you filled out the name in the *DA_Heist_(modname)*. Clicking on the heist will launch it.
+
+You just made your first heist! 
+
+Follow the World Settings link below to ensure your heist is setup for the heist game mode and more using the link below.
+
+* xref:world-settings.adoc[World Settings]

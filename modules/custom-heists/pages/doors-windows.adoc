@@ -1,0 +1,19 @@
+= Doors & Windows
+
+[cols="1,3"]
+|===
+|Asset |Location
+
+|Main window
+|`Gameplay/Props/Window/Master_BPs/BP_IW_BRE_CUT_OPE_NAV_ATT`
+
+|Doors
+|`Gameplay/Props/Door/` with the main wooden one being `SingleDoor/BP_Int_SingleDoor_wood_03`
+|===
+
+By default these are interaction enabled.
+
+[NOTE]
+====
+This page is a current work in progress.
+====

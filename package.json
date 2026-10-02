@@ -5,6 +5,7 @@
   "description": "Community documentation for PAYDAY 3 modding with the custom UE5 modkit, CrimeForge, and PDML.",
   "scripts": {
     "build": "antora antora-playbook.yml && node scripts/build-search.js",
+    "dev": "node scripts/dev.js",
     "build:fetch": "antora --fetch antora-playbook.yml",
     "clean": "node -e \"require('fs').rmSync('build',{recursive:true,force:true})\""
   },

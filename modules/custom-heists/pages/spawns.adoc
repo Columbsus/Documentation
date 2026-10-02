@@ -1,0 +1,36 @@
+= Spawns
+
+== Player Spawns
+
+* Player spawns require a `Player spawn group`.
+* In the player spawn group, attach up to 4 `player spawns` in the variable array.
+* The map will automatically choose a random player spawn group to spawn player spawns from. No need to code in randomized spawns or coding in executing of the player spawns itself. Make as many spawn groups as you may want
+
+== Guard, Civ, and Assault spawns
+
+All spawns use the `SBZPawnspawnPredefined` class for any scripted, or assault based spawn locations for civilians or cops.
+
+=== Pawn spawns
+
+* Pawn spawns offer the ability for players to hold key items which will be dropped on death or cuffing.
+* key items attached to spawn pawns is added to the `spawn loot class`
+* You can also set the spawn animation for a pawn that was spawned, see xref:ai-navigation.adoc[Life Actions] for more details.
+* For the pawn spawn to work, you need to ensure the spawn definition array has at least 1 item, with the location set (typically where the actor itself is.) Same as the weighted location.
+
+=== Spawn groups
+
+Spawn pawn group, just like player spawn, have the ability to add pawn spawns in an array as a variable. The game automatically chooses spawn groups to spawn cops during assaults, so the only way to say if cops use it or not is the bool `set enabled for assault`. It is recommended to use 4 pawn spawns per group.
+
+Spawn groups actor locations need to be inside the SBZRoomVolume for the game to recognize that as their spawn location.
+
+[TIP]
+====
+It is best practice that if you want them to spawn initially as a scripted spawn, do not use `spawn on begin play` but instead spawn them after the player has spawned in. Spawning in too early can cause clipping issues at times.
+====
+
+=== Assaults and civilians
+
+* In sbzworld settings, change the assault manager setting to a preset assault manager (or uncook one and modify it, remember to place it in your mod plugin content folder.) SBZ has preset small,medium,big,huge assault managers.
+* Civilian manager in world settings controls the automatic spawning of roaming civilians around your map.
+
+See xref:world-settings.adoc[World Settings] for the managers.

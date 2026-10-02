@@ -1,8 +1,22 @@
 = Objectives
 
-[NOTE]
-====
-This page is scaffolded for the next documentation pass.
-====
+Two things are needed to make objectives work. You need to both spawn in the class in game, and also utilize blueprints to execute objectives.
 
-This section will document the validated PAYDAY 3 modkit workflow for objectives.
+== Progression
+
+There are multiple checkboxes to utilize % progression, # progression, or no progression. Or set an objective as optional. As well as timers for PONR or countdowns.
+
+Use a blueprint node to add in progress to objectives if needed. The objective will not auto complete when set to 100% progress. Use set to make it a number, or add to add to the existing number.
+
+== Sub objectives
+
+You can have one objective attach multiple sub objectives if you want to have players do multiple things at once. This means less blueprint mess for you. Do this via `Sub objectives`. In the main objective, set the Sub Objectives to the ones you want, and in each sub objective set the parent as the Main objective. Each objective should be in the same `Objective group`
+
+== Blueprint nodes
+
+Useful blueprint nodes for objectives are `Activate`, `Complete`, `add progress`, and `set progress`
+
+[TIP]
+====
+Using the activate blueprint node, you can do a `Complete + add` by activating the `End Active in group` bool. This will complete the active objective then activate the new one you referenced, as long as these objectives are in the same `Objective Group`.
+====

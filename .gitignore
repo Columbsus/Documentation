@@ -3,3 +3,5 @@
 /.cache/
 .DS_Store
 Thumbs.db
+scripts/dev.js
+package.json

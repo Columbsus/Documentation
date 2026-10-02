@@ -1,0 +1,19 @@
+= Player Triggers
+
+== Player trigger volume
+
+`SBZPlayerTriggerVolume` is Used for when the player enters an area. You can see when players begin or end touching the volume itself by the Player Pawn Begin/End Overlapping respectively.
+
+`SBZPlayerTriggerVolume` `overlapping all player pawns` checks for all players instead of just one.
+
+== Escape trigger
+
+For the escape trigger, unlike in pd2, Escape volume is a different Volume. This volume is called `SBZPlayerEscapeVolume`. You can signify how long the escape duration is, and if the volume disables when complete.
+
+=== Ending the mission
+
+For Escape trigger use event `On Escape Timer Done` to start the Escape sequence. After this go to a `Request mission End` node, with the target set to a `Get Game State machine` Node. From Request data hit `Make `SBZEndMissionRequestData` and set `Mission Result` to Success
+
+=== Failing the mission
+
+If you want to fail a mission instead, you can use the same `Request Mission End` layout but instead set `Mission Result` to `Failed`
