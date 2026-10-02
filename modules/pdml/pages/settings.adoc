@@ -311,54 +311,21 @@ Settings can be changed at any time from the PDML settings menu. If your mod nee
 
 Get the PDML Mod Loader reference with `GetModLoaderManager`, then bind an event to:
 
-[source,text]
-----
-OnSettingsChanged
-----
+image::OnSettingsChanged-BindSetup.png[OnSettingsChanged Setup, width=600]
 
 The dispatcher does not provide a specific setting value. When it fires, call the appropriate settings getter again and apply the latest value to your mod.
 
 A typical Blueprint setup is:
 
-[source,text]
-----
-GetModLoaderManager
-  -> Bind Event to OnSettingsChanged
-
-OnSettingsChangedEvent
-  -> Get<Type>SettingValue
-       Config Name = <Your Config Name>
-       Unique Name = <Your Setting Unique ID>
-  -> Apply the returned value
-----
+image::SettingsChanged-TypicalBPSetup.png[Typical Settings Changed BP Setup, width=600]
 
 For example, a HUD widget using a color setting called `CrosshairColor` can refresh itself like this:
 
-[source,text]
-----
-GetModLoaderManager
-  -> Bind Event to OnSettingsChanged
-
-OnSettingsChangedEvent
-  -> GetColorSettingValue
-       Config Name = <Your Config Name>
-       Unique Name = CrosshairColor
-  -> Set Brush Color
-----
+image::SettingsChanged-ExampleWithColor.png[Example Settings Changed with color BP Setup, width=600]
 
 If a widget uses several settings, it is usually simplest to create a function such as `RefreshSettings` that reads all settings used by that widget. Call it once when the widget is initialized and again from `OnSettingsChanged`.
 
-[source,text]
-----
-Construct / Initialize
-  -> RefreshSettings
-
-GetModLoaderManager
-  -> Bind Event to OnSettingsChanged
-
-OnSettingsChangedEvent
-  -> RefreshSettings
-----
+image::MultipleSettingsThroughFunction-Setup.png[Multiple setting implementation through function Setup, width=900]
 
 This keeps the widget synchronized with the saved PDML values without duplicating the setting application logic.
 
@@ -371,40 +338,17 @@ This allows every mod to use the same input path regardless of how many keybind 
 
 Get the PDML Mod Loader reference with `GetModLoaderManager`, then bind to:
 
-[source,text]
-----
-OnKeybindDown
-----
+image::OnKeybindDown-BindSetup.png[Keybind binding Setup, width=600]
 
 The dispatcher identifies the setting and the Input Chord that caused the event. In your callback, compare the returned setting name with the Unique ID of the keybind you registered.
 
 For example:
 
-[source,text]
-----
-GetModLoaderManager
-  -> Bind Event to OnKeybindDown
-
-OnKeybindDown
-  Setting Name
-  Chord
-      |
-      -> Setting Name == IncreaseHUDScale
-             |
-             -> Branch
-                    True -> Run your held/down input logic
-----
+image::KeybindDown-ExampleWithHUDScale.png[Example Keybind Down with HUD Scale Setup, width=600]
 
 If your mod has several keybinds, route the returned setting name to the appropriate logic:
 
-[source,text]
-----
-OnKeybindDown
-  -> Setting Name
-       |- MoveWidgetLeft   -> Move left
-       |- MoveWidgetRight  -> Move right
-       `- IncreaseScale    -> Increase scale
-----
+image::SeveralKeybinds-NodeSetup.png[Example Multiple Keybind Down Setup, width=600]
 
 `OnKeybindDown` represents a binding being down, so code connected directly to it may run repeatedly while the player holds the chord. Do not treat it as a guaranteed one-shot press event unless your mod adds its own press/hold state handling.
 
