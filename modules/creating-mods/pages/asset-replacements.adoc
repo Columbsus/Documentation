@@ -143,3 +143,8 @@ The full workflow is:
 . Add the modified asset to the CrimeForge mod PAL's *Explicit Assets* array.
 . Forge the mod through CrimeForge.
 . Test the replacement in PAYDAY 3.
+
+[NOTE]
+====
+This workflow can be used for replacing other asset types like `Textures` and `Materials`.
+====
