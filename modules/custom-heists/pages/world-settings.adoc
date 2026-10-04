@@ -2,7 +2,7 @@
 
 World Settings controls the level state as a whole. Starbreeze has a custom world settings class called `SBZWorldSettings`. 
 
-In the modkit this is already listed as the default World settings in the project settings but incase you can see it when viewing the world settings tab from a level.
+In the modkit this is already listed as the default World settings in the project settings but incase you can't see it when viewing the world settings tab from a level.
 
 === Finding the PD3 World Settings
 
@@ -10,11 +10,11 @@ In the modkit this is already listed as the default World settings in the projec
 . Search for `World Settings`
 . Change the default class to `SBZWorldSettings`
 
-If you can't see SBZWorld settings, ensure you are using the modkit and you've exported the jmap.
+If you can't see `SBZWorldSettings`, ensure you are using the modkit and you've exported the jmap.
 
 [IMPORTANT]
 ====
-Pay attention to the important tags such as this for what options are required for you heist to function.
+Pay attention to the important tags such as this for what options are required for your heist to function.
 ====
 
 == Surface types
@@ -27,7 +27,7 @@ The following variables all control the music in the heist, although typically t
 
 
 - `Music Event` controls which song will play during the heist. You can use a base game song or your own.
-- `Stop Music` Play this event when `Get Music Manager -> Stop Music` function is played
+- `Stop Music` Plays this event when `Get Music Manager -> Stop Music` function is played.
 - `Start Music on Begin Play` Default is on. Otherwise use `Get Music Manager -> Play Music` to start a song.
 
 == Negotiation
@@ -39,12 +39,10 @@ The following variables control what happens when the alarm goes off.
 
 == Key Item Data map
 
-Important Map to correlate gameplay item pickups to HUD items that show up on each player. If you are placing pickup items but they do not appear on the player, this is the setting you need to fix.
+This is an important map that correlates gameplay item pickups to HUD items that show up on each player. If you are picking up items but they do not appear on the HUD, this is the setting you need to fix.
 
-- `Key` Your Gameplay Tag correlated to the asset you are picking up. Most will be in the `Item` category
+- `Key` Your Gameplay Tag correlated to the asset you are picking up. Most will be in the `Item` category and clearly indicate the item in its name.
 - `Value` The UI Data Asset that has the UI texture. 
-
-Both Tags and the `SBZKeyItemData` can be made into custom Key items.
 
 == Managers
 
@@ -53,13 +51,11 @@ An important section that controls many factors with the level itself. Without s
 === Assault manager
 Controls everything assault related. In 3.9 Starbreeze changed to using small, medium, big, & huge variants to control the intensity of assault spawns in the heist.
 
-While it is recommended to use one of the default settings, if you use you may copy an uncooked version of one of these assets and change some of the values.
+While it is recommended to use one of the default settings, if you want you may copy an uncooked version of one of these assets to your mod folder to edit the values.
 
 - `* Phase Duration Seconds` Controls how long each phase lasts (Anticipation, Build, Regroup)
 - `Difficulty Settings Array` Changes various difficulty settings such as squads/cops that can spawn per assault wave, difficulty increase per assault wave, time reduction on certain phases across assault waves.
 - `Types to ignore During First Build` Enemy types to ignore before first assault begins
-
-See xref:inspect-vanilla-heists.adoc[Inspecting Vanilla Heists] for a table of code name to heists.
 
 [NOTE]
 ====
@@ -68,12 +64,12 @@ While the names are mostly self explanatory, the remaining settings have not bee
 
 [IMPORTANT]
 ====
-This manager is required for the game to run stable.
+This manager is required for the game to be stable.
 ====
 
 === Negotiation manager
 
-Affects settings related to the negotiation phase and civilian killed penalty per difficulty. Similar to Assault Manager where it is recommended to use a Vanilla data asset, but if you want copy an uncooked version to your local mod folder before editing.
+Affects settings related to the negotiation phase and civilian killed penalty per difficulty. Similar to Assault Manager where it is recommended to use a Vanilla data asset, but if you want you can copy an uncooked version to your local mod folder before editing.
 
 [NOTE]
 ====
@@ -82,11 +78,11 @@ While the names are mostly self explanatory, these settings have not been verifi
 
 [IMPORTANT]
 ====
-This manager is required for the game to run stable.
+This manager is required for the game to be stable.
 ====
 
 === Civilian manager
-Controls the automatic infinite spawning of roaming civilians that walk around on a heist such as `Syntax Error`, `No Rest for the Wicked`, and more. Not used to designate regular civial spawns.
+Controls the automatic infinite spawning of roaming civilians that walk around on a heist such as `Syntax Error`, `No Rest for the Wicked`, and more. Not used to designate regular civilian spawns.
 
 [NOTE]
 ====
@@ -94,7 +90,7 @@ While the names are mostly self explanatory, these settings have not been verifi
 ====
 
 === Traffic manager
-This manager controls the flow of automatic infinite spawning vehicles, such as the cards on `No Rest for the Wicked`.
+This manager controls the flow of automatic infinite spawning vehicles, such as the cars on `No Rest for the Wicked`.
 
 They are also used to control the spawning of SWAT Vans and First Responder vehicles.
 

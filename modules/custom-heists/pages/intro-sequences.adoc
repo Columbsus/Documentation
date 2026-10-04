@@ -1,6 +1,6 @@
 = Intro Sequences
 
-Custom heists can also have custom intro sequences. It is recommended that you learn a little about UE5's sequencer and the basics of making cinematics before starting.
+Custom heists can also have custom intro sequences.
 
 If you still need help, you can follow this video to get it setup https://www.youtube.com/watch?v=F_MLP3XvCQI
 

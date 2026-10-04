@@ -1,7 +1,0 @@
-= Levels
-
-
-[NOTE]
-====
-This page is a current work in progress.
-====

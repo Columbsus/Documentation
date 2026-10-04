@@ -4,6 +4,16 @@ CrimeForge includes a custom-heist template and PAYDAY-specific tooling for auth
 
 This area is more advanced than a basic mod. Complete xref:getting-started:index.adoc[Getting Started] first.
 
+This section makes assumption you know the basics of Unreal Engine such as:
+
+- Levels & sublevels
+- Level Blueprints
+- Volumes
+- Replication
+- Cinematics 
+
+& more
+
 [IMPORTANT]
 ====
 Custom-heist support is not uniform across every PAYDAY 3 subsystem.
@@ -15,7 +25,6 @@ Individual pages identify supported, experimental, in-progress, and known-limita
 
 * xref:first-heist.adoc[Create Your First Heist]
 * xref:world-settings.adoc[World Settings]
-* xref:levels.adoc[Levels]
 * xref:spawns.adoc[Spawns]
 * xref:interactions.adoc[Interactions]
 * xref:objectives.adoc[Objectives]

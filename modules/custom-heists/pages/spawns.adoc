@@ -2,35 +2,87 @@
 
 == Player Spawns
 
-* Player spawns require a `Player spawn group`.
-* In the player spawn group, attach up to 4 `player spawns` in the variable array.
-* The map will automatically choose a random player spawn group to spawn player spawns from. No need to code in randomized spawns or coding in executing of the player spawns itself. Make as many spawn groups as you may want
+Player spawns use the `SBZPlayerSpawnGroup` class. In this class, you can attach `Player Spawns` to an array.
 
-== Guard, Civ, and Assault spawns
+The game will randomly choose one `SBZPlayerSpawnGroup` in your heist to have the Players spawn through. It is recommended for each group to have 4 `PlayerSpawns` attached to it, one for each player.
 
-All spawns use the `SBZPawnspawnPredefined` class for any scripted, or assault based spawn locations for civilians or cops.
+You can use the function `On Player Group Chosen` on the group to execute certain nodes based on the spawn location chosen.
 
-=== Pawn spawns
+== Scripted Spawns
 
-* Pawn spawns offer the ability for players to hold key items which will be dropped on death or cuffing.
-* key items attached to spawn pawns is added to the `spawn loot class`
-* You can also set the spawn animation for a pawn that was spawned, see xref:ai-navigation.adoc[Life Actions] for more details.
-* For the pawn spawn to work, you need to ensure the spawn definition array has at least 1 item, with the location set (typically where the actor itself is.) Same as the weighted location.
+All spawns, such as civilians & cops, use the `SBZPawnspawnPredefined` class.
 
-=== Spawn groups
+=== Spawning
+You can use `Spawn on Begin Play` although it is recommended to have the level blueprint spawn the pawn using `Spawn predefined` on the `Begin Black Screen` event. This is due to if you spawn the AI too early, there is a chance it can cause instability or not spawn altogether. 
 
-Spawn pawn group, just like player spawn, have the ability to add pawn spawns in an array as a variable. The game automatically chooses spawn groups to spawn cops during assaults, so the only way to say if cops use it or not is the bool `set enabled for assault`. It is recommended to use 4 pawn spawns per group.
+Use Override Spawnining method if you are experiencing issues with a pawn spawning. Although they may be inside the nav mesh, they typically need a bit of a radius of mesh before they spawn.
 
-Spawn groups actor locations need to be inside the SBZRoomVolume for the game to recognize that as their spawn location.
-
-[TIP]
+[IMPORTANT]
 ====
-It is best practice that if you want them to spawn initially as a scripted spawn, do not use `spawn on begin play` but instead spawn them after the player has spawned in. Spawning in too early can cause clipping issues at times.
+For the pawn spawn to work, you need to ensure the spawn definition array and weighted location have at least 1 item with the location set, typically where the actor itself is. 
+
+This can be accomplished by:
+
+. Right clicking the transform location at the top of the actor details panel and hitting copy
+. Head to the bottom of the `SBZPawnspawnPredefined` section, and open the advanced section
+. Right click paste into `Weighted Location`
+. Hit the + on `Spawn definition array`, and open the index > transform
+. Right click paste into said `Transform` 
 ====
 
-=== Assaults and civilians
+If you want a different location, set it to that locations transform.
 
-* In sbzworld settings, change the assault manager setting to a preset assault manager (or uncook one and modify it, remember to place it in your mod plugin content folder.) SBZ has preset small,medium,big,huge assault managers.
-* Civilian manager in world settings controls the automatic spawning of roaming civilians around your map.
+=== Settings
 
-See xref:world-settings.adoc[World Settings] for the managers.
+Set the `Spawn Loot Class` to a blueprint of your choice to have the pawn have an item on their back such as a keycard or phone. In order for key items to show up on the hud go, add the key item to the world settings key item array, see xref:world-settings.adoc[World Settings]
+
+Use the `Predefined request Action Actor Ref` to have the pawn use a blueprint based Life action. Used in patrols or other movement based life actions. See xref:life-actions.adoc[Life Actions] for more details.
+
+Inside the Predefined Pawn Request, the `Data` section is where you specify what type of scripted spawn you would like, be it Civilian, Guard, or other variety.
+
+=== Other ways to spawn in AI
+
+In the level blueprint, you can use "Spawn Actor of class" on any of the `CH_*` assets in the content folder to spawn in other types of AI that arent listed in the `data` section of the `SBZPawnspawnPredefined`.
+
+== Spawn groups
+
+Spawn pawn groups, class `PD3PawnSpawnGroup`, just like player spawn group are used to spawn pawns randomly.
+
+These groups can be used in a variety of ways, either to spawn a bunch of determined spawns at once, or used for assaults.
+
+=== Assaults
+
+The game automatically chooses spawn groups to spawn cops during assaults, so the only way to say if cops may spawn at that location during an assault is the bool `set enabled for assault`. This can be enabled or disabled at any time.
+
+It is recommended to use 4 pawn spawns per group.
+
+Spawn groups actor location need to be inside the SBZRoomVolume for the game to recognize that as their spawn location.
+
+[WARNING]
+====
+As of update 3.9, assault spawns have stopped being functional. A fix is being determined so please be patience. Scripted spawns work just fine.
+====
+
+=== Assault and civilian managers
+
+See xref:world-settings.adoc[World Settings] to manage automatic spawning, ie what can spawn, how frequently, etc. 
+
+== Spawn Closets
+
+Spawn closets refer to the spawning behavior where the game will spawn a squad behind closed doors, then open the door up for the squad to leave.
+
+This can be seen used in `No Rest For The Wicked` in the elevators for example.
+
+They have these level actor variables
+- A closet volume, which is the `SBZRoomVolume`
+- The spawn group
+- The reactor, which is the actor you want to be interacted with when a squad spawns from the group
+
+These allows the spawn closet to interact with the reactor actor, the enemies to spawn if no player is inside the volume to spawn the group, and the volume to know if any pawn is inside the Room volume. 
+
+Reactors, (like the `BP_ElevatorDoor`), need the `ReactToCloset` blueprint interface to interact with the closet.
+
+[CAUTION]
+====
+Information of how to use spawn closets so has been acquired but not tested.
+====

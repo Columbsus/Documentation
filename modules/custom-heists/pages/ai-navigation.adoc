@@ -16,24 +16,42 @@ There are 3 parts to Navigation in Payday.
 |Connects the rooms together.
 |===
 
-Rooms are important because AI try their best to get into the same room the player is in.
+== Navigation generation
 
-[NOTE]
-====
-Rooms aren't exclusive to inside buildings.
-====
+Use the `NavMeshBoundsVolume` to generate navigation for AI. You can be very generous with this volume, typically done by encompassing the entire playable space plus extra in one volume.
 
-=== Navigation generators
-
-Navigation Generators, you can be very generous with. Make the volume engulf the entire area you want the enemies to move in. You can use the Brush tools to also change the shape of the volume or use multiple volumes to do things such as when you need nav mesh to go between different elevations.
-
-=== Rooms
-
-* `SBZRooms` have a few parts to it. They both need to fill the entire area you want AI to navigate in, and between rooms you need to use a Connector Volume. Inside a connector volume you need to manually signify what 2 rooms this connector is connecting.
-* If you have a big area, it's recommended to break up the room into smaller rooms. Remember a room needs to be about the size you want cops to engage the player at as cops navigate to the room the player is located in.
-* Each room has a Room type, which signifies what security level you are at, if you are in a public, private, or secure area.
+You can use the Brush tools to also change the shape of the volume or use multiple volumes to do things such as when you need nav mesh to go between different locations.
 
 [TIP]
 ====
 Press `P` in engine to show the Navigation. Navigation will show up as a green glow above the surfaces where navigation is.
 ====
+
+== Nav Modifier
+
+Use can use `NavModifier` components or volumes to change or add nav for certain areas.
+
+Nav modifying is used when you want to be able to change an area between being able to be modified or not midheist, typically used on moveable objects such as door or cars.
+
+Use the `Area Class` to specify what you want that area to be replaced with, or `Area Class to Replace` for a filter of what area class should be replaced.
+
+Use the `NavMesh_Default` to add, or `NavMesh_Null` to subtract nav mesh.
+
+== Rooms
+
+`SBZRoomVolume` is the main way AI understand how to traverse through the heists.
+
+Each `SBZRoomVolume` should encompass an entire room up to the edges of the walls and can be intersected with meshes or the edge of other room volumes.
+
+For big areas, indoors or outdoors, one room volume can be split up into multiple volumes. One room should be about the distance you want the cops to engage the player at. 
+
+As an example, `Road Rage` has the bridge split up into 8 room volumes that take the entire playable space. Each room volume is one half of the road, and a scale of about `40` for the length.
+
+For stealth, rooms are also used to determine the security level, `Public`, `Private`, or `Secure`.
+
+=== SBZRoomConnectorVolumes
+
+`SBZRoomConnectorVolume` is another volume you use to signify where two room volumes connect. These are used for AI to be able to understand where they need to go to get to the other room.
+
+Simply put the volume at the intersection point of 2 room volumes then add each volume into either the `Room A` & `Room B` variable. Use the `Gate` variable to specify a door or fence that would be in the way that cops would open.
+

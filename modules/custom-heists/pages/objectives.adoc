@@ -1,22 +1,76 @@
 = Objectives
 
-Two things are needed to make objectives work. You need to both spawn in the class in game, and also utilize blueprints to execute objectives.
+Two things are needed to make objectives work.
+
+You need to both spawn in the class in your level, and then utilize level blueprints to execute the objective.
+
+There is a lot of settings you can utilize to do and manage a variety of settings, so here is brief description for the important lines.
+
+== Settings
+
+`Display Order`: Sets the hierarchy for where this should appear on the list, higher number is higher on the list.
+
+`Optional`: enables the optional tag next to the objective
+
+`Objective Type`:
+
+- `One Shot`: Standard objective
+- `Progress`: Progress bar type objectives
+- `Timed`: Timed objectives
+- `money`: Fear & Greed money counter. Check below for more details.
+
+`UI Use Progress Bar`: Enables the progress bar
+
+`Reverse progress bar`: Starts at max, instead of 0
+
+`UI Reverse Progress Bar`: Counts down instead of up
+
+`Progress Text option`: Sets the type of progress such as %, fraction, time, or speed
+
+`Objective Group`: Used to organize as well as some functions work with other objectives in the same group, such as being able to complete the previous objective when activating a new objective in the same group.
+
+`State`: The current state. Don't set outside of level blueprints.
+
+== Sub Objectives
+
+Sub objectives allow you to have multiple objectives displayed at once such as:
+
+`Objective`
+
+- `Subjobjective`
+- `Subjobjective`
+- `Subjobjective`
+
+
+Each sub objective is its own `Objective` actor in the level itself. Simply add the Subjobjectives to the array of the main objective. 
+
+In each sub objective set the parent as the Main objective. Each objective should also be in the same `Objective group`.
+
+Now when you activate the main objective, it will also activate the sub objective.
 
 == Progression
 
-There are multiple checkboxes to utilize % progression, # progression, or no progression. Or set an objective as optional. As well as timers for PONR or countdowns.
+`Progress`: The current progress of the objective. Set using the blueprint nodes shown below.
 
-Use a blueprint node to add in progress to objectives if needed. The objective will not auto complete when set to 100% progress. Use set to make it a number, or add to add to the existing number.
+`Max Progress`: This value sets the max amount of progress you need for the progress. If you have one max value for all difficulties, set it here. If you need max per difficulty use the array to directly beneath. Useful for bag progress bars such as `Secure the Bags: 2/10`
 
-== Sub objectives
+`Timed Objective Actor`: Add a `SBZModifiable Timer` in your level, and add it to your variable here. 
 
-You can have one objective attach multiple sub objectives if you want to have players do multiple things at once. This means less blueprint mess for you. Do this via `Sub objectives`. In the main objective, set the Sub Objectives to the ones you want, and in each sub objective set the parent as the Main objective. Each objective should be in the same `Objective group`
+The modifiable timer is used in situations where actions in your game can increase or decrease the speed of the timer. (eg, the escape sequence in Dirty Ice where you have to keep the street clear of cops to keep Bile from flying away.)
+
+This timer can have its speed modified on the fly, paused, and resumed.
+
+`Ticking Loot Manager`: Add a `SBZTickingLootManager` in your level to manage the `Money` progess text option. This Ticking loot can be paused, reversed, and started.
 
 == Blueprint nodes
 
 Useful blueprint nodes for objectives are `Activate`, `Complete`, `add progress`, and `set progress`
 
+Use `Set Progress` to set the progress bar to a value, useful for bag securing.
+
+Use `Add Progress` to add your new value ontop of your current progress.
+
 [TIP]
 ====
-Using the activate blueprint node, you can do a `Complete + add` by activating the `End Active in group` bool. This will complete the active objective then activate the new one you referenced, as long as these objectives are in the same `Objective Group`.
+Using the activate blueprint node, activating the `End Active in group` bool will complete the active objective when activating a new objective. This requires both objectives to be in the same `Objective Group`.
 ====

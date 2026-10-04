@@ -1,7 +1,7 @@
 .Custom Heists
+* xref:index.adoc[Overview]
 * xref:first-heist.adoc[Create Your First Heist]
 * xref:world-settings.adoc[World Settings]
-* xref:levels.adoc[Levels]
 * xref:spawns.adoc[Spawns]
 * xref:interactions.adoc[Interactions]
 * xref:objectives.adoc[Objectives]
