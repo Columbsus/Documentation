@@ -1,3 +1,5 @@
+:imagesdir: .
+
 # Materials & Textures
 
 Materials are assets you create to control how a mesh looks and reacts to light.
@@ -49,7 +51,7 @@ Lastly, for your normal map, you can paste another texture node and call this ne
 
 Your final result of the material should look like this if you have followed all steps properly. 
 
-image::https://i.imgur.com/yhBiMUe.png[MMOutput]
+image::Ex1.png[xref=Ex1.png]
 
 
 # Node Shortcuts
@@ -84,10 +86,7 @@ If you want to rename it, name it "MI_YourMatInstName"
 
 In the Material Instance screen, you can drag and drop your textures over the appropriate parameter, and save. 
 
-
-
-image::https://i.imgur.com/tGmH8cs.png[MMOutput]
-
+image::Ex2.png[xref=Ex2.png]
 
 # Importing Textures
 
@@ -103,7 +102,7 @@ For normal maps, set compression to "NormalMap (BC5)" and unticking the "sRGB" b
 ====
 "NormalMap (BC5)" can cause channel artifacts, so if you instead want to use BC7 for better quality, set the texture's sampler type to Linear Color, plug the RGB node into a "ConstantBiasScale" make the Bias value -0.5, and your Scale value 2.0, then plug into a normalize node. 
 
-image::https://i.imgur.com/h1t7K8x.png[MMOutput]
+image::Ex3.png[xref=Ex3.png]
 
 If your Normal Map is also formatted in OpenGL (Y+) you can use the "Flip Green Channel" setting to convert it to a DirectX Normal Map. 
 ====
@@ -112,5 +111,4 @@ UI textures should be imported with "UserInterface2D (RGBA8)" And also in the **
 
 If you're porting a model or adding a collection of new textures you can select each texture, right click and hover over "Asset Actions" and in the second menu that appears, select "Edit Selection in Property Matrix" this can allow you to mass edit textures instead of needing to do it all one by one, which can be a huge time saver. 
 
-
-image::https://i.imgur.com/T7iOL8n.png[MMOutput]
+image::Ex4.png[xref=Ex4.png]
