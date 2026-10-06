@@ -2,7 +2,82 @@
 
 [NOTE]
 ====
-This page is scaffolded for the next documentation pass.
+This page is still Work In Progress, this is just a really rought layout (images and links are missing)
 ====
 
-This section will document the validated PAYDAY 3 modkit workflow for meshes.
+This section of documentation aims to give the user of the modkit some basic and necessary information for sucessful replacement of both the `Static Mesh` and `Skeletal Mesh`.
+
+[NOTE]
+====
+This pard of documentation will expect you to have basic knowledge on how to use Blender and Fmodel 
+====
+
+== Before you start
+
+If you have not yet, read through both the xref:getting-started:fmodel-setup.adoc[Fmodel setup] page and the xref:modkit:cooked-assets.adoc[Cooked Assets] page.
+After you read through those pages you can continue reading this page or if you are already familiar with PAYDAY 3 modding from the past and think you know what youre doing then feel free to skip reading
+those pages but it is highly encouraged to read through them anyway to make sure your knowledhe is up to date.
+
+== Find the model you want to replace
+
+Locate the original cooked model in the Content Browser under `/Game/...`.
+
+Open the model in read-only mode first and inspect any defaults, references, materials, parent classes, or other information that may be useful when recreating the modified version.
+
+== Uncook the model and its dependencies
+
+After you find the model that you want to replace check its dependnecies.
+For Static meshes there arent any but for Skeletal meshes there is usually a "skeleton" and a "physical asset"
+
+[NOTE]
+====
+While Some skeletal meshes do have Physical asset some on the other hand dont have it, and while replacing the model you should use the new "Physical asset" that gets generated when importing the model.  
+====
+
+== Import the model into Blender
+
+After you get the model exported from Fmodel you will open it in blender, for you to be able to open it in blender you will need to install this extention (insert link to the extention).
+
+== General Rules in Blender
+
+When it comes to general rules in blender most of them apply to the "Skeletal Mesh" but that doesnt mean that you can go haywire with "static meshes"
+
+For Static meshes youll want to just keep your models size in check since if you wont, yxou might end up causing unwanted clipping the the game when youll be testing your mod.
+
+For skeletal meshes you will want to also keep the size in check but on top of that you will need to also setup naming of your model and the skeleton in blender correctly for it to transfer well when imporitng into the editor.
+
+== Export Settings
+
+For exporting you will want to export your model as ".fbx", theres not much difference between export settings for static meshes and for skeletal meshes but both settings setups are listed below.
+
+Static mesh: (inset image)
+
+Skeletal mesh: (insert image)
+
+== Importing the model into UE Editor
+
+...
+
+== Your mod/PAL Setup
+
+For your PAL setup you will want to include only the Static or Skeletal mesh, and keep the physical asset in your mods folder.
+
+[WARNING]
+====
+Including the "Skeleton" in your PAL will most likely result in your mesh not loading or a crash
+====
+
+== General workflow
+
+The general workflow for mesh replacement is:
+
+. Find the asset that youre looking for.
+. If working with Skeletal meshes uncook both the skeleton and the mesh, otherwise for static meshes only uncook the mesh
+. Get the model from Fmodel and import it into Blender
+. Do your modifications to your model (adjust, edit, completely swap).
+. Make sure you configured the structure in blender rigth.
+. Export the model with proper settings depending on the mesh type.
+. Import and replace the uncooked asset with your model under the same name, if imporing skeletal mesh make it refer to the proper skeleton.
+. Setup your PAL properly.
+. Package and test out your mod.
+ 
