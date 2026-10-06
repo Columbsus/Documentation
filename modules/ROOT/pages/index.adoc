@@ -1,11 +1,20 @@
 = PAYDAY 3 Modding Documentation
-:description: Community documentation for creating PAYDAY 3 mods using the custom Unreal Engine modkit, CrimeForge, and PDML.
+:description: Community documentation for installing and creating PAYDAY 3 mods.
 
 Welcome to the PAYDAY 3 modding documentation.
 
-This documentation covers the community toolchain for creating mods with the custom PAYDAY 3 Unreal Engine {pd3-engine-version} development environment, CrimeForge, and PDML.
+Find and install mods for your game, or learn to create your own with the custom PAYDAY 3 Unreal Engine {pd3-engine-version} development environment, CrimeForge, and PDML.
 
-== New to PAYDAY 3 modding?
+== Playing with Mods
+
+Start with xref:playing-with-mods:index.adoc[Playing with Mods] to find downloads on ModWorkshop and choose an installation method.
+
+PDML is the recommended mod format. Install PDML and keep each downloaded mod as a complete folder under `PAYDAY3/Mods/`.
+
+* xref:playing-with-mods:manual-installation.adoc[Manual Installation] - install complete PDML mod folders yourself.
+* xref:playing-with-mods:mod-organizer-2.adoc[Installing with Mod Organizer 2] - set up ModWorkshop's PAYDAY 3 plugin and preserve the PDML folder layout.
+
+== Developing Mods
 
 Start with xref:getting-started:index.adoc[Getting Started].
 

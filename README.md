@@ -1,12 +1,16 @@
 # PAYDAY 3 Modding Documentation
 
-Community documentation for PAYDAY 3 modding with the custom Unreal Engine editor, CrimeForge, PDML, and the supporting modkit toolchain.
+Community documentation for playing PAYDAY 3 with mods and creating mods with the custom Unreal Engine editor, CrimeForge, PDML, and the supporting modkit toolchain.
 
 The documentation is written in AsciiDoc and built with [Antora](https://antora.org/).
 
 ## What this repository covers
 
-The site documents the current PAYDAY 3 modding workflow, including:
+The site is organised into **Playing with Mods** and **Developing Mods**.
+
+Playing with Mods covers finding downloads on ModWorkshop, installing complete PDML mod folders into `PAYDAY3/Mods/`, and using Mod Organizer 2 with ModWorkshop's PAYDAY 3 plugin. PDML is the recommended mod format; loose PAK installation is documented as an older workflow being phased out.
+
+Developing Mods documents the current PAYDAY 3 modding workflow, including:
 
 - Installing the custom PAYDAY 3 Unreal Engine editor
 - Setting up FModel and PAYDAY 3 mappings
@@ -96,6 +100,7 @@ For example:
 ```text
 modules/
 ├── ROOT/
+├── playing-with-mods/
 ├── getting-started/
 ├── modkit/
 ├── crimeforge/
@@ -111,7 +116,6 @@ Each module normally contains:
 
 ```text
 <module>/
-├── nav.adoc
 ├── pages/
 ├── images/
 └── partials/
@@ -119,7 +123,9 @@ Each module normally contains:
 
 Edit `.adoc` files under `pages/` to change documentation content.
 
-Edit `nav.adoc` to add, remove, or reorder pages in the sidebar.
+The sidebar is assembled in `modules/ROOT/nav.adoc`. Edit it to change the two main sections or the Playing with Mods links.
+
+Each development module keeps its page links in `partials/nav.adoc`, included under Developing Mods. Edit those partials to add, remove, or reorder development pages.
 
 Store screenshots and diagrams in the `images/` directory for the module that owns the page.
 
@@ -152,6 +158,7 @@ scripts/build-search.js
 The main documentation areas are:
 
 - `ROOT` for the landing page, terminology, and contribution information
+- `playing-with-mods` for finding downloads, manual installation, and Mod Organizer 2 setup
 - `getting-started` for the linear beginner setup and first-mod workflow
 - `modkit` for the custom editor, cooked assets, reflection data, and modkit internals
 - `crimeforge` for mod creation, templates, Forge, validation, and editor tooling
@@ -177,6 +184,7 @@ Keep documentation practical and reproducible.
 9. Move deeper implementation details into the relevant Modkit, Advanced, or Reference page and link to them.
 10. Use the term **Forge** for CrimeForge's cook/package action.
 11. Use `PAYDAY3/Mods/` as the normal install location for CrimeForge/PDML mods unless a specific workflow explicitly states otherwise.
+12. Lead player installation guides with PDML and installing the complete mod folder. Keep loose PAK installation as secondary guidance for older downloads.
 
 ## Status labels
 

@@ -22,7 +22,7 @@ You do not need to understand PAYDAY 3 reverse engineering or Unreal Engine inte
 . xref:install-modkit.adoc[Install the modkit and generate its local JMAP.]
 . xref:project-setup.adoc[Connect the project to your PAYDAY 3 installation.]
 . xref:editor-tour.adoc[Learn the important editor areas.]
-. xref:first-mod.adoc[Create your first CrimeForge mod.]
+. xref:first-mod.adoc[Create your first mod and set up its CrimeForge plugin.]
 . xref:package-mod.adoc[Forge it.]
 . xref:install-test.adoc[Load and test it in PAYDAY 3.]
 

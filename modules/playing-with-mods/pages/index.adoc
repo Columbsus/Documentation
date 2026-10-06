@@ -1,0 +1,37 @@
+= Playing with Mods
+:description: Find PAYDAY 3 mods on ModWorkshop and install complete PDML mod folders manually or with Mod Organizer 2.
+
+Welcome to playing PAYDAY 3 with mods. This section explains where to download mods and how to install them on PC.
+
+== Start with PDML mods
+
+PDML is the recommended mod format for PAYDAY 3. The community is moving towards PDML mods and phasing out loose PAK installations.
+
+Install PDML, the runtime mod loader, using the instructions supplied with its download. Then install each mod as a *complete folder* under `PAYDAY3/Mods/`, preserving all of its files and subfolders. PDML discovers and loads these mod folders when the game starts.
+
+For example, a mod named `ExampleMod` belongs in `PAYDAY3/Mods/ExampleMod/`, with its `ExampleMod.uplugin` file and packaged content kept together.
+
+== Find mods on ModWorkshop
+
+Browse https://modworkshop.net/g/payday-3[PAYDAY 3 on ModWorkshop]. Use the search, categories, and tags to find mods, then open a mod's page to read its description and download its files.
+
+Before downloading, check:
+
+* Compatibility with your current PAYDAY 3 version. Look for releases updated for UE5 when playing the UE5 version of the game.
+* Whether a PDML version is available, its dependencies, and any installation instructions from the author. Prefer the PDML release when choosing between formats.
+* Whether the download offers several variants. Pick the files for the version you want to use.
+
+Install any required dependencies as well as the mod itself. The mod's own instructions take priority when it needs a different setup from the general guides here.
+
+== Choose how to install
+
+* xref:manual-installation.adoc[Manual Installation] explains how to extract a PDML mod and copy its complete folder into `PAYDAY3/Mods/`.
+* xref:mod-organizer-2.adoc[Installing with Mod Organizer 2] explains how to set up MO2 with ModWorkshop's PAYDAY 3 plugin and keep the PDML folder layout when installing supported packages.
+
+You can use either method. Mod Organizer 2 is useful if you want to keep track of several mods and switch them on or off from one place.
+
+Older loose PAK mods are covered at the end of the manual installation guide for downloads that have not moved to PDML yet.
+
+== Making your own mods
+
+To create mods, open *Developing Mods* in the sidebar and start with xref:getting-started:index.adoc[Getting Started].

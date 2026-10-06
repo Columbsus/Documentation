@@ -1,0 +1,82 @@
+= Manual Installation
+:description: Download PAYDAY 3 mods from ModWorkshop and install complete PDML mod folders into PAYDAY3/Mods/.
+
+The recommended workflow is to install PDML mods as complete folders under `PAYDAY3/Mods/`. Close PAYDAY 3 before adding, updating, or removing mod files.
+
+== Download a mod
+
+. Open https://modworkshop.net/g/payday-3[PAYDAY 3 on ModWorkshop] and choose a mod.
+. Read its description, dependencies, and installation instructions. Check that the release supports your game version, and choose the PDML version when one is available.
+. Download the mod and any required dependencies. Extract downloaded archives so you can copy the complete mod folders into the game.
+
+== Find the game folder
+
+Open PAYDAY 3's installation folder using your game launcher. In Steam, right-click *PAYDAY 3* in your library and select *Manage > Browse local files*.
+
+The paths below are relative to the folder containing the game's `PAYDAY3` directory. For example, a Steam installation can look like this:
+
+[source,text]
+----
+steamapps/common/PAYDAY3/
+`-- PAYDAY3/
+    |-- Content/
+    `-- Mods/
+----
+
+== Install PDML
+
+PDML is the runtime loader required by PDML mods. Install it using the instructions supplied with its download before adding your mods.
+
+== Install a PDML mod
+
+Put the *whole mod folder* in:
+
+[source,text]
+----
+PAYDAY3/Mods/
+----
+
+. Open the game's `PAYDAY3` directory and create a folder named `Mods` if it does not exist.
+. Find the extracted mod folder containing its `.uplugin` file.
+. Copy that complete folder into `Mods`, preserving every file and subfolder supplied by the author.
+. Install required PDML dependencies in the same way, following any additional instructions on their download pages.
+. Start PAYDAY 3 with PDML installed and check that the mod is loaded.
+
+The resulting layout should look like this:
+
+[source,text]
+----
+PAYDAY3/
+`-- Mods/
+    |-- ExampleMod/
+    |   |-- ExampleMod.uplugin
+    |   `-- ... all supplied files and subfolders ...
+    `-- AnotherMod/
+        |-- AnotherMod.uplugin
+        `-- ... all supplied files and subfolders ...
+----
+
+[IMPORTANT]
+====
+Keep each PDML mod together as one folder. Its `.uplugin` file should be directly inside that folder, for example `PAYDAY3/Mods/ExampleMod/ExampleMod.uplugin`.
+
+Avoid adding an extra archive wrapper folder such as `PAYDAY3/Mods/ExampleMod-download/ExampleMod/`. Keep the packaged content inside the mod folder; do not extract individual `.pak`, `.utoc`, or `.ucas` files into `Content/Paks/~mods`.
+====
+
+See xref:pdml:loading.adoc[PDML Mod Loading] for more on how PDML discovers these folders.
+
+== Update or remove a mod
+
+Close the game and follow the author's update instructions. Replace the old mod folder with the complete new version, keeping any mod-specific configuration the author tells you to preserve. To uninstall a PDML mod, remove its folder from `PAYDAY3/Mods/`.
+
+If a mod fails to load, check that PDML is installed, the `.uplugin` file is directly inside the mod folder, and all dependencies are present. If it causes a crash, check its compatibility and try it without other mods. Use the mod's ModWorkshop page to check for updates or report the problem to its author.
+
+== Older loose PAK mods
+
+Loose PAK installations are being phased out in favour of PDML. Use this method only for a download distributed as a loose PAK mod; moving a PAK file into `PAYDAY3/Mods/` does not turn it into a PDML mod.
+
+Follow the author's instructions, usually copying the `.pak` file and any matching `.utoc` and `.ucas` files into `PAYDAY3/Content/Paks/~mods/`. Keep matching files together. PAYDAY 3 on UE5 loads these directly without a PAK unlocker or extra launch option.
+
+To remove a loose PAK mod, close the game and remove its files from `~mods`. When switching to a PDML release of the same mod, remove the old loose PAK version first.
+
+Prefer managing your downloads in one place? See xref:mod-organizer-2.adoc[Installing with Mod Organizer 2].

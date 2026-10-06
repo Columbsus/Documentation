@@ -1,5 +1,0 @@
-.Reference
-* xref:index.adoc[Overview]
-* xref:directory-structure.adoc[Directory Structure]
-* xref:mod-types.adoc[Mod Types]
-* xref:status.adoc[Feature Status]

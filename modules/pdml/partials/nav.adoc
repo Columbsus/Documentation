@@ -1,0 +1,7 @@
+* xref:pdml:index.adoc[Overview]
+* xref:pdml:loading.adoc[Mod Loading]
+* xref:pdml:initialization.adoc[Initialization]
+* xref:pdml:settings.adoc[Mod Settings]
+* xref:pdml:dependencies.adoc[Dependencies]
+* xref:pdml:multiplayer.adoc[Multiplayer]
+* xref:pdml:api.adoc[API Reference]

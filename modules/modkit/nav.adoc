@@ -1,8 +1,0 @@
-.The Modkit
-* xref:index.adoc[Overview]
-* xref:architecture.adoc[Architecture]
-* xref:project-structure.adoc[Project Structure]
-* xref:custom-editor.adoc[Custom Unreal Editor]
-* xref:cooked-assets.adoc[Cooked Assets]
-* xref:reflected-types.adoc[Reflected Game Types]
-* xref:updating.adoc[Updating the Modkit]

@@ -3,17 +3,7 @@ title: PAYDAY 3 Modding Documentation
 version: ~
 start_page: ROOT:index.adoc
 nav:
-  - modules/getting-started/nav.adoc
-  - modules/modkit/nav.adoc
-  - modules/crimeforge/nav.adoc
-  - modules/creating-mods/nav.adoc
-  - modules/audio-modding/nav.adoc
-  - modules/custom-heists/nav.adoc
-  - modules/pdml/nav.adoc
-  - modules/advanced/nav.adoc
-  - modules/reference/nav.adoc
-  - modules/troubleshooting/nav.adoc
-  - modules/ROOT/nav-bottom.adoc
+  - modules/ROOT/nav.adoc
 asciidoc:
   attributes:
     page-pagination: ''

@@ -1,0 +1,50 @@
+= Installing with Mod Organizer 2
+:description: Set up Mod Organizer 2 with ModWorkshop's PAYDAY 3 plugin and preserve complete PDML mod folders.
+
+https://github.com/ModOrganizer2/modorganizer/releases[Mod Organizer 2 (MO2)] can manage PAYDAY 3 mods with https://modworkshop.net/mod/54424[ModWorkshop's MO2 plugins]. These add PAYDAY 3 support, ModWorkshop downloads, and installers for additional file formats.
+
+Prefer PDML releases when downloading mods. Each PDML mod must remain a complete folder under `PAYDAY3/Mods/`, including its `.uplugin` file and all packaged content.
+
+== Install MO2 and the plugins
+
+. Download the installer from the https://github.com/ModOrganizer2/modorganizer/releases[MO2 releases page] and install it.
+. Close MO2 if it is running.
+. Download https://modworkshop.net/mod/54424[ModWorkshop - Mod Organizer 2 Plugins] and extract the archive.
+. Copy the plugin files into the `plugins` folder inside your MO2 installation, following the package's folder layout. Replace existing plugin files if prompted.
+. Start MO2 and create an instance for *PAYDAY 3*. A global instance is the usual choice. If the game is not detected, select its installation folder manually.
+
+If PAYDAY 3 is missing from the supported games, check that the ModWorkshop plugins were installed in the MO2 copy you are running, then restart MO2.
+
+== Download and install mods
+
+Install PDML using the instructions supplied with its download. MO2 manages your mod files; PDML loads PDML mods when PAYDAY 3 starts.
+
+Keep your PAYDAY 3 instance open while downloading from https://modworkshop.net/g/payday-3[ModWorkshop]. Choose the PDML release when available, read its compatibility notes, and install its listed dependencies too.
+
+. Click *Install with Mod Organizer 2* on a supported mod page. The option may also appear in the download dropdown.
+. Allow the browser to open MO2 when prompted.
+. When the download finishes, double-click it in MO2's *Downloads* tab to install it.
+. Enable the installed mod in the main mod list.
+
+If a mod has no MO2 download option, download it normally and drag the file into MO2's *Downloads* tab, then install it from there. Check the author's instructions if MO2 cannot recognise the package layout.
+
+== Keep the PDML folder layout
+
+For a PDML package, check that the installed files will appear to the game as `PAYDAY3/Mods/<ModName>/<ModName>.uplugin`, with the rest of the mod's files and subfolders intact beside it. MO2 may provide these files through its virtual filesystem when launching the game.
+
+If the plugin does not recognise a PDML package or cannot preserve this layout, use xref:manual-installation.adoc[Manual Installation] to copy the whole mod folder into `PAYDAY3/Mods/`.
+
+[IMPORTANT]
+====
+A PDML mod's packaged files belong inside its mod folder. Installing only its PAK files into `Content/Paks/~mods` loses the PDML package structure.
+====
+
+== Launch and manage your mods
+
+Select PAYDAY 3 in MO2's executable menu and launch it from MO2 so the enabled mods are available to the game.
+
+Use the mod list to enable or disable installed mods. Disabling a mod in MO2 does not remove files you previously installed manually; remove those copies yourself when switching to MO2.
+
+To check a problem, confirm PDML is installed and the complete mod folder is available under `PAYDAY3/Mods/`, then try the affected mod with only its required dependencies. Check its ModWorkshop page for updates and installation notes.
+
+For more on MO2 setup, see ModWorkshop's https://wiki.modworkshop.net/books/using-mo2-with-games/page/installation-and-setup[Installation and Setup]. For direct file installation, see xref:manual-installation.adoc[Manual Installation].
