@@ -4,7 +4,7 @@ World Settings controls the level state as a whole. Starbreeze has a custom worl
 
 In the modkit this is already listed as the default World settings in the project settings but incase you can't see it when viewing the world settings tab from a level.
 
-=== Finding the PD3 World Settings
+== Finding the PD3 World Settings
 
 . Head to the Project Settings
 . Search for `World Settings`

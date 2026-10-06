@@ -1,25 +1,38 @@
-:imagesdir: .
+= Materials & Textures
 
-# Materials & Textures
+Materials control how something is rendered in Unreal Engine. While they are commonly used to define the appearance of meshes and how their surfaces respond to lighting, they are not limited to mesh materials.
 
-Materials are assets you create to control how a mesh looks and reacts to light.
+Depending on the material domain and settings, materials can also be used for:
 
-With the custom editor, users can freely create whatever material they are able to use that can be supported and cooked into PAYDAY 3. 
+* Mesh and surface materials
+* Decals
+* User interface elements
+* Post-processing effects
+
+With the custom editor, you can create new materials and textures for use in PAYDAY 3 as long as the assets and features used by the material can be successfully cooked for the game.
+
+This page focuses primarily on creating a basic surface material and material instance, but the same Material Editor is also used when creating materials for decals, UI, and post processing.
 
 
-# Before You Start
+== Before You Start
 
 It is recommended to avoid touching pre-existing cooked materials that were from PAYDAY 3 originally due to their editor data being stripped, so you won't get much use out of them. It is better to create your own master materials from scratch. 
 
 If you are also planning on distributing materials you have created, it is advised to NOT use Static Switch Parameter nodes, they can cause issues or crash users who are attempting to use them without the custom editor. 
 
-# Creating a Master Material
+== Creating a Master Material
 
-To create a master material (a normal material) is quite simple, go to an area in your content browser where you want to create your material and right click on the browser and click on "Material" under the Create Basic Asset Tab. Name it "MM_YourMatName" since there will be 2 types of materials we will be working with, Master Materials and Material Instance's, the formatting will help us keep everything organized. 
+To create a master material, go to the area of the Content Browser where you want to create it, right-click, and select *Material* under the Create Basic Asset section.
 
-Here you will see nothing but inputs for your material, like Base Color, Metallic, Specular, Roughness, Normal, Etc.
+For this guide, name it `MM_YourMatName`. We will be working with both master materials and material instances, so using prefixes such as `MM_` and `MI_` helps keep them organized.
 
-The tab on the left side of the screen will be where other details will be stored for your material data, if you want the material to be opaque or support opacity, be Two Sided, etc.
+When the material opens, the available inputs depend on its current settings and Material Domain. A normal Surface material can expose inputs such as Base Color, Metallic, Specular, Roughness, Normal, and Ambient Occlusion.
+
+The material settings are also where you configure properties such as Blend Mode, Two Sided rendering, and Material Domain.
+
+For example, changing the Material Domain allows the same material system to be used for other purposes such as *Deferred Decal*, *User Interface*, or *Post Process*. The node graph and available outputs will change to match the selected domain.
+
+This guide uses the default *Surface* domain and builds a simple Base Color/ORM/Normal material.
 
 I won't go into specifics on how to create a material that will suit your needs, since there are already plenty of tutorials out there, so I will be sticking with a basic Base Color/ORM/Normal Map formatted material for this.
 
@@ -27,7 +40,7 @@ If you would like official documentation of how to create materials, or get more
 
 Official Epic Games Unreal Engine Documentation: https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-5-5-documentation?application_version=5.5&lang=en-US
 
-# Adding Nodes
+== Adding Nodes
 
 To add your own new node, right click anywhere on the grid and a popup of nodes will appear. You can use the search bar to find nodes that you need, and there are also a few hotkeys that you could use.
 
@@ -51,10 +64,10 @@ Lastly, for your normal map, you can paste another texture node and call this ne
 
 Your final result of the material should look like this if you have followed all steps properly. 
 
-image::Ex1.png[xref=Ex1.png]
+image::Ex1.png[]
 
 
-# Node Shortcuts
+== Node Shortcuts
 
 These are some of the shortcuts I use frequently, but there are plenty more. 
 
@@ -74,7 +87,7 @@ O + Left Click - Invert (1-x) Node
 C - Comment
 ```
 
-# Creating a Material Instance
+== Creating a Material Instance
 
 Once you are done tinkering with your Master Material, it is now time to create your Material Instance. A Material Instance is basically your original Master Material, but you are able to freely change scalars and paremeters/textures to what you want it to be. 
 
@@ -86,9 +99,9 @@ If you want to rename it, name it "MI_YourMatInstName"
 
 In the Material Instance screen, you can drag and drop your textures over the appropriate parameter, and save. 
 
-image::Ex2.png[xref=Ex2.png]
+image::Ex2.png[]
 
-# Importing Textures
+== Importing Textures
 
 There are plenty of different textures you can import, ranging from texture sheets to UI textures or stickers. 
 
@@ -102,7 +115,7 @@ For normal maps, set compression to "NormalMap (BC5)" and unticking the "sRGB" b
 ====
 "NormalMap (BC5)" can cause channel artifacts, so if you instead want to use BC7 for better quality, set the texture's sampler type to Linear Color, plug the RGB node into a "ConstantBiasScale" make the Bias value -0.5, and your Scale value 2.0, then plug into a normalize node. 
 
-image::Ex3.png[xref=Ex3.png]
+image::Ex3.png[]
 
 If your Normal Map is also formatted in OpenGL (Y+) you can use the "Flip Green Channel" setting to convert it to a DirectX Normal Map. 
 ====
@@ -111,4 +124,4 @@ UI textures should be imported with "UserInterface2D (RGBA8)" And also in the **
 
 If you're porting a model or adding a collection of new textures you can select each texture, right click and hover over "Asset Actions" and in the second menu that appears, select "Edit Selection in Property Matrix" this can allow you to mass edit textures instead of needing to do it all one by one, which can be a huge time saver. 
 
-image::Ex4.png[xref=Ex4.png]
+image::Ex4.png[]

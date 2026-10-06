@@ -2,5 +2,6 @@
 * xref:index.adoc[Overview]
 * xref:asset-replacements.adoc[Asset Replacements]
 * xref:blueprint-logic.adoc[Blueprint & Logic Mods]
+* xref:materials-textures.adoc[Materials & Textures]
 * xref:meshes.adoc[Meshes]
 * xref:ui.adoc[UI & HUD Mods]
