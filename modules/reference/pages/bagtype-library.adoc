@@ -1,4 +1,4 @@
-= Bagtype DA list
+= BagType DA list
 
 List of all the data assets that shade the Bag type class
 
