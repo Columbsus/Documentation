@@ -2,3 +2,4 @@
 * xref:reference:directory-structure.adoc[Directory Structure]
 * xref:reference:mod-types.adoc[Mod Types]
 * xref:reference:status.adoc[Feature Status]
+* xref:reference:bagtype-library.adoc[Bagtype DA Library]

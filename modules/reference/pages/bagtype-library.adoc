@@ -1,0 +1,375 @@
+= Bagtype DA list
+
+List of all the data assets that shade the Bag type class
+
+[NOTE]
+====
+This includes loot, equipment and other possible bags located in the game 
+====
+
+
+== List of Loot bags
+
+
+[cols="1,1,1,1"]
+|===
+|File Name |Loot In Game |Bag/Hardcase |File-path
+
+|DA_CocaineBagType
+|Cocaine
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_CryptoWallet
+|Crypto Wallet
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_DegradingTechBagPrePlanningType
+|Tech Bag
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_DegradingTechBagType_LowValue
+|Tech Bag 
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_DegradingTechBagType_MediumValue
+|Tech Bag
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_DegradingTechBagType
+|Tech Bag
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_JewelryBagType_HighValue
+|Jevelry
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_JewelryBagType_LowValue
+|Jevelry
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_JewelryHighCleanBagType
+|Clean Jevelry
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_JewelryLowCleanBagType
+|Clean Jevelry
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_MoneyBagType_Dyed
+|Dyed Money
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_MoneyBagType_LowValue
+|Money
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_MoneyBagType
+|Money
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_PaintingBagType_FakeUma
+|Painting
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_PaintingBagType_Generic
+|Painting
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_PaintingBagType_Greg
+|Painting
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_PaintingBagType_HighValue
+|Painting
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_PaintingBagType_LowValue
+|Painting
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_PaintingBagType_MediumValue
+|Painting
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_PaintingBagType_Pedro
+|Painting
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_PaintingBagType_Special
+|Painting
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_PaintingBagType_Uma
+|Painting
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_RareMinerals
+|Rare Minerals
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_RareStone
+|Rare Stone
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_ServerBag
+|Server
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_ServerBag
+|Server
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_SSDBagType
+|SSD
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_SatellitePart_LowValue
+|Orbit Stabilizer
+|Bag
+|DLCs\00004-DLCREMA\Blueprints\Bags
+
+|DA_SatellitePart
+|Solar Panel
+|Bag
+|DLCs\00004-DLCREMA\Blueprints\Bags
+
+|DA_SatellitePrototype
+|Satellite Prototype
+|Bag
+|DLCs\00004-DLCREMA\Blueprints\Bags
+
+|DA_MethBag_Burnt
+|Meth Burned
+|Bag
+|DLCs\00004-DLCREMA\DataAssets\Heists
+
+|DA_MethBag_Pure
+|Meth Pure
+|Bag
+|DLCs\00004-DLCREMA\DataAssets\Heists
+
+|DA_MethBag
+|Meth
+|Bag
+|DLCs\00004-DLCREMA\DataAssets\Heists
+
+|DA_AIBag
+|AI Core
+|Hardcase
+|DLCs\00005-DLCHEIST0001\DataAssets\Heists
+
+|DA_ServerBagCleaned
+|Optional Server
+|Bag
+|DLCs\00005-DLCHEIST0001\DataAssets\Heists
+
+|DA_ServerBagCombined
+|Drone Server
+|Hardcase
+|DLCs\00005-DLCHEIST0001\DataAssets\Heists
+
+|DA_ServerBagDrone
+|Server
+|Bag
+|DLCs\00005-DLCHEIST0001\DataAssets\Heists
+
+|DA_GoldBagType
+|Gold Pile
+|Bag
+|DLCs\00010-DLCHEIST0002\Blueprints\Bags
+
+|DA_CleanedEvidenceBagType
+|Optional Evidence
+|Bag
+|DLCs\00030-DLC0003\DataAssets\Bags
+
+|DA_EvidenceBagType
+|Evidence
+|Bag
+|DLCs\00030-DLC0003\DataAssets\Bags
+
+|DA_EvidenceGenericBagType
+|Evidence
+|Bag
+|DLCs\00030-DLC0003\DataAssets\Bags
+
+|DA_EvidenceHoustonBagType
+|Houston's Evidence
+|Hardcase
+|DLCs\00030-DLC0003\DataAssets\Bags
+
+|DA_DIM_RareStone
+|Opal
+|Bag
+|DLCs\00060-FREE0002\DataAssets
+
+|DA_DegradingTechBagType_02_LowValue
+|Degraded Device
+|Bag
+|DLCs\00150-DLCSHIYA\Blueprints\Bags
+
+|DA_DegradingTechBagType_02_MediumValue
+|Partially Degraded Device
+|Bag
+|DLCs\00150-DLCSHIYA\Blueprints\Bags
+
+|DA_DegradingTechBagType_02
+|Device
+|Bag
+|DLCs\00150-DLCSHIYA\Blueprints\Bags
+
+|DA_PietroBagType
+|Pietro
+|Bag
+|DLCs\00180-DLCDEMA\Blueprints\Bags
+
+|DA_RiflesBagType
+|Assault Rifles
+|Bag
+|DLCs\00180-DLCDEMA\Blueprints\Bags
+
+|DA_TeddyMooBagType
+|Golden Moo
+|Bag
+|DLCs\00180-DLCDEMA\Blueprints\Bags
+
+|DA_CigarsBagType
+|Cigars
+|Bag
+|DLCs\00213-SKY\DataAssets\Bags
+
+|DA_FigurineBagType
+|Figurine (cat)
+|Bag
+|DLCs\00213-SKY\DataAssets\Bags
+
+|DA_SatellitePrototype_Alpha
+|Satellite Prototype
+|Bag
+|DLCs\00215-MURK\DataAssets\Bags
+
+|DA_SatellitePrototype_Beta
+|Satellite Prototype
+|Bag
+|DLCs\00215-MURK\DataAssets\Bags
+
+|DA_SatellitePrototype_Gamma
+|Satellite Prototype
+|Bag
+|DLCs\00215-MURK\DataAssets\Bags
+
+|DA_SatellitePrototype_Omega
+|Satellite Prototype
+|Bag
+|DLCs\00215-MURK\DataAssets\Bags
+
+|===
+
+
+
+== List of Equipment bags
+
+
+[cols="1,1,1,1"]
+|===
+|File Name |Loot In Game |Bag/Hardcase |File-path
+
+|DA_CageBag
+|Secure Cage Parts
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_DeviceBag
+|Steering Device
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_ZiplineBag
+|Zipline
+|Bag
+|Content\Prototype\Blueprints\Bags
+
+|DA_Authenticator
+|Authenticator
+|Bag
+|Content\Gameplay\Breaching\Bags
+
+|DA_DrillPartBagType
+|Drill Parts
+|Hardcase
+|Content\Gameplay\Breaching\Bags
+
+|DA_EMPBag
+|EMP
+|Bag
+|Content\Gameplay\Breaching\Bags
+
+|DA_EquipmentBag
+|Equipment
+|Bag
+|Content\Gameplay\Breaching\Bags
+
+|DA_ThermiteBag
+|Thermite
+|Bag
+|Content\Gameplay\Breaching\Bags
+
+|DA_MethIngridientBag
+|Meth Ingredients
+|Bag
+|DLCs\00004-DLCREMA\DataAssets\Heists
+
+|DA_EMPBagNoWP
+|EMP Device
+|Bag
+|DLCs\00030-DLC0003\DataAssets\Bags
+
+|DA_SatelliteDishBag
+|Satellite Dish
+|Bag
+|DLCs\00080-DLC0004\DataAssets
+
+|===
+
+
+
+== List of Special bags
+
+
+[cols="1,1,1,1"]
+|===
+|File Name |Loot In Game |Bag/Hardcase |File-path
+
+|DA_OverkillWeaponBagType
+|Overkill Weapon
+|Hardcase
+|Content\Prototype\Blueprints\Bags
+
+|===
