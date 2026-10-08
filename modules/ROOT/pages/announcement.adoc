@@ -76,6 +76,11 @@ CrimeForge is a completely custom plugin made for PAYDAY 3, supporting both repl
 
 The new and improved PDML, also known as the mod loader, allows for a better user experience when playing with mods.
 
+[NOTE]
+====
+PDML is in early access and may change significantly as we update it. Expect frequent updates to PDML, and be aware that mods may also need updates to stay compatible with the PDML version you are using.
+====
+
 === Main Menu Mod Manager
 
 Enjoy a completely new button on your main menu, allowing you to quickly see what mods you have installed.
@@ -85,6 +90,12 @@ image::modmanager.png[Mod Manager, width=1000]
 View your installed mods, and click any mod to open its download page so you can quickly share it with your friends.
 
 image::installedmods.png[View your installed mods, width=1000]
+
+We plan to add mod load ordering and the ability to enable and disable mods. In the future, we may also add an in-game mod browser if possible. These features are planned, and the concept below shows what a future Mod Manager could look like.
+
+.Concept Mod Manager screen by https://modworkshop.net/user/flamingfury1000[@FlamingFury1000]
+[caption=""]
+image::modmanager-concept.png[Concept Mod Manager screen, width=1000]
 
 === Settings Galore
 
@@ -96,15 +107,17 @@ image::settings.png[Mod settings menu, width=1000]
 
 We've spent the last month creating a smoother experience for both users and developers in this community. We hope you all enjoy it and start creating the mods you've always wanted to make.
 
-For developers, check out the rest of the documentation to get started!
+For developers, head to xref:getting-started:index.adoc[Getting Started] to set up the tools and create your first mod!
 
 For users, we hope you enjoy everyone's mods soon!
 
 == Contributions
 
-* NadzW: Modkit developer and documentation
-* Capcake: Custom heist documentation and testing
-* Pinki_Ninja: Documentation and testing
-* Columbus: Documentation and testing
-* DrProtogen: Testing
-* Braidy08: Testing
+* https://modworkshop.net/user/shalashaska1[NadzW]: PDML, Modkit, UE5_PD3 developer and documentation
+* https://modworkshop.net/user/flamingfury1000[@FlamingFury1000]: Concept UI for the main menu and Mod Manager screen
+* https://modworkshop.net/user/lawsfercapcake[Capcake]: Custom heist documentation and testing
+* https://modworkshop.net/user/113369[Pinki_Ninja]: Documentation and testing
+* https://modworkshop.net/user/55826[Columbus]: Documentation and testing
+* https://modworkshop.net/user/drprotogen[DrProtogen]: Testing
+* https://modworkshop.net/user/braidy08[Braidy08]: Testing
+* https://modworkshop.net/user/averageengineerenjoyer[Gordon Greedman]: Xbox/Microsoft Store compatibility and testing
