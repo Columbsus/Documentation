@@ -27,36 +27,53 @@ Open the model in read-only mode first and inspect any defaults, references, mat
 == Uncook the model and its dependencies
 
 After you find the model that you want to replace check its dependnecies.
-For Static meshes there arent any but for Skeletal meshes there is usually a "skeleton" and a "physical asset"
+For Static meshes there arent any but for Skeletal meshes there is usually a "skeleton" and a `physical asset`
 
 [NOTE]
 ====
-While Some skeletal meshes do have Physical asset some on the other hand dont have it, and while replacing the model you should use the new "Physical asset" that gets generated when importing the model.  
+While Some skeletal meshes do have `Physical asset` some on the other hand dont have it, and while replacing the model you should use the new `Physical asset` that gets generated when importing the model.  
 ====
+
 
 == Import the model into Blender
 
-After you get the model exported from Fmodel you will open it in blender, for you to be able to open it in blender you will need to install this extention (insert link to the extention).
+After you get the model exported from Fmodel you will open it in blender, for you to be able to open it in blender you will need to install this extention https://github.com/DarklightGames/io_scene_psk_psa[psk/pskx importer]
+
 
 == General Rules in Blender
 
-When it comes to general rules in blender most of them apply to the "Skeletal Mesh" but that doesnt mean that you can go haywire with "static meshes"
+When it comes to general rules in blender most of them apply to the `Skeletal Mesh` but that doesnt mean that you can go haywire with `static meshes`
 
 For Static meshes youll want to just keep your models size in check since if you wont, yxou might end up causing unwanted clipping the the game when youll be testing your mod.
 
 For skeletal meshes you will want to also keep the size in check but on top of that you will need to also setup naming of your model and the skeleton in blender correctly for it to transfer well when imporitng into the editor.
 
+(insert image of blender setup for skeletal mesh as a lead)
+
 == Export Settings
 
-For exporting you will want to export your model as ".fbx", theres not much difference between export settings for static meshes and for skeletal meshes but both settings setups are listed below.
+For exporting you will want to export your model as `.fbx`, theres not much difference between export settings for static meshes and for skeletal meshes but both settings setups are listed below.
 
-Static mesh: (inset image)
+Static mesh:
 
-Skeletal mesh: (insert image)
+image::ExportSet-StaticMesh.png[Static mesh export Setup, width=200]
+
+Skeletal mesh: 
+
+image::ExportSet-SkeletalMesh.png[Skeletal mesh export Setup, width=200]
+
+
+[NOTE]
+====
+You can see that the only difference is including/expluding the armature and ticking off the `Add Leaf Bones` check box
+====
+
+When you Export your model as `.fbx` you will want to make sure its names the same way as it is in the game. 
 
 == Importing the model into UE Editor
 
-...
+There are few ways how to import your model into the editor but the simplest one is to simply just drag and drop your file into the location where the games original asset is located. 
+
 
 == Your mod/PAL Setup
 
@@ -64,7 +81,7 @@ For your PAL setup you will want to include only the Static or Skeletal mesh, an
 
 [WARNING]
 ====
-Including the "Skeleton" in your PAL will most likely result in your mesh not loading or a crash
+Including the "Skeleton" in your PAL will most likely result in your mesh not loading or your game crashing when the game will try to render the mesh
 ====
 
 == General workflow
