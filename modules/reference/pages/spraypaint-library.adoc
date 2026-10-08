@@ -1,0 +1,557 @@
+= Spray Paint DA List
+
+List of all the Spray paints in the game
+
+[NOTE]
+====
+All the spray paints can be found in a database DA called `DA_SprayCanDatabase` undeer the `PAYDAY3/Content/Gameplay/ItemDatabase` path.
+====
+
+[WARNING]
+====
+This list also includes unreleased spray paints that Starbeeze never released.
+====
+
+
+== List of all the non-pattern Spray paints
+
+
+[cols="1,1,1"]
+|===
+|File Name |In-Game Name |File-path
+
+
+
+|DA_SprayCan_Color1
+|Red
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Color2
+|Green
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Color3
+|Blue
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Color4
+|Yellow
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Color5
+|Rose Pink
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Color6
+|Pale Turquoise
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Color7
+|Dim Gray
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Color8
+|Silver Gray
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Color9
+|Bright Firebrick
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Color10
+|Yellow Green
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Color11
+|Spring Green
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Color12
+|Steel Blue
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Color13
+|Dark Orchid
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Color14
+|Moccasin
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Color15
+|Light Gray
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Texture16
+|Glossy Black
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Texture17
+|Shiny Bright Gray
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Texture18
+|Red Shine
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Texture19
+|Polished Blue
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Texture20
+|Green Gloss
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Texture21
+|Shiny Yellow
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Texture22
+|Gleaming Dark Orchid
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Texture23
+|Lustrous Pink
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Texture24
+|Gun Gray Varnish
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Texture25
+|Copper Varnish
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Texture26
+|Brass Varnish
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Texture27
+|Golden Varnish
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Texture28
+|Gun Blue Varnish
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Texture29
+|Olive Green Varnish
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Texture30
+|Firebrick Varnish
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Texture31
+|Purple Varnish
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Texture32
+|Red Star Blue
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Texture33
+|Hex-Cell Grayshift
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Texture34
+|Paint Stripper
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan35
+|Purple Brown Sheen
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan36
+|Smooth Maroon
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan37
+|Bright Terracotta Gloss
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan38
+|Dark Gold Yellow Sheen
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan39
+|Smooth Forest Green
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan40
+|Light Sea Green Sheen
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan41
+|Royal Blue Gloss
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan42
+|Dim Gray Gloss
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan43
+|Slick Dark Rosy Brown
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan44
+|Dark Sea Green Sheen
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan45
+|Light Salmon Pink Gloss
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan46
+|Light Steel Blue Gloss
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan47
+|Black Silver Chrome
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan48
+|Copper Chrome
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan49
+|Gold Chrome
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan50
+|Light Bronze Chrome
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan51
+|Vermillion Chrome
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan52
+|Forest Green Chrome
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan53
+|Blue Green Chrome
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan54
+|Deep Sea Chrome
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan55
+|Night Sky Chrome
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan56
+|Dark Orchid Purple Chrome
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan57
+|Sienna Chrome
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan58
+|Black Chrome
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Internal01
+|-NONE-
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Internal02
+|-NONE-
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Internal03
+|-NONE-
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Internal04
+|-NONE-
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Internal05
+|-NONE-
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Internal06
+|-NONE-
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Internal07
+|-NONE-
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Internal08
+|-NONE-
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Internal09
+|-NONE-
+|Content\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Internal10
+|-NONE-
+|Content\Gameplay\Cosmetics\SprayCans
+
+|===
+
+
+
+
+
+== List of all the pattern Spray paints
+
+
+[cols="1,1,1"]
+|===
+|File Name |In-Game Name |File-path
+
+
+
+|DA_SprayCan_DigitalCamo_01
+|Mottled & Sharp Bright
+|DLCs\00004-DLCREMA\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_DigitalCamo_02
+|Mottled & Sharp Dark
+|DLCs\00004-DLCREMA\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_DigitalCamo_03
+|Bubblegum Apocalypse
+|DLCs\00004-DLCREMA\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_DigitalCamo_04
+|Desert Snake
+|DLCs\00004-DLCREMA\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_DigitalCamo_05
+|Shifty Industrial
+|DLCs\00004-DLCREMA\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_DigitalCamo_06
+|Candy Funk
+|DLCs\00004-DLCREMA\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_DigitalCamo_07
+|Fractured Claret
+|DLCs\00004-DLCREMA\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_DigitalCamo_08
+|Icy Depth
+|DLCs\00004-DLCREMA\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_DigitalCamo_09
+|Cracked Veneer
+|DLCs\00004-DLCREMA\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_DigitalCamo_10
+|Hail & Sleet
+|DLCs\00004-DLCREMA\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Graffiti_01
+|Chaos Graffiti: Tropical Candy
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Graffiti_02
+|Chaos Graffiti: Underpass
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Graffiti_03
+|Chaos Graffiti: Strawberry Sweet
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Graffiti_04
+|Chaos Graffiti: Verdant
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Graffiti_05
+|Chaos Graffiti: Desert Scribe
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Graffiti_06
+|Chaos Graffiti: Urban Park
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Graffiti_07
+|Chaos Graffiti: Firehouse
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Graffiti_08
+|Chaos Graffiti: Dark Phonk
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Graffiti_09
+|Chaos Graffiti: Mango Punch
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Graffiti_10
+|Chaos Graffiti: Frozen Art
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Money_01
+|Them Bills: Money Launder
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Money_02
+|Them Bills: Silver Cash
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Money_03
+|Them Bills: Play Money
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Money_04
+|Them Bills: Rusted Stacks
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Money_05
+|Them Bills: Bad Print
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Money_06
+|Them Bills: Gold Standard
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Money_07
+|Them Bills: Sun Bleached
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Money_08
+|Them Bills: Pocket Cash
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Money_09
+|Them Bills: Blood Money
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Money_10
+|Them Bills: Cash Out
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Money_01
+|Patched Camo: Spring Flow
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Money_02
+|Patched Camo: Sprawl Shooter
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Money_03
+|Patched Camo: Neon Punk
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Money_04
+|Patched Camo: Killer Wasp
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Money_05
+|Patched Camo: Desert Scorpion
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Money_06
+|Patched Camo: City Breeze
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Money_07
+|Patched Camo: Deep Claret
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Money_08
+|Patched Camo: Winter Street
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Money_09
+|Patched Camo: Broken Paint
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Money_10
+|Patched Camo: Icy Sleet
+|DLCs\00050-STPATCH02\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Cloud_10
+|Accented Cloud: Burning Horizon
+|DLCs\00130-SPCTPACK0001\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Cloud_01
+|Accented Cloud: Soft Mint
+|DLCs\00130-SPCTPACK0001\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Cloud_02
+|Accented Cloud: Desert Echo
+|DLCs\00130-SPCTPACK0001\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Cloud_03
+|Accented Cloud: Weird Sky
+|DLCs\00130-SPCTPACK0001\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Cloud_04
+|Accented Cloud: Steel Sky
+|DLCs\00130-SPCTPACK0001\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Cloud_05
+|Accented Cloud: Mustard Gas
+|DLCs\00130-SPCTPACK0001\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Cloud_06
+|Accented Cloud: Washed Out
+|DLCs\00130-SPCTPACK0001\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Cloud_07
+|Accented Cloud: Bad Wine
+|DLCs\00130-SPCTPACK0001\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Cloud_08
+|Accented Cloud: Pure Lilac
+|DLCs\00130-SPCTPACK0001\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Cloud_09
+|Accented Cloud: Poisoned Sky
+|DLCs\00130-SPCTPACK0001\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Dragon_10
+|Mystic Dragon: Sky King
+|DLCs\00130-SPCTPACK0001\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Dragon_01
+|Mystic Dragon: Ancient One
+|DLCs\00130-SPCTPACK0001\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Dragon_02
+|Mystic Dragon: Bamboo Spirit
+|DLCs\00130-SPCTPACK0001\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Dragon_03
+|Mystic Dragon: Sand Wyrm
+|DLCs\00130-SPCTPACK0001\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Dragon_04
+|Mystic Dragon: Pond Dweller
+|DLCs\00130-SPCTPACK0001\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Dragon_05
+|Mystic Dragon: Fire Scaled
+|DLCs\00130-SPCTPACK0001\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Dragon_06
+|Mystic Dragon: Chi Guardian
+|DLCs\00130-SPCTPACK0001\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Dragon_07
+|Mystic Dragon: Progenitor
+|DLCs\00130-SPCTPACK0001\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Dragon_08
+|Mystic Dragon: Warrior’s Zeal
+|DLCs\00130-SPCTPACK0001\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_Dragon_09
+|Mystic Dragon: Forest Serpent
+|DLCs\00130-SPCTPACK0001\Gameplay\Cosmetics\SprayCans
+
+|DA_SprayCan_SawMarks_01
+|Reckless Use
+|DLCs\00229-Construction\Gameplay\Cosmetics\SprayCans
+
+
+|===
