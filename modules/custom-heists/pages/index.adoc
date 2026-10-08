@@ -24,7 +24,6 @@ Individual pages identify supported, experimental, in-progress, and known-limita
 
 * xref:first-heist.adoc[Create Your First Heist]
 * xref:world-settings.adoc[World Settings]
-* xref:heist-progression.adoc[Heist Progression]
 * xref:spawns.adoc[Spawns]
 * xref:interactions.adoc[Interactions]
 * xref:objectives.adoc[Objectives]

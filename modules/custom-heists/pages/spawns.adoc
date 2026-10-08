@@ -6,7 +6,7 @@ Player spawns use the `SBZPlayerSpawnGroup` class. In this class, you can attach
 
 The game randomly chooses one `SBZPlayerSpawnGroup` in your heist and spawns the players there. It is recommended for each group to have 4 `PlayerSpawns` attached to it, one for each player.
 
-Use the `On Player Group Chosen` function on the group to execute nodes based on the spawn location that was chosen.
+Use the `On Player Group Chosen` event on the group to execute nodes based on the spawn location that was chosen.
 
 == Scripted spawns
 
@@ -14,9 +14,9 @@ All scripted spawns, such as civilians and cops, use the `SBZPawnspawnPredefined
 
 === Spawning
 
-You can use `Spawn on Begin Play`, but it is recommended to have the level blueprint spawn the pawn using `Spawn predefined` on the `Begin Black Screen` event. Spawning AI too early can cause instability, or prevent the pawn from spawning at all.
+You can use `Spawn on Begin Play`, but it is recommended to have the level blueprint spawn the pawn using `Spawn predefined` on the `Begin Black Screen` event. Spawning AI too early can cause instability, or prevent the pawn from spawning at all which the `Begin Black Screen` event prevents.
 
-Use `Override Spawning Method` if a pawn is having trouble spawning. Even when a pawn is inside the nav mesh, it typically needs a radius of nav mesh around it before it can spawn.
+Use `Override Spawning Method` if a pawn is having trouble spawning. Even when a pawn is inside the nav mesh, it typically needs a radius of nav mesh around the actor before it can spawn.
 
 [IMPORTANT]
 ====
@@ -44,12 +44,16 @@ The `Data` section inside the Predefined Pawn Request specifies the type of scri
 === Other ways to spawn in AI
 
 In the level blueprint, you can use "Spawn Actor of class" on any of the `CH_*` assets in the content folder to spawn other types of AI that aren't listed in the `data` section of the `SBZPawnspawnPredefined`.
+[WARNING]
+====
+This has a tendency of no replicating to clients. Be careful of using the "Spawn Actor of Class" method.
+====
 
 == Spawn groups
 
-Spawn pawn groups (class `PD3PawnSpawnGroup`), like player spawn groups, are used to spawn pawns randomly.
+Spawn pawn groups (class `PD3PawnSpawnGroup`), like player spawn groups, are used to spawn AI pawns randomly.
 
-Groups can spawn a fixed set of pawns at once, or be used for assaults.
+Groups can be used to spawn civilians randomly, or in assaults.
 
 === Assaults
 

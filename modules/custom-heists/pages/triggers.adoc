@@ -22,9 +22,17 @@ Escapes use a separate volume, `SBZPlayerEscapeVolume`, rather than the player t
 
 You can set the escape duration and whether the volume disables when complete.
 
+Use the `BP_MarkerZone` blueprint for the highlight for the escape zone, or bag secure zones.
+
+[NOTE]
+====
+`BP_MarkerZone` is purely for decoration and does not have logic such as escaping, or securing of bags.
+====
+
+
 === Ending the mission
 
-. Use the `On Escape Timer Done` event.
+. Use the `On Escape Timer Done` event from the `SBZPlayerEscapeVolume`.
 . After this, add a `Request Mission End` node.
 . Set its target to a `Get Game State machine` node.
 . From `Request Data`, select `Make SBZEndMissionRequestData` and set `Mission Result` to `Success`.

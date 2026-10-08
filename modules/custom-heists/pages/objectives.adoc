@@ -51,9 +51,9 @@ Activating the main objective now also activates its sub objectives.
 
 `Max Progress`: Sets the maximum amount of progress needed. If one value applies to all difficulties, set it here. If you need a different maximum per difficulty, use the array directly beneath. Useful for bag progress bars such as `Secure the Bags: 2/10`.
 
-`Timed Objective Actor`: Add an `SBZModifiable Timer` to your level and assign it to this variable.
+`Timed Objective Actor`: Add an `SBZModifiable Timer` to your level and assign it's actor to this variable.
 
-Use the modifiable timer when actions in your heist can increase or decrease the speed of the timer, for example the escape sequence in Dirty Ice, where you have to keep the street clear of cops to stop Bile from flying away.
+Use the modifiable timer when actions in your heist can increase or decrease the speed of the timer. For example this is used in the escape sequence in Dirty Ice, where you have to keep the street clear of cops to stop Bile from flying away.
 
 This timer can have its speed modified on the fly, paused, and resumed.
 
@@ -69,5 +69,5 @@ Use `Add Progress` to add a new value on top of the current progress.
 
 [TIP]
 ====
-When using the `Activate` blueprint node, activating the `End Active in group` bool completes the active objective when the new objective is activated. This requires both objectives to be in the same `Objective Group`.
+When using the `Activate` blueprint node, enabling the `End Active in group` bool completes the active objective when the new objective is activated. This requires both objectives to be in the same `Objective Group`.
 ====

@@ -16,7 +16,9 @@ This page is a current work in progress.
 
 == Giving a life action
 
-* Place a blueprint in the level and have a life action reference it (typically for movement)
+There are two ways to utilize life actions.
+
+* Place a `BP_LA_*` blueprint in the level and have a life action reference it (typically for movement). 
 * Within the `PawnSpawn`, set the Action to `SBZAIAction Life Action` and set the gameplay effect class to the animation you want.
 
 === Patrols
@@ -25,8 +27,5 @@ This page is a current work in progress.
 . Set the pawn spawn action to `SBZAIAction Patrol`.
 . Set the Action order to `SBZAIOrder Patrol`, then set the Start point to the start of the patrol.
 
-Inside each patrol point, you set what the next patrol point is, whether it randomizes, and how long the person waits at the location.
+Inside each patrol point, you set what the next patrol point is  via the patrol point components. If you want more points, simply add more components. In the root component you can control Whether it randomizes what point to go to, what animation to play at each point, and how long the person waits at the location.
 
-=== Life action settings
-
-See xref:world-settings.adoc[World Settings] for adding the life action data asset, which loads life action animations.

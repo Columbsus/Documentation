@@ -26,18 +26,18 @@ Set the `Bag Type to Spawn` variable to choose which bag data asset to spawn.
 
 `SBZBag Trigger Volume` is used for respawning, securing, or destroying bags.
 
-Setting the trigger mode to `Secure and Destroy` secures the bag, and is the mode typically used for securing bags.
+Setting the trigger mode to `Secure and Destroy` secures and then destroys the bag, and is the mode typically used for securing bags versus using just `Secure`.
 
 `Destroy` can be used for equipment, such as when you set up thermite.
 
-`Teleport` is used together with the `SBZ Respawn Point` to teleport bags. Set the `Bag Teleport Point` to a `SBZRespawn Point` and bags will teleport there automatically. This is used when bags go out of bounds and need to be reset to the playable space.
+`Teleport` is used together with the `SBZ Respawn Point` to teleport bags that go out of bounds. Set the `Bag Teleport Point` to a `SBZRespawn Point` and bags will teleport there automatically. 
 
-Use the filters to restrict the volume to specific bags. Select the + on the filter type and add the DA of the bag that should be able to trigger this volume.
+Use the filters to restrict the volume to specific bags. Select the + on the filter type and add the Data Asset of the bag that should be able to trigger this volume.
 
 Use `Target` to set the number of bags that must be secured in this volume before it executes. You can use `Disable on Complete` to disable the volume automatically once the target is reached, or use the `Add on Complete` event to detect when a certain amount of bags have been secured.
 
-Combine `On bag entered or Secured` with an `Set Progress` function call on an objective to count bags in the HUD. See xref:objectives.adoc[Objectives] for more.
+Combine `On bag entered or Secured` event with the `Set Progress` function call on an objective to count bags in the HUD. See xref:objectives.adoc[Objectives] for more.
 
 == Bag drop points
 
-`SBZBag Drop point` marks where cops go after they have picked up a bag. Place one on the nav mesh and cops will go to it automatically after they have picked up a bag.
+`SBZBag Drop point` marks where cops go after they have picked up a bag to hide the bags from the players. Place one on the nav mesh and cops will go to it automatically.
