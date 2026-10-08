@@ -4,7 +4,7 @@ List of all the Spray paints in the game
 
 [NOTE]
 ====
-All the spray paints can be found in a database DA called `DA_SprayCanDatabase` undeer the `PAYDAY3/Content/Gameplay/ItemDatabase` path.
+All the spray paints can be found in a database DA called `DA_SprayCanDatabase` under the `PAYDAY3/Content/Gameplay/ItemDatabase` path.
 ====
 
 [WARNING]
