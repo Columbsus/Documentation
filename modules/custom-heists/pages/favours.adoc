@@ -1,7 +1,10 @@
 = Favours
 
-Custom-heist favour authoring is currently a known limitation.
+Favour authoring for custom heists is not currently supported.
 
-The required complete workflow has not yet been established.
+A complete workflow has not yet been established. The registration and data requirements still need to be validated in-game.
 
-This page should be expanded once the registration/data requirements have been validated in-game.
+[NOTE]
+====
+This page will be expanded once those requirements have been validated.
+====

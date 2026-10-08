@@ -1,76 +1,73 @@
 = Objectives
 
-Two things are needed to make objectives work.
+Two things are needed to make objectives work: spawn the objective class in your level, then use level blueprints to execute the objective.
 
-You need to both spawn in the class in your level, and then utilize level blueprints to execute the objective.
-
-There is a lot of settings you can utilize to do and manage a variety of settings, so here is brief description for the important lines.
+Objectives have many settings. The important ones are described below.
 
 == Settings
 
-`Display Order`: Sets the hierarchy for where this should appear on the list, higher number is higher on the list.
+`Display Order`: Sets where the objective appears in the list. A higher number appears higher.
 
-`Optional`: enables the optional tag next to the objective
+`Optional`: Enables the optional tag next to the objective.
 
 `Objective Type`:
 
 - `One Shot`: Standard objective
 - `Progress`: Progress bar type objectives
 - `Timed`: Timed objectives
-- `money`: Fear & Greed money counter. Check below for more details.
+- `Money`: Fear & Greed money counter. Check below for more details.
 
-`UI Use Progress Bar`: Enables the progress bar
+`UI Use Progress Bar`: Enables the progress bar.
 
-`Reverse progress bar`: Starts at max, instead of 0
+`Reverse progress bar`: Starts at max, instead of 0.
 
-`UI Reverse Progress Bar`: Counts down instead of up
+`UI Reverse Progress Bar`: Counts down instead of up.
 
-`Progress Text option`: Sets the type of progress such as %, fraction, time, or speed
+`Progress Text option`: Sets the type of progress, such as %, fraction, time, or speed.
 
-`Objective Group`: Used to organize as well as some functions work with other objectives in the same group, such as being able to complete the previous objective when activating a new objective in the same group.
+`Objective Group`: Used to organize objectives. Some functions also work across objectives in the same group, such as completing the previous objective when activating a new one.
 
-`State`: The current state. Don't set outside of level blueprints.
+`State`: The current state. Do not set this outside of level blueprints.
 
-== Sub Objectives
+== Sub objectives
 
-Sub objectives allow you to have multiple objectives displayed at once such as:
+Sub objectives let you display multiple objectives at once, for example:
 
 `Objective`
 
-- `Subjobjective`
-- `Subjobjective`
-- `Subjobjective`
+- `Subobjective`
+- `Subobjective`
+- `Subobjective`
 
+Each sub objective is its own `Objective` actor in the level. Add the sub objectives to the array of the main objective.
 
-Each sub objective is its own `Objective` actor in the level itself. Simply add the Subjobjectives to the array of the main objective. 
+In each sub objective, set the parent to the main objective. All of them should also be in the same `Objective Group`.
 
-In each sub objective set the parent as the Main objective. Each objective should also be in the same `Objective group`.
-
-Now when you activate the main objective, it will also activate the sub objective.
+Activating the main objective now also activates its sub objectives.
 
 == Progression
 
 `Progress`: The current progress of the objective. Set using the blueprint nodes shown below.
 
-`Max Progress`: This value sets the max amount of progress you need for the progress. If you have one max value for all difficulties, set it here. If you need max per difficulty use the array to directly beneath. Useful for bag progress bars such as `Secure the Bags: 2/10`
+`Max Progress`: Sets the maximum amount of progress needed. If one value applies to all difficulties, set it here. If you need a different maximum per difficulty, use the array directly beneath. Useful for bag progress bars such as `Secure the Bags: 2/10`.
 
-`Timed Objective Actor`: Add a `SBZModifiable Timer` in your level, and add it to your variable here. 
+`Timed Objective Actor`: Add an `SBZModifiable Timer` to your level and assign it's actor to this variable.
 
-The modifiable timer is used in situations where actions in your game can increase or decrease the speed of the timer. (eg, the escape sequence in Dirty Ice where you have to keep the street clear of cops to keep Bile from flying away.)
+Use the modifiable timer when actions in your heist can increase or decrease the speed of the timer. For example this is used in the escape sequence in Dirty Ice, where you have to keep the street clear of cops to stop Bile from flying away.
 
 This timer can have its speed modified on the fly, paused, and resumed.
 
-`Ticking Loot Manager`: Add a `SBZTickingLootManager` in your level to manage the `Money` progess text option. This Ticking loot can be paused, reversed, and started.
+`Ticking Loot Manager`: Add an `SBZTickingLootManager` to your level to manage the `Money` progress text option. Ticking loot can be paused, reversed, and started.
 
 == Blueprint nodes
 
-Useful blueprint nodes for objectives are `Activate`, `Complete`, `add progress`, and `set progress`
+Useful blueprint nodes for objectives are `Activate`, `Complete`, `add progress`, and `set progress`.
 
-Use `Set Progress` to set the progress bar to a value, useful for bag securing.
+Use `Set Progress` to set the progress bar to a value, which is useful for bag securing.
 
-Use `Add Progress` to add your new value ontop of your current progress.
+Use `Add Progress` to add a new value on top of the current progress.
 
 [TIP]
 ====
-Using the activate blueprint node, activating the `End Active in group` bool will complete the active objective when activating a new objective. This requires both objectives to be in the same `Objective Group`.
+When using the `Activate` blueprint node, enabling the `End Active in group` bool completes the active objective when the new objective is activated. This requires both objectives to be in the same `Objective Group`.
 ====

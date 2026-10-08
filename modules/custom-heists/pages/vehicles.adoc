@@ -1,31 +1,29 @@
 = Vehicles
 
-Vehicle workflows are supported by the newer custom editor/modkit work.
+Vehicles are supported by the newer custom editor and modkit.
 
-This page is reserved for the validated authoring procedure, required actors/data, runtime behavior, and packaging checks.
+This page covers the vehicle blueprints and settings documented so far. It will be expanded with the validated authoring procedure, required actors and data, runtime behavior, and packaging checks.
 
 [NOTE]
 ====
 This page is a current work in progress.
 ====
 
-
 == Blueprints/Pawns
 
-* All vehicles are located in the `/Vehicle` folder. Each folder has Static and non-static BP's.
+* All vehicles are located in the `/Vehicle` folder. Each folder has static and non-static blueprints.
 * _Mockup includes Escape van/helicopter, and police vehicles.
 
 === Vehicle seeds
 
-Use `Set seed` on vehicles to change their data. -10000 to 10000 will allow for all types of Vehicles. Seeds widely change the aesthetics, like sedans can change colours and turn into taxis.
+Use `Set seed` on vehicles to change their data. Values from -10000 to 10000 cover all vehicle types. Seeds change the aesthetics significantly; for example, sedans can change colour or turn into taxis.
 
 === Escape vehicles
 
-Escape vehicles have the capability of opening and closing doors via `Door states per type` then setting the door and if it's opened or closed. Or use Blueprint node `set door state`(?). For escape van, you want to use the back doors to open it.
+Escape vehicles can open and close their doors via `Door states per type`, where you set each door and whether it is open or closed. You can also use the `set door state` Blueprint node. For the escape van, use the back doors to open it.
 
 === Traffic
 
 * `SBZTrafficVolume` is used to stop traffic.
-* In `SBZWorld` settings, the traffic manager data asset controls how many, of what bp, spawn in the heist. See xref:world-settings.adoc[World Settings].
-* Use `SBZTrafficSpline`, not `SBZSpline`, to control the movement of cars, each vehicle has a `Set and Drive *` that controls how that pawn moves.
-
+* In `SBZWorld` settings, the traffic manager data asset controls which blueprints spawn in the heist, and how many. See xref:world-settings.adoc[World Settings].
+* Use `SBZTrafficSpline`, not `SBZSpline`, to control the movement of cars. Each vehicle has a `Set and Drive *` that controls how that pawn moves.

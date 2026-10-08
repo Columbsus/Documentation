@@ -1,42 +1,42 @@
 = Create Your First Heist
 
-== Creating your First Heist
+== Creating your first heist
 
-In crimeforge, we've provided a basic heist template. You can create a mod with the template via:
+CrimeForge provides a basic heist template. You can create a mod with the template via:
 
-- Clicking the Dallas mask on the top of the editor
-- Clickin `Create mod`
+- Clicking the Dallas mask at the top of the editor
+- Clicking `Create mod`
 - Clicking `Heist Template`
 
-Then write the name of your mod. 
+Then enter a name for your mod.
 
-If you wish to create your own heist without a template, you can follow the information below with a blank mod template as well.
+To create a heist without the template, start from a blank mod template and follow the information below.
 
 == Inside this template
 
 See xref:crimeforge:templates.adoc[Templates] for the standard template assets.
 
-=== DA_HEIST_(modname)
+=== `DA_Heist_(modname)`
 
-The most important file in the template, this Data asset holds all of the basic information you would see for the heist when in the menu's and in some of the heist as well. Here is where you will signify what your heist is called, its description, time of day, and location. Some other things are also the heist banner image as well.
+The most important file in the template. This data asset holds the basic information you see for the heist in the menus and, in some cases, during the heist itself. Here you set the name of your heist, its description, time of day, and location. It also holds other details, such as the heist banner image.
 
 [IMPORTANT]
 ====
-For the current moment in time, if you experience any issues loading into the heist itself and get a `failed to fetch data` you may need to change the of your LVL_(modname) to match the name of a Vanilla Payday 3 Heist codename.
+Currently, if you experience issues loading into the heist and get a `failed to fetch data` error, you may need to change the name of your `LVL_(modname)` to match the name of a vanilla PAYDAY 3 heist codename.
 
-Refer to ______ to see all vanilla codenames
+See xref:inspect-vanilla-heists.adoc[Inspecting Vanilla Heists] for all vanilla codenames.
 ====
 
-== Launching your Heist
+== Launching your heist
 
 See xref:crimeforge:packaging.adoc[Forge] for the full Forge workflow before continuing.
 
-Once in game, simply go to start a solo mode heist then change the filter till it says `Custom Heists`. 
+Once in game, start a solo mode heist, then change the filter until it says `Custom Heists`.
 
-In here you should now see your heist listed, assuming you filled out the name in the *DA_Heist_(modname)*. Clicking on the heist will launch it.
+Your heist should now be listed, provided you entered a name in the `DA_Heist_(modname)`. Click the heist to launch it.
 
-You just made your first heist! 
+You just made your first heist!
 
-Follow the World Settings link below to ensure your heist is setup for the heist game mode and more using the link below.
+Follow the link below to make sure your heist is set up for the heist game mode, and more.
 
 * xref:world-settings.adoc[World Settings]

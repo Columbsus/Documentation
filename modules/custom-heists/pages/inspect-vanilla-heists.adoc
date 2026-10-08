@@ -1,9 +1,8 @@
 = Inspecting Vanilla Heists
 
-With the power of the modkit, not only can we place game assets directly into our editor with full 
-functionality and materials, we can also inspect vanilla heists to see what exactly a specific asset name is called.
+The modkit lets you place game assets directly into your editor with full functionality and materials. It also lets you inspect vanilla heists to see exactly what a specific asset is called.
 
-Inspecting these heists is also an important aspect to get a good insight into how the heists themselves work via seeing what variables they have on certain assets.
+Inspecting these heists also gives you good insight into how they work, by showing which variables certain assets have.
 
 [IMPORTANT]
 ====
@@ -15,17 +14,17 @@ Level blueprints are not reflected in the modkit. If you try and open the level 
 
 In some situations you may crash when changing levels to and from vanilla heists. 
 
-It is not advised to copy any assets from a vanilla heist into your own heist, or loading them as sublevels. While you may be able to, it is a highly volatile action so tread with caution.
+It is not advised to copy any assets from a vanilla heist into your own heist, or loading them as sublevels. While you may be able to, it is a highly volatile action so proceed with caution.
 ====
 
 
 == Opening a heist
 
-First step is locating the name of the heist that you want to open, for ease of use I have provided a table of heist names to codename below where you can search them in the /content/ folder to find your heist.
+First, locate the name of the heist you want to open. The table of heist names and codenames below can be used to search for the heist in the `/Content/` folder.
 
 When searching for a codename, you will notice many different types of levels.
 
-[cols=`1,2`]
+[cols="1,2"]
 |===
 |Level name |Description
 
@@ -39,7 +38,7 @@ When searching for a codename, you will notice many different types of levels.
 |These are the audio sublevels where all of the ambience lives. This is not where the shade or heister voicelines are reflected, those are in the scripting levels.
 
 |L_*
-|All of the lighting that isnt directly scripted by events is held in here, as well as post processing volumes, lightmap density, and visiblity volumes (not to be confused with SBZVisibility).
+|All of the lighting that isn't directly scripted by events is held in here, as well as post processing volumes, lightmap density, and visibility volumes (not to be confused with SBZVisibility).
 
 |R_*
 |Randomized sublevels. These are small instances that can be randomly moved between locations, such as the bathroom & utility closet in No Rest For the Wicked.
@@ -48,10 +47,7 @@ When searching for a codename, you will notice many different types of levels.
 |Cinematics. These typically hold the intro camera sequence for the Heist.
 
 |VFX_*
-|The special effects displayed in the level such as flashing lights, scammpering rats, and other niagara based assets.
-
-|G_*
-|The gameplay sublevels that have various kinds
+|The special effects displayed in the level such as flashing lights, scampering rats, and other niagara based assets.
 
 |G_*_Collision
 |This holds mainly blocking volumes & the edge of the map fade to black blueprint.
@@ -60,22 +56,22 @@ When searching for a codename, you will notice many different types of levels.
 |This level holds all of the AI navigation coverpoints in the level.
 
 |G_*_Navlinks
-|The level that holds all of the special animations that Cops do, such as cloakers running on walls, cops climping over props or other objects, and more.
+|The level that holds all of the special animations that Cops do, such as cloakers running on walls, cops climbing over props or other objects, and more.
 
 |G_*_Scripting
-|The main scripting of the map, as well as any asset in the heist that the scripting interacts with (ie, enemy spawns, doors, randomization, etc)
+|The main scripting of the map, as well as any asset in the heist that the scripting interacts with (i.e., enemy spawns, doors, randomization, etc)
 
 |G_*_LivingWorld
 |This level refers to the traffic, cars, and wandering civilians of the level. This does not include animations which is in the scripting sublevel.
 |===
 
-It is best to click on the main level with no prefix', this will load all sublevels as well so you can see all assets loading in the heist itself.
+It is best to open the main level with no prefix. This loads all sublevels as well, so you can see all of the heist's assets.
 
-After you've loaded into the heist, you may notice the level is black and nothing is loaded. 
+After the heist loads, the level may appear black with nothing loaded. 
 
-To Fix this simply click in the levels panel, typically located in the top right, then right click a level and under `Visibility In Editor` hit `hide all` then `show all`.
+To fix this, open the Levels panel (typically in the top right), right-click a level, and under `Visibility In Editor` hit `hide all` then `show all`.
 
-You are now free to inspect and move around the level!
+You can now inspect and move around the level.
 
 [TIP]
 ====
@@ -84,11 +80,11 @@ Press `G` in engine to hide all Editor only assets such as volumes, billboards, 
 
 == Heist names
 
-This is table of Vanilla heist name to its code/level name. It is up to date as of 3.9. 
+This table maps each vanilla heist name to its code/level name. It is up to date as of 3.9. 
 
 
 === Base Game
-[cols=`1,2`]
+[cols="1,2"]
 |===
 |Level |Heist
 
@@ -118,7 +114,7 @@ This is table of Vanilla heist name to its code/level name. It is up to date as 
 |===
 
 === Year 1
-[cols=`1,2`]
+[cols="1,2"]
 |===
 |Level |Heist
 
@@ -145,7 +141,7 @@ This is table of Vanilla heist name to its code/level name. It is up to date as 
 |===
 
 === Year 2
-[cols=`1,2`]
+[cols="1,2"]
 |===
 |Level |Heist
 
@@ -166,7 +162,7 @@ This is table of Vanilla heist name to its code/level name. It is up to date as 
 |===
 
 === Year 3
-[cols=`1,2`]
+[cols="1,2"]
 |===
 |Level |Heist
 

@@ -1,0 +1,110 @@
+= Welcome to the new age of PAYDAY 3 Modding
+
+Since the Unreal Engine 5 update was released in August, PAYDAY 3 modding has had to effectively reset. This is because all of the mods, projects, and workflows we used in Unreal Engine 4 no longer work in Unreal Engine 5.
+
+What started as a "Let's remake what we had in Unreal Engine 4" quickly expanded. Around every corner, we found ourselves asking, "What if we could make this even better for the community?"
+
+A month later, we are ready to unveil it to the community...
+
+[NOTE]
+====
+Only use mods, not create them? No worries, head directly to xref:#PDML[PDML: The New and Improved Mod Loader] to see what's going to be new for you.
+====
+
+== The Modkit
+
+The core of the innovation for mod developers.
+
+The modkit allows for complete integration with the PAYDAY 3 game. You can load the assets from the game directly into the editor, meaning you can say goodbye to extracting assets and hello to a full view of the game within the editor.
+
+=== Custom Unreal Engine
+
+We had been unable to mod many assets, such as materials and animations, in Unreal Engine 4 due to compilation mismatches with the game. 
+
+With the new custom Unreal Engine, we've increased the number of supported asset types that work in the game, resulting in very few mismatches.
+
+You can now freely create custom materials, use Wwise audio, create animations, bake materials, and more.
+
+[NOTE]
+====
+While we can't guarantee that every asset type works, due to limited testing capacity, we've yet to encounter an asset type that doesn't load into the game.
+====
+
+=== Open Up Levels
+
+Open up a heist to test your texture mods, find a mesh you need, or simply learn how heists are made while making your own heist.
+
+image::editor-heist.png[View heists, width=1000]
+
+=== Animations
+
+View your custom animations using in-game skeletons, or view your custom skeletons using in-game animations.
+
+image::animations.png[View animations and skeletons, width=1000]
+
+=== Uncook Assets Directly in the Editor
+
+Uncook numerous asset types directly in the editor, either as a copy or in the same directory. 
+
+image::widget.png[Widgets, width=1000]
+
+[NOTE]
+====
+This editor does not include any source code for the game. Uncooking blueprints or widgets does not include code, and opening levels does not allow you to view the heist code.
+====
+
+== CrimeForge
+
+Tired of needing a thousand different command-line tools just to package your mods? Want a way to easily find and organize your mods in the editor? CrimeForge does both.
+
+image::crimeforge-dashboard.png[CrimeForge Dashboard, width=1000]
+
+CrimeForge is a completely custom plugin made for PAYDAY 3, supporting both replacement mods and new assets for the game. It's an easy-to-use tool that lets you mod and test faster than ever before.
+
+=== Features
+
+* Create various mods from templates. No more having to start from scratch every time.
+* Import and convert Unreal Engine 4 or non-CrimeForge mods into CrimeForge-supported mods.
+* Click the mod icon to go right to your mod folder.
+* Keep mod folders completely separate from normal game assets, making it easier to differentiate the two.
+* Cook and package your mod(s) in a single click.
+* Package faster than ever before.
+* Have your mod(s) automatically transferred to the game, and the game launched for you.
+
+[[PDML]]
+== PDML: The New and Improved Mod Loader
+
+The new and improved PDML, also known as the mod loader, allows for a better user experience when playing with mods.
+
+=== Main Menu Mod Manager
+
+Enjoy a completely new button on your main menu, allowing you to quickly see what mods you have installed.
+
+image::modmanager.png[Mod Manager, width=1000]
+
+View your installed mods, and click any mod to open its download page so you can quickly share it with your friends.
+
+image::installedmods.png[View your installed mods, width=1000]
+
+=== Settings Galore
+
+PDML now supports creating entirely new settings in an integrated, separate settings menu right in the game, allowing you to configure your mods however the developer sees fit.
+
+image::settings.png[Mod settings menu, width=1000]
+
+== Conclusion
+
+We've spent the last month creating a smoother experience for both users and developers in this community. We hope you all enjoy it and start creating the mods you've always wanted to make.
+
+For developers, check out the rest of the documentation to get started!
+
+For users, we hope you enjoy everyone's mods soon!
+
+== Contributions
+
+* NadzW: Modkit developer and documentation
+* Capcake: Custom heist documentation and testing
+* Pinki_Ninja: Documentation and testing
+* Columbus: Documentation and testing
+* DrProtogen: Testing
+* Braidy08: Testing
