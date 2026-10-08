@@ -11,7 +11,7 @@
 |`Gameplay/Props/Door/` with the main wooden one being `SingleDoor/BP_Int_SingleDoor_wood_03`
 |===
 
-By default these are interaction enabled.
+Both are interaction-enabled by default.
 
 [NOTE]
 ====

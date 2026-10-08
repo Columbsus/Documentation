@@ -2,28 +2,48 @@
 
 Custom heists can also have custom intro sequences.
 
-If you still need help, you can follow this video to get it setup https://www.youtube.com/watch?v=F_MLP3XvCQI
+If you still need help, you can follow this video to set it up: https://www.youtube.com/watch?v=F_MLP3XvCQI
 
 == Master sequence and level setup
 
-To get started with the intro, you need to create a master sequence. This will hold all your cinematic shots. For better management and workflow purposes, it is recommended to create a new empty level that will be streamed into the main custom heist level. Ensure the world setting of this empty level is set to `BP_HeistGameMode`. Now open the level blueprint, open the class settings tab and change the parent class to `SBZLevelScriptActor` class. This will give us access to many useful PD3 related functions.
+Start by creating a master sequence, which holds all of your cinematic shots. For easier management, it is recommended to create a new empty level that is streamed into the main custom heist level.
+
+. Set the world settings Game Mode of the empty level to `BP_HeistGameMode`.
+. Open the level blueprint and open the Class Settings tab.
+. Change the parent class to `SBZLevelScriptActor`, which gives access to many useful PAYDAY 3 functions.
 
 == Creating the shots
 
-Back in the editor, click the Cinematics tab on the top toolbar (near Blueprints) and create a new master sequence. Give it a name and a number of shots (and adjust any other settings to your desires) then click Create Master Sequence.
+In the editor, click the Cinematics tab on the top toolbar (near Blueprints) and create a new master sequence. Give it a name and a number of shots, adjust any other settings as desired, then click Create Master Sequence.
 
-You should now have a few new level sequence shots that were auto created with the master sequence. Simply go through each shot and adjust the camera animation to your liking.
+The master sequence automatically creates several level sequence shots. Go through each shot and adjust the camera animation to your liking.
 
-It is important that the camera cuts for the shot fills the full length of the sequence or the animation won't work.
+[IMPORTANT]
+====
+The camera cuts for each shot must fill the full length of the sequence, or the animation will not work.
+====
 
 == Intro logic
 
-Once you have all shots adjusted and the master sequence looks good, you can set up the logic. Open the level blueprint and override the `Intro Sequence Changed` event. If the intro has started, you can set the game to cinematic mode, hide all outlines and play the master sequence. You should also bind an event on the sequence player on the finish event that will handle ending the intro sequence. This will call the `End Intro Sequence` function from the `SBZLevelScriptActor` class along with also resetting the cinematic mode and unhiding all outlines. If the intro hasn't started (meaning its changing from playing to finished), you can unbind the on finished event, stop the sequence player and reset the cinematic mode and unhide the outlines.
+Once all shots are adjusted and the master sequence looks good, you can set up the logic. Open the level blueprint and override the `Intro Sequence Changed` event.
+
+If the intro has started:
+
+* Set the game to cinematic mode.
+* Hide all outlines.
+* Play the master sequence.
+* Bind an event to the sequence player's finish event to end the intro sequence. This calls the `End Intro Sequence` function from the `SBZLevelScriptActor` class, resets cinematic mode, and unhides all outlines.
+
+If the intro has not started (meaning it is changing from playing to finished):
+
+* Unbind the on finished event.
+* Stop the sequence player.
+* Reset cinematic mode and unhide the outlines.
 
 == Streaming the sublevel
 
-If you are handling the intro/outro logic within a sublevel, you will need to stream the level in your main level. This can either be done in blueprints or by setting the sublevel to be Autoloaded. In your main level blueprint, on BlackScreenStarted event, you can load stream the intro outro sublevel like this: (make sure you select the correct level)
+If you handle the intro/outro logic within a sublevel, you need to stream that level in from your main level. This can be done in blueprints, or by setting the sublevel to Autoloaded. In your main level blueprint, use the `BlackScreenStarted` event to stream in the intro/outro sublevel. Make sure you select the correct level.
 
 == Heist data asset
 
-Now go back to your heist data asset and ensure `Has Intro Sequence` is set to true.
+Finally, return to your heist data asset and make sure `Has Intro Sequence` is set to true.

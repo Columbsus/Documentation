@@ -1,88 +1,90 @@
 = Spawns
 
-== Player Spawns
+== Player spawns
 
 Player spawns use the `SBZPlayerSpawnGroup` class. In this class, you can attach `Player Spawns` to an array.
 
-The game will randomly choose one `SBZPlayerSpawnGroup` in your heist to have the Players spawn through. It is recommended for each group to have 4 `PlayerSpawns` attached to it, one for each player.
+The game randomly chooses one `SBZPlayerSpawnGroup` in your heist and spawns the players there. It is recommended for each group to have 4 `PlayerSpawns` attached to it, one for each player.
 
-You can use the function `On Player Group Chosen` on the group to execute certain nodes based on the spawn location chosen.
+Use the `On Player Group Chosen` function on the group to execute nodes based on the spawn location that was chosen.
 
-== Scripted Spawns
+== Scripted spawns
 
-All spawns, such as civilians & cops, use the `SBZPawnspawnPredefined` class.
+All scripted spawns, such as civilians and cops, use the `SBZPawnspawnPredefined` class.
 
 === Spawning
-You can use `Spawn on Begin Play` although it is recommended to have the level blueprint spawn the pawn using `Spawn predefined` on the `Begin Black Screen` event. This is due to if you spawn the AI too early, there is a chance it can cause instability or not spawn altogether. 
 
-Use Override Spawnining method if you are experiencing issues with a pawn spawning. Although they may be inside the nav mesh, they typically need a bit of a radius of mesh before they spawn.
+You can use `Spawn on Begin Play`, but it is recommended to have the level blueprint spawn the pawn using `Spawn predefined` on the `Begin Black Screen` event. Spawning AI too early can cause instability, or prevent the pawn from spawning at all.
+
+Use `Override Spawning Method` if a pawn is having trouble spawning. Even when a pawn is inside the nav mesh, it typically needs a radius of nav mesh around it before it can spawn.
 
 [IMPORTANT]
 ====
-For the pawn spawn to work, you need to ensure the spawn definition array and weighted location have at least 1 item with the location set, typically where the actor itself is. 
+For the pawn spawn to work, the spawn definition array and the weighted location must each have at least one item with the location set, typically to the actor's own location.
 
-This can be accomplished by:
+To set this up:
 
-. Right clicking the transform location at the top of the actor details panel and hitting copy
-. Head to the bottom of the `SBZPawnspawnPredefined` section, and open the advanced section
-. Right click paste into `Weighted Location`
-. Hit the + on `Spawn definition array`, and open the index > transform
-. Right click paste into said `Transform` 
+. Right-click the transform location at the top of the actor's Details panel and select Copy.
+. Scroll to the bottom of the `SBZPawnspawnPredefined` section and open the Advanced section.
+. Right-click and paste into `Weighted Location`.
+. Select the + on `Spawn definition array`, then open the index > transform.
+. Right-click and paste into that `Transform`.
 ====
 
-If you want a different location, set it to that locations transform.
+To spawn the pawn at a different location, use that location's transform instead.
 
 === Settings
 
-Set the `Spawn Loot Class` to a blueprint of your choice to have the pawn have an item on their back such as a keycard or phone. In order for key items to show up on the hud go, add the key item to the world settings key item array, see xref:world-settings.adoc[World Settings]
+Set the `Spawn Loot Class` to a blueprint of your choice to give the pawn an item on their back, such as a keycard or phone. For key items to show up on the HUD, add the key item to the Key Item Data Map in the world settings. See xref:world-settings.adoc[World Settings].
 
-Use the `Predefined request Action Actor Ref` to have the pawn use a blueprint based Life action. Used in patrols or other movement based life actions. See xref:life-actions.adoc[Life Actions] for more details.
+Use the `Predefined request Action Actor Ref` to have the pawn use a blueprint-based life action, such as patrols or other movement-based life actions. See xref:life-actions.adoc[Life Actions] for more details.
 
-Inside the Predefined Pawn Request, the `Data` section is where you specify what type of scripted spawn you would like, be it Civilian, Guard, or other variety.
+The `Data` section inside the Predefined Pawn Request specifies the type of scripted spawn, such as Civilian, Guard, or another type.
 
 === Other ways to spawn in AI
 
-In the level blueprint, you can use "Spawn Actor of class" on any of the `CH_*` assets in the content folder to spawn in other types of AI that arent listed in the `data` section of the `SBZPawnspawnPredefined`.
+In the level blueprint, you can use "Spawn Actor of class" on any of the `CH_*` assets in the content folder to spawn other types of AI that aren't listed in the `data` section of the `SBZPawnspawnPredefined`.
 
 == Spawn groups
 
-Spawn pawn groups, class `PD3PawnSpawnGroup`, just like player spawn group are used to spawn pawns randomly.
+Spawn pawn groups (class `PD3PawnSpawnGroup`), like player spawn groups, are used to spawn pawns randomly.
 
-These groups can be used in a variety of ways, either to spawn a bunch of determined spawns at once, or used for assaults.
+Groups can spawn a fixed set of pawns at once, or be used for assaults.
 
 === Assaults
 
-The game automatically chooses spawn groups to spawn cops during assaults, so the only way to say if cops may spawn at that location during an assault is the bool `set enabled for assault`. This can be enabled or disabled at any time.
+The game automatically chooses spawn groups to spawn cops during assaults, so the only control you have over whether cops may spawn at a location is the `set enabled for assault` bool, which can be changed at any time.
 
 It is recommended to use 4 pawn spawns per group.
 
-Spawn groups actor location need to be inside the SBZRoomVolume for the game to recognize that as their spawn location.
+The spawn group actor's location needs to be inside an `SBZRoomVolume` for the game to initialize the actor.
 
 [WARNING]
 ====
-As of update 3.9, assault spawns have stopped being functional. A fix is being determined so please be patience. Scripted spawns work just fine.
+As of update 3.9, assault spawns are not functional. A fix is being investigated. Scripted spawns are unaffected.
 ====
 
 === Assault and civilian managers
 
-See xref:world-settings.adoc[World Settings] to manage automatic spawning, ie what can spawn, how frequently, etc. 
+See xref:world-settings.adoc[World Settings] to manage automatic spawning, i.e., what can spawn, how frequently, etc.
 
-== Spawn Closets
+== Spawn closets
 
-Spawn closets refer to the spawning behavior where the game will spawn a squad behind closed doors, then open the door up for the squad to leave.
+A spawn closet spawns a squad behind closed doors, then opens the doors so the squad can leave.
 
-This can be seen used in `No Rest For The Wicked` in the elevators for example.
+An example is the elevators in `No Rest For The Wicked`.
 
-They have these level actor variables
+A spawn closet uses these level actor variables:
+
 - A closet volume, which is the `SBZRoomVolume`
 - The spawn group
-- The reactor, which is the actor you want to be interacted with when a squad spawns from the group
+- The reactor, the actor that is triggered when a squad spawns from the group
 
-These allows the spawn closet to interact with the reactor actor, the enemies to spawn if no player is inside the volume to spawn the group, and the volume to know if any pawn is inside the Room volume. 
+Together, these allow the spawn closet to interact with the reactor, to spawn enemies only when no player is inside the volume, and to detect whether any pawn is inside the room volume to keep the door open.
 
-Reactors, (like the `BP_ElevatorDoor`), need the `ReactToCloset` blueprint interface to interact with the closet.
+Reactors, such as `BP_ElevatorDoor`, need the `ReactToCloset` blueprint interface to interact with the closet.
 
 [CAUTION]
 ====
-Information of how to use spawn closets so has been acquired but not tested.
+This information has been gathered but not yet tested.
 ====

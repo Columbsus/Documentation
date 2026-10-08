@@ -1,13 +1,13 @@
 = AI & Navigation
 
-There are 3 parts to Navigation in Payday.
+Navigation in PAYDAY 3 has three parts:
 
-[cols=`1,3`]
+[cols="1,3"]
 |===
 |Actor |Purpose
 
 |`NavMeshBoundsVolume`
-|Will generate navigation for AI to move.
+|Generates the navigation mesh that AI move on.
 
 |`SBZRoomVolume`
 |Tells AI where a room is.
@@ -18,40 +18,39 @@ There are 3 parts to Navigation in Payday.
 
 == Navigation generation
 
-Use the `NavMeshBoundsVolume` to generate navigation for AI. You can be very generous with this volume, typically done by encompassing the entire playable space plus extra in one volume.
+Use the `NavMeshBoundsVolume` to generate navigation for AI. This volume can be generous. Typically, a single volume covers the entire playable space with some extra margin.
 
-You can use the Brush tools to also change the shape of the volume or use multiple volumes to do things such as when you need nav mesh to go between different locations.
+You can use the Brush tools to reshape the volume, or use multiple volumes, for example when you need nav mesh to go between different locations.
 
 [TIP]
 ====
-Press `P` in engine to show the Navigation. Navigation will show up as a green glow above the surfaces where navigation is.
+Press `P` in the editor viewport to show the navigation. It appears as a green glow above the surfaces where navigation exists.
 ====
 
-== Nav Modifier
+== Nav modifier
 
-Use can use `NavModifier` components or volumes to change or add nav for certain areas.
+You can use `NavModifier` components or volumes to change or add nav for certain areas.
 
-Nav modifying is used when you want to be able to change an area between being able to be modified or not midheist, typically used on moveable objects such as door or cars.
+Nav modifiers are used to change whether an area is navigable or not during the heist, typically on movable objects such as doors or cars so AI do not walk inside the meshes.
 
-Use the `Area Class` to specify what you want that area to be replaced with, or `Area Class to Replace` for a filter of what area class should be replaced.
+Use `Area Class` to specify what the area is replaced with, and `Area Class to Replace` to filter which area class gets replaced with the `Area Class` you set.
 
-Use the `NavMesh_Default` to add, or `NavMesh_Null` to subtract nav mesh.
+Use `NavMesh_Default` to add nav mesh, or `NavMesh_Null` to subtract it.
 
 == Rooms
 
-`SBZRoomVolume` is the main way AI understand how to traverse through the heists.
+`SBZRoomVolume` is the main way AI understand how to move through a heist.
 
-Each `SBZRoomVolume` should encompass an entire room up to the edges of the walls and can be intersected with meshes or the edge of other room volumes.
+Each `SBZRoomVolume` should encompass an entire room up to the edges of the walls, and may intersect meshes or the edges of other room volumes.
 
-For big areas, indoors or outdoors, one room volume can be split up into multiple volumes. One room should be about the distance you want the cops to engage the player at. 
+Large areas, indoors or outdoors, can be split into multiple room volumes. Each room should be about the distance at which you want cops to engage the player.
 
-As an example, `Road Rage` has the bridge split up into 8 room volumes that take the entire playable space. Each room volume is one half of the road, and a scale of about `40` for the length.
+As an example, `Road Rage` splits the bridge into 8 room volumes that cover the entire playable space. Each room volume is one half of the road, with a scale of about `40` for the length.
 
-For stealth, rooms are also used to determine the security level, `Public`, `Private`, or `Secure`.
+For stealth, rooms are also used to determine the security level: `Public`, `Private`, or `Secure`.
 
 === SBZRoomConnectorVolumes
 
-`SBZRoomConnectorVolume` is another volume you use to signify where two room volumes connect. These are used for AI to be able to understand where they need to go to get to the other room.
+`SBZRoomConnectorVolume` signifies where two room volumes connect. AI use these to understand how to get from one room to the other.
 
-Simply put the volume at the intersection point of 2 room volumes then add each volume into either the `Room A` & `Room B` variable. Use the `Gate` variable to specify a door or fence that would be in the way that cops would open.
-
+Place the volume at the point where two room volumes meet, then assign each room volume to the `Room A` and `Room B` variables. Use the `Gate` variable to specify a door or fence in the way that cops would open.

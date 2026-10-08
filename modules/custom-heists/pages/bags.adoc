@@ -1,8 +1,8 @@
 = Bags
 
-Bags have three types of files. For basegame heists, you can find most of these in `/Prototype/Blueprints/Bags`.
+There are three types of bag files. For base game heists, most of these are in `/Prototype/Blueprints/Bags`.
 
-[cols=`1,3`]
+[cols="1,3"]
 |===
 |File |Purpose
 
@@ -18,26 +18,26 @@ Bags have three types of files. For basegame heists, you can find most of these 
 
 == Spawning bags
 
-You can spawn in physical bags, for equipment or other means using the `SBZBagSpawner` class.
+You can spawn physical bags, for equipment or other purposes, using the `SBZBagSpawner` class.
 
-Set the `Bag Type to Spawn` variable to signify what bag data asset to spawn.
+Set the `Bag Type to Spawn` variable to choose which bag data asset to spawn.
 
 == Bag trigger volumes
 
-`SBZBag Trigger Volume` is used for respawning, securing, or destroying bags. 
+`SBZBag Trigger Volume` is used for respawning, securing, or destroying bags.
 
-Setting trigger mode to `Secure and Destroy` will secure the bag itself and is typically what is used when securing bags.
+Setting the trigger mode to `Secure and Destroy` secures the bag, and is the mode typically used for securing bags.
 
-`Destroy` can be used for things such as equipment like setting up thermite.
+`Destroy` can be used for equipment, such as when you set up thermite.
 
-`Teleport` is used along with the `SBZ Respawn Point` to teleport bags, set the `Bag Teleport Point` to a `SBZRespawn Point` to have it teleport there automatically. This is used for when bags go out of bounds and you need to reset it back to the playable space.
+`Teleport` is used together with the `SBZ Respawn Point` to teleport bags. Set the `Bag Teleport Point` to a `SBZRespawn Point` and bags will teleport there automatically. This is used when bags go out of bounds and need to be reset to the playable space.
 
-Using the filters, you can filter exact bags. Just hit the + on the filter type and add in the DA of the bag you only want to be able to trigger this volume.
+Use the filters to restrict the volume to specific bags. Select the + on the filter type and add the DA of the bag that should be able to trigger this volume.
 
-You can use the `Target` to set a an amount of bags to be seccured in this volume before executing. This can be used for either having it auto disable when you've hit that target via the `Disable on Complete`, or if you'd like to tell when a certain amount of bags have been secured using the `Add on Complete` event.
+Use `Target` to set the number of bags that must be secured in this volume before it executes. You can use `Disable on Complete` to disable the volume automatically once the target is reached, or use the `Add on Complete` event to detect when a certain amount of bags have been secured.
 
-Use `On bag entered or Secured` combined with an `Add Progress` function call on an objective to count bags in the HUD. See xref:objectives.adoc[Objectives] for more.
+Combine `On bag entered or Secured` with an `Set Progress` function call on an objective to count bags in the HUD. See xref:objectives.adoc[Objectives] for more.
 
 == Bag drop points
 
-`SBZBag Drop point` signify where cops go after they've picked up a bag. Simply place a point down in the nav mesh, and cops will automatically go to this location.
+`SBZBag Drop point` marks where cops go after they have picked up a bag. Place one on the nav mesh and cops will go to it automatically after they have picked up a bag.

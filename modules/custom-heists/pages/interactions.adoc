@@ -4,87 +4,93 @@ SBZ has a custom interaction class called `SBZInteraction`. You can add this com
 
 == Interaction location
 
-By default the interaction will be bound locally to 0 0 0 in the blueprint. In order to change this add a new component (typically a static mesh) and move it to the location you want the interaction to be. Use the `Shapes` located in `SBZBase Interactable Component` and change the component type to the same component you just made, and component name to the name of that same component. The Interaction will now be located where the location of that component is
+By default, the interaction is bound locally to 0 0 0 in the blueprint's local location. To change this:
+
+. Add a new component (typically a static mesh) and move it to the location you want the interaction to be.
+. In `SBZBase Interactable Component`, open `Shapes`.
+. Set the component type to the type of the component you just made, and the component name to that component's name.
+
+The interaction is now located at that component's transform.
 
 == Interaction settings
 
-* Use the `Completed Comment` to add a voiceline to whoever interacts with the component
+* Use `Completed Comment` to add a voiceline to whoever interacts with the component.
+* Use the `Interaction query` and `shared key item query` to require an item for this interaction (e.g., a keycard is needed to use it).
+* Use `gameplay effects on interact` to give players an item when they interact.
+* Use `Normal distance` to change the interaction distance.
+* `duration` to change how long it takes (0 = instant).
+* `text` to change the interaction text that appears before interacting.
+* Change `animated interaction data` to change the animation that gets played while a player interacts.
+* Use the checkboxes in the `SBZInteractable` component to change key properties, such as whether the interaction is illegal, allowed in casing, or enabled on startup of the heist.
 
-* Use the Interaction query and shared key item query to have a required item when using this interaction (eg, a keycard will be needed to use this interaction)
+== Common objectives
 
-* Use the `gameplay effects on interact` to give players an item when interacted
+PAYDAY 3 includes many common objectives that you can use and follow, but you can also create completely new objectives that suit your level.
 
-* Use `Normal distance` to change the distance, duration to change duration of interaction (0=instant) and text to change the interaction text
+See xref:objectives.adoc[Objectives] for how the objectives in the HUD are activated, progressed, and completed.
 
-* change the `animated interaction data` to change the animation of the interaction using the DA's from the modkit
+Below is a list of common objective actors:
 
-Use the checkboxes in the `SBZInteractable` component to change key things like if its illegal, allowed in casing, or its enabled on startup of the heist itself.
+== Pocket drills
 
-== Common Objectives
+* The standard blueprint is located at `Gameplay/Breaching/Tools/PocketDrill/BP_PocketDrill`.
+* This interaction is enabled by default. To disable it, disable the `Is Enabled` bool. You also want to set the state to `not assembled`.
+* The `On Breaching Equipment Completed` event signifies that the drill has been picked up after it finished drilling. `On Disassembly Needed` is used when the player needs to pick up the drill.
+* To enable the drill mid-heist, use the `set active` event in the `BP_PocketDrill` class.
+* You can set the number of adjusts needed, and how long each adjust takes.
+* Change `duration time seconds` to change how long the drill takes to finish.
 
-Although there are a lot of common objectives inside Payday 3 that you can use and follow, you have full access to completely make new and unique objectives that cater to your level.
+== Computer hacks
 
-See xref:objectives.adoc[Objectives] for how the objectives in the HUD themselves are activated, progressed and completed.
-
-== Pocket Drills
-
-* The standard BP is located at `Gameplay/Breaching/Tools/PocketDrill/BP_PocketDrill`
-* By default this interaction is set to ENABLED. Meaning if you want to disable it, you need to disable the `Is Enabled` bool. You also want to set the state as `not assembled`
-* The event `On Breaching Equipment Completed` is used to signify when the drill is picked up after it is finished drilling. `On Disassembly` needed is used for when the player needs to pick up the drill
-* To enable the drill mid heist, you grab the event `set active` in `bp_pocketdrill` class
-* You can set the number of adjusts needed, and how long each adjust takes
-* change the `duration time seconds` to change how long the drill is
-
-== Computer Hacks
-
-* Generic hack computer is located at `Gameplay/Props/HackableActor/BP_GenericHackableComputer`
-* By default interaction is enabled. When Interaction is enabled, a waypoint is automatically applied. You can disable the waypoint by removing the data asset
-* You can change the progress and success text. This is useful if you want to customize the screens to say different things
-* `Set duration seconds` can be used to change how long the hack is in the middle of a heist.
-* Event `On Hacking Complete` is executed when the hack is complete.
-* Setting the `unlock mode` will change it between needing a key item, hack timer, or no hack (no security)
+* The generic hack computer is located at `Gameplay/Props/HackableActor/BP_GenericHackableComputer`.
+* Interaction is enabled by default. While it is enabled, a waypoint is applied automatically. You can disable the waypoint by removing the data asset.
+* You can change the progress and success text. This is useful for customizing the screens to say different things.
+* `Set duration seconds` can be used to change how long the hack takes mid-heist.
+* The `On Hacking Complete` event is executed when the hack is complete.
+* Setting the `unlock mode` changes the hack between needing a key item, a hack timer, or no hack (no security).
 
 == Keycards
 
-* Keycard path for Red & Blue is located at `Gameplay/Props/KeycardReader/BP_(COLOR)Keycard`
-* Keycard Reader for Red & Blue is located at `Gameplay/Props/KeycardReader/BP_(COLOR)KeycardReader`
-* By default these are both set to interaction enabled
-* Keycard Reader Event `On State Changed Delegate` is used to indicate when the keycard reader has been interacted with
-* `On Server Complete Interaction Event` is used to tell when the keycard is interacted with
+* The Red and Blue keycards are located at `Gameplay/Props/KeycardReader/BP_(COLOR)Keycard`.
+* The Red and Blue keycard readers are located at `Gameplay/Props/KeycardReader/BP_(COLOR)KeycardReader`.
+* Both are interaction-enabled by default.
+* The keycard reader's `On State Changed Delegate` event indicates when the keycard reader has been interacted with.
+* `On Server Complete Interaction Event` indicates when the keycard is interacted with.
 
 [IMPORTANT]
 ====
-To ensure the keycard shows up on the HUD, you also need to populate your level's world settings key item data map with the correct tag and data asset for the keycard. See xref:world-settings.adoc[World Settings] for more details.
+To ensure the keycard shows up on the HUD, you also need to populate your level's world settings Key Item Data Map with the correct tag and data asset for the keycard. See xref:world-settings.adoc[World Settings] for more details.
 ====
 
 == Keypads
 
-* Keypad path located at `Gameplay/Props/Keypad/BP_Keypad`
-
-* `BP_DigitPassword_Decal` is for the physical world password
+* The keypad is located at `Gameplay/Props/Keypad/BP_Keypad`.
+* `BP_DigitPassword_Decal` is used for the password shown in the world.
 
 [NOTE]
 ====
 This objective still requires further documentation.
 ====
 
-== WiFi Circles
+== WiFi circles
 
-To get wifi circles to work, the level requires two actors: `SBZHackingZoneController` and one or more `SBZHackingZone`.
+To get WiFi circles to work, the level requires two actors: `SBZHackingZoneController` and one or more `SBZHackingZone`.
 
-. `SBZHackingZones` should be placed around the level in predefined locations but have the enabled bool set to false.
-. For each hacking objective, an `SBZHackingZoneController` should be placed in the level (can be anywhere). In the actor's defaults, the Hacking zone array should be populated with the `SBZHackingZones` previously placed in the level.
-. On objective activated, the hacking controller state should be changed to running, the interaction set to enabled and the OnProgressionReached should have an event binded to it that will handle the objective's progression.
+. Place `SBZHackingZone` actors around the level in predefined locations, with the enabled bool set to false.
+. For each hacking objective, place an `SBZHackingZoneController` in the level (it can be anywhere). In the actor's defaults, populate the Hacking zone array with the `SBZHackingZone` actors you placed.
+. When the objective is activated, change the hacking controller state to running and set the interaction to enabled. Bind an event to `OnProgressionReached` to handle the objective's progression.
 
 [WARNING]
 ====
-This objective is stale documentation from before the objective rework. Need verification if this objective being handled this way still exists.
+This section predates this objective's rework. It still needs to be verified that this objective is handled this way.
 ====
-
 
 == Not yet documented
 
 [NOTE]
+====
+The following objectives have not been documented yet.
+====
 
 * Thermal Lances
 * QR Codes/Phone Hacks

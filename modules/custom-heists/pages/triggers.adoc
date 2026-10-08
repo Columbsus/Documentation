@@ -2,32 +2,33 @@
 
 == Player trigger volume
 
-`SBZPlayerTriggerVolume` is Used for when the player enters an area. 
-You can see when players begin or end touching the volume itself by the Player Pawn Begin/End Overlapping respectively.
+`SBZPlayerTriggerVolume` detects when a player enters an area.
+
+Use the Player Pawn Begin Overlapping and Player Pawn End Overlapping events to detect when players enter or leave the volume.
 
 `Overlapping all player pawns` checks for all players instead of just one.
 
-== Player Trigger Voice Volume
+== Player trigger voice volume
 
-Just like the regular player trigger, except this trigger is for ease of having player specific voicelines play.
+This works like the regular player trigger, but is intended for playing player-specific voicelines.
 
-set the `Dialog` to play shade, twitch, or shade voicelines.
+Set the `Dialog` to play Bile, Twitch, or Shade voicelines.
 
-Set the `Comment` to play heister specific voicelines.
+Set the `Comment` to play heister-specific voicelines.
 
 == Escape trigger
 
-The trigger volume to initiate an escape is not the Player trigger volume. This volume is called `SBZPlayerEscapeVolume`. 
+Escapes use a separate volume, `SBZPlayerEscapeVolume`, rather than the player trigger volume.
 
-You can signify how long the escape duration is, and if the volume disables when complete.
+You can set the escape duration and whether the volume disables when complete.
 
 === Ending the mission
 
-. For Escape trigger use event `On Escape Timer Done`
-. After this go to a `Request mission End` node
-. Set the target set to a `Get Game State machine` Node
-. From Request data hit make `SBZEndMissionRequestData` and set `Mission Result` to Success
+. Use the `On Escape Timer Done` event.
+. After this, add a `Request Mission End` node.
+. Set its target to a `Get Game State machine` node.
+. From `Request Data`, select `Make SBZEndMissionRequestData` and set `Mission Result` to `Success`.
 
 === Failing the mission
 
-If you want to fail a mission instead, you can use the same `Request Mission End` layout but instead set `Mission Result` to `Failed`
+To fail the mission instead, use the same `Request Mission End` layout, but set `Mission Result` to `Failed`.
