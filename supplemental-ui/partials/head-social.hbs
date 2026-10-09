@@ -1,0 +1,21 @@
+{{#unless page.[404]}}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{site.title}}">
+<meta property="og:title" content="{{detag page.title}}">
+<meta property="og:description" content="{{or page.description site.keys.socialDescription}}">
+{{#if page.canonicalUrl}}
+<meta property="og:url" content="{{page.canonicalUrl}}">
+{{/if}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{detag page.title}}">
+<meta name="twitter:description" content="{{or page.description site.keys.socialDescription}}">
+{{#if site.url}}
+{{! Image paths are relative to the published site base, including any GitHub Pages project path. }}
+{{#with (or page.attributes.social-image site.keys.socialImage)}}
+<meta property="og:image" content="{{@root.site.url}}{{this}}">
+<meta name="twitter:image" content="{{@root.site.url}}{{this}}">
+{{/with}}
+<meta property="og:image:alt" content="{{or page.attributes.social-image-alt site.keys.socialImageAlt}}">
+<meta name="twitter:image:alt" content="{{or page.attributes.social-image-alt site.keys.socialImageAlt}}">
+{{/if}}
+{{/unless}}

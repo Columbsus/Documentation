@@ -153,6 +153,32 @@ supplemental-ui/js/docs-search.js
 scripts/build-search.js
 ```
 
+## Link previews
+
+Each generated documentation page includes Open Graph and Twitter Card metadata for link previews with a title, description, and image.
+
+The preview title comes from the page's AsciiDoc title. Add a `:description:` attribute directly beneath the title to set the preview text:
+
+```asciidoc
+= Installing Mods
+:description: Install PAYDAY 3 mods with PDML and keep each mod in its own folder.
+```
+
+Pages without a description use the shared description in `site.keys.social-description` in `antora-playbook.yml`. All pages use the CrimeForge dashboard image by default. Change `site.keys.social-image` and `site.keys.social-image-alt` to replace the shared image and its accessible description.
+
+To give a page its own image, add these attributes beneath its title:
+
+```asciidoc
+:page-social-image: /payday3-modding/_images/editor-heist.png
+:page-social-image-alt: A custom PAYDAY 3 heist open in the Unreal Engine editor.
+```
+
+Image paths start with `/` and are relative to the site base URL. For images in other modules, include the module name, for example `/payday3-modding/crimeforge/_images/crimeforge-dashboard.png`. Use PNG or JPEG files that are publicly accessible.
+
+Set `site.url` in `antora-playbook.yml` to the published site's base URL without a trailing slash. The GitHub Pages deployment workflow uses the base URL from `actions/configure-pages`, including a custom domain if configured. For a local build targeting another host, set Antora's `URL` environment variable before running `npm run build`.
+
+Preview metadata is rendered into the HTML at build time in `supplemental-ui/partials/head-social.hbs`. The `scripts/link-previews.js` Antora extension also copies it onto static redirects, including the site root, for crawlers that do not follow browser redirects. Rebuild and deploy the site before testing a public link in Discord or X. Local file links cannot be fetched by those services. Existing previews may remain cached after an update, and each service controls how much of the preview it displays.
+
 ## Repository layout
 
 The main documentation areas are:

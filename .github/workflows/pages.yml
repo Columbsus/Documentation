@@ -36,11 +36,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Configure GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
       - name: Build documentation
         run: npm run build
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
+        env:
+          URL: ${{ steps.pages.outputs.base_url }}
 
       - name: Upload site
         uses: actions/upload-pages-artifact@v4

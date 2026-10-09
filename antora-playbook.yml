@@ -1,6 +1,15 @@
+antora:
+  extensions:
+    - require: ./scripts/link-previews.js
+
 site:
   title: PAYDAY 3 Modding Documentation
+  url: https://payday3-modding.github.io/Documentation
   start_page: payday3-modding::index.adoc
+  keys:
+    social-description: Community guides for installing and creating PAYDAY 3 mods with the custom Unreal Engine editor, CrimeForge, and PDML.
+    social-image: /payday3-modding/_images/crimeforge-dashboard.png
+    social-image-alt: CrimeForge dashboard showing PAYDAY 3 mods and Forge controls.
 
 content:
   sources:
