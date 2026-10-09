@@ -1,0 +1,312 @@
+= Sticker DA List
+
+[NOTE]
+====
+This list contains all of the Released and possibly unreleased stickers that can be found in the gamefiles. 
+====
+
+
+
+== List of all the Stickers
+
+[cols="1,1,1"]
+|===
+|File Name |In-Game Name |File-path
+
+|DA_WeaponSticker1
+|SFORZA
+|Content\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker2
+|Zero Sweet
+|Content\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker3
+|Spirits & Spritzers
+|Content\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker4
+|Leafy Koala
+|Content\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker5
+|Hawt Dog
+|Content\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker6
+|Hazardous Product
+|Content\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker7
+|Dynasty
+|Content\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker8
+|Wiener Robber
+|Content\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker9
+|Burger Robber
+|Content\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker10
+|Slice Robber
+|Content\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker11
+|UFO Down
+|Content\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker12
+|Fat Stacks
+|Content\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker13
+|Pixelled Jalopy
+|Content\Gameplay\Cosmetics\Weapon
+
+
+|DA_WeaponSticker_Nebula01
+|Criminal Selection
+|Content\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker_Nebula02
+|Yours for the Taking
+|Content\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker16
+|Sticky BCD
+|DLCs\00004-DLCREMA\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker17
+|Sticky Star-Spangled
+|DLCs\00004-DLCREMA\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker18
+|Sticky Owl or Blade
+|DLCs\00004-DLCREMA\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker19
+|Sticky Breacher
+|DLCs\00004-DLCREMA\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker20
+|Sticky Edged Grin
+|DLCs\00004-DLCREMA\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker21
+|Sectioned
+|DLCs\00004-DLCREMA\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker_DLC1
+|BSOD
+|DLCs\00006-DLCWEAP0001\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker_Donut
+|Copnut
+|DLCs\00010-DLCHEIST0002\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker_HelmetPop
+|Helmet Pop
+|DLCs\00040-STPATCH01\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker_Flag_01
+|Sweden
+|DLCs\00010-DLCHEIST0002\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker_Flag_02
+|United Kingdom
+|DLCs\00010-DLCHEIST0002\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker_Flag_03
+|USA
+|DLCs\00010-DLCHEIST0002\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker_Flag_04
+|France
+|DLCs\00010-DLCHEIST0002\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker_Flag_05
+|Germany
+|DLCs\00010-DLCHEIST0002\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker_Flag_06
+|Brazil
+|DLCs\00010-DLCHEIST0002\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker_Flag_07
+|Spain
+|DLCs\00010-DLCHEIST0002\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker_Flag_08
+|Australia
+|DLCs\00010-DLCHEIST0002\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker_Flag_09
+|Mexico
+|DLCs\00010-DLCHEIST0002\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker_Flag_10
+|Japan
+|DLCs\00010-DLCHEIST0002\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker_Flag_11
+|Ireland
+|DLCs\00010-DLCHEIST0002\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker_Flag_12
+|Canada
+|DLCs\00010-DLCHEIST0002\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker_Potatisgris
+|Potatisgris
+|DLCs\00010-DLCHEIST0002\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker_Egg
+|Sunny Side
+|DLCs\00010-DLCHEIST0002\Gameplay\Cosmetics\Weapon
+
+|DA_WeaponSticker_Gavel
+|Gavel
+|DLCs\00030-DLC0003\Gameplay\Weapons\Stickers
+
+|DA_WeaponSticker_Cocktail
+|Long Island
+|DLCs\00030-DLC0003\Gameplay\Weapons\Stickers
+
+|DA_WeaponSticker_Icecream
+|Double Scoop
+|DLCs\00030-DLC0003\Gameplay\Weapons\Stickers
+
+|DA_WeaponSticker_SandCastle
+|Sand Castle
+|DLCs\00030-DLC0003\Gameplay\Weapons\Stickers
+
+|DA_WeaponSticker_MoneySack
+|Moneybags
+|DLCs\00080-DLC0004\Gameplay\Weapons\Stickers
+
+|DA_WeaponSticker_Axe
+|Constant & Sharp
+|DLCs\00080-DLC0004\Gameplay\Weapons\Stickers
+
+|DA_WeaponSticker_Finger
+|Gotcha
+|DLCs\00080-DLC0004\Gameplay\Weapons\Stickers
+
+|DA_WeaponSticker_Candle
+|Payday 2
+|DLCs\00080-STPATCH04\Gameplay\Weapons\Stickers
+
+|DA_WeaponSticker_HoustonBday
+|Houston’s Homecoming
+|DLCs\00080-STPATCH04\Gameplay\Weapons\Stickers
+
+|DA_WeaponSticker_SmallDallas
+|Mini Dallas
+|DLCs\00080-STPATCH04\Gameplay\Weapons\Stickers
+
+|DA_WeaponSticker_AlienSignBoard
+|Alien Conspiracy
+|DLCs\00100-STPATCH05\Gameplay\Cosmetics\Weapon\Stickers
+
+|DA_WeaponSticker_Heister4Life
+|Heister 4-Life
+|DLCs\00100-STPATCH05\Gameplay\Cosmetics\Weapon\Stickers
+
+|DA_WeaponSticker_Smiley
+|Third Eye of Smile
+|DLCs\00100-STPATCH05\Gameplay\Cosmetics\Weapon\Stickers
+
+|DA_WeaponSticker_Richard
+|Richard 1989
+|DLCs\00110-DLCPPFool\Gameplay\Cosmetics\Weapon\Stickers
+
+|DA_WeaponSticker_HolidayTag
+|North Pole Funeral
+|DLCs\00110-TwitchDrops06\Gameplay\Cosmetics\Weapon\Stickers
+
+|DA_WeaponSticker_Santa
+|Bullseye Santa
+|DLCs\00110-TwitchDrops06\Gameplay\Cosmetics\Weapon\Stickers
+
+|DA_WeaponSticker_Heartbroken
+|Heartbroken
+|DLCs\00110-TwitchDrops07\Gamplay\Cosmetics\Weapons\Stickers
+
+|DA_WeaponSticker_PillowTalk
+|Pillow Talk
+|DLCs\00110-TwitchDrops07\Gamplay\Cosmetics\Weapons\Stickers
+
+|DA_WeaponSticker_Atomic_skull
+|What Remains
+|DLCs\00120-TwitchDrops08\Gamplay\Cosmetics\Weapons\Stickers
+
+|DA_WeaponSticker_Radioactive_sign
+|Rad Trefoil
+|DLCs\00120-TwitchDrops08\Gamplay\Cosmetics\Weapons\Stickers
+
+|DA_WeaponSticker_C-Stack
+|C-Stacked
+|DLCs\00200-Questline001\Gameplay\Cosmetics\WeaponStickers
+
+|DA_WeaponSticker_Clownware
+|Clownware
+|DLCs\00200-Questline001\Gameplay\Cosmetics\WeaponStickers
+
+|DA_WeaponSticker_Lion
+|Lionheart
+|DLCs\00210-Questline002\Gameplay\Cosmetics\Stickers
+
+|DA_WeaponSticker_Crown
+|Your Majesty
+|DLCs\00210-Questline002\Gameplay\Cosmetics\Stickers
+
+|DA_WeaponSticker_Altyn
+|Orange Spetsnaz
+|DLCs\00223-PATCH3_5\Gameplay\Cosmetics\Weapon\Stickers
+
+|DA_WeaponSticker_ChickenDinner
+|Chicken Dinner Feast
+|DLCs\00223-PATCH3_5\Gameplay\Cosmetics\Weapon\Stickers
+
+|DA_WeaponSticker_PUBGLogo
+|PUBG: Battlegrounds
+|DLCs\00223-PATCH3_5\Gameplay\Cosmetics\Weapon\Stickers
+
+|DA_WeaponSticker_Balaclava
+|Baggy Blues
+|DLCs\00211-Questline003\Gameplay\Cosmetics\Stickers
+
+|DA_WeaponSticker_ToySMG
+|Ratata!
+|DLCs\00211-Questline003\Gameplay\Cosmetics\Stickers
+
+|DA_WeaponSticker_DollarFlag
+|Almighty Dollar
+|DLCs\00238-PATCH3_7\Gameplay\Cosmetics\Weapon\Stickers
+
+|DA_WeaponSticker_WolfCook
+|Wolf Kiss
+|DLCs\00248-questline006\Gameplay\Cosmetics\Weapon\Stickers
+
+|DA_WeaponSticker_GrinSaw
+|Sawbreeze
+|DLCs\00229-Construction\Gameplay\Cosmetics\Weapon\Stickers
+
+|DA_WeaponSticker_RipSaw
+|Let it rip
+|DLCs\00229-Construction\Gameplay\Cosmetics\Weapon\Stickers
+
+|DA_WeaponSticker_WarningSaw
+|Warning: Saw!
+|DLCs\00229-Construction\Gameplay\Cosmetics\Weapon\Stickers
+
+|DA_WeaponSticker_ChainsSaw
+|Chains the Saw Man
+|DLCs\00229-Construction\Gameplay\Cosmetics\Weapon\Stickers
+
+
+
+|===
+

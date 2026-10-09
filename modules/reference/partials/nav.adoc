@@ -4,3 +4,4 @@
 * xref:reference:status.adoc[Feature Status]
 * xref:reference:bagtype-library.adoc[BagType DA Library]
 * xref:reference:spraypaint-library.adoc[SprayPaint DA Library]
+* xref:reference:sticker-library.adoc[Sticker DA Library]
