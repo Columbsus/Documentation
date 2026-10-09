@@ -1,6 +1,6 @@
 = BagType DA list
 
-List of all the data assets that shade the Bag type class
+List of all the data assets that share the Bag type class
 
 [NOTE]
 ====
