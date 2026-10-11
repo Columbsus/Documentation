@@ -67,6 +67,57 @@ Your final result of the material should look like this if you have followed all
 image::Ex1.png[]
 
 
+== Emissive (Glowing) Textures
+
+Emissive textures or vectors control if you want parts of your model to glow. This can be handy if your material makes use of an emissive texture to add extra detail. If you want to control the brightness of your emissive texture, you can add a scalar node and a multiply node, plug your texture or vector into the A slot of your multiply and your scalar into the B slot. Call your Scalar Node "Emissive Brightness" or something to refer to easily. 
+
+
+image::EmissiveEx.png[] 
+
+Emissive textures on some heists are displayed correctly, but could sometimes appear to be too dim or too bright in some other heists due to post processing of the heist or light exposure.
+
+To fix this issue from happening, take the output of either your texture or multiply node and add a Divide node and plug it into the A slot. Get an EyeAdapation node and plug it into the B slot of the divide, then plug the output of the divide into Emissive Color, and this will resolve your issue of inconsistent emissive brightness on certain maps.
+
+image::EmissiveFix.png[] 
+
+
+== Opacity Masking Textures
+
+Opacity textures are commonly used on textures that require opacity, like hair or glass. To properly use a opacity texture, set your blend mode of your material to "Masked" or "Translucent" but I do no recommended using a translucent blend unless you know how to use one properly. It is also good practice to have your opacity be combined with either your Base Color or ORM texture packed in the alpha channel to avoid calling extra textures.
+
+image::OpacityEx1.png[]
+
+Though using a masked blend technique is less resource costly, the output of the opacity could be unsatisfying. Opacity usually in this format works in a 0 or 1 value, where a part of the texture is either visible or invisible. But if you want to mimic the use of using a translucent blend mode without needing to use the extra shader work to use one, you can use a "DitherTemporalAA" node which will act like a psuedo translucent material for your material. Simply plug in your Scalar or opacity texture into the Alpha Threshold (S) input and your Result into the Opacity Mask node. You can add an extra scalar parameter to the Random (S) input, but it is recommended to either keep it alone if you do not want to use it.
+
+image::OpacityDitherEx.png[] 
+
+
+== Starbreeze Formatted Normal Map Textures
+
+A normal map texture is what mimics fake 3D bumps and lighting on a model to give it extra detail. Many modern models use them, whether it would be for the model as a whole, or overlaying multiple patterns over. But I will explain how you can create your normal map the Starbreeze way. 
+
+Starbreeze has formatted their normal in a rather unusual way, instead of going the traditional way of having a XYZ channel, they opted to only use a XY channel and replaced the Z height with a roughness channel, and packed in a metallic in the alpha, this normal map format is seen on the MM_HelicopterInterior that many users have used before custom master materials have become a thing.
+
+If you would like to recreate it in favor of using it instead of a normal XYZ, here are the steps to do so:
+
+* In your master material, instead of using a normal map texture, you want to use a Linear Color Normal Map. Regular normal maps do not support alpha channels, and are not compatible with having other texture masks in their channels. 
+* Add an AppendVector and connect your XY (RG) color masks to the A and B slot. 
+* Connect the AppendVector output to a ConstantBiasScale, make the Bias have a value of -0.5, and the Scale 2.0
+* Connect the output of the ConstantBiasScale to a DeriveNormalZ and connect that final node to your Normal slot.
+
+Your final output should look similar to this:
+
+image::SBZ-NRM-Ex.png[] 
+
+[NOTE]
+====
+With the DeriveNormalZ, this will reconstruct the Z height of the normal map using the X and Y channels, so you are not losing much detail if you use this format of normal maps.
+
+This setup is almost the same to the Linear Color formatted normal as it will be explained at the bottom of this document, but with the exception of there being a Roughness and Metallic channel instead of a Z height channel.
+====
+ 
+
+
 == Node Shortcuts
 
 These are some of the shortcuts I use frequently, but there are plenty more. 
@@ -83,6 +134,10 @@ S + Left Click - Scalar Parameter Node
 O + Left Click - Invert (1-x) Node
 
 1 + Left Click - Constant Node
+
+4 + Left Click - Constant 4Vector Node
+
+T + Left Click - Texture Node
 
 C - Comment
 ```
