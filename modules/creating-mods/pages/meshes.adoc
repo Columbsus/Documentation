@@ -39,7 +39,7 @@ After you get the model exported from Fmodel you will open it in blender, for yo
 
 When it comes to general rules in blender most of them apply to the `Skeletal Mesh` but that doesnt mean that you can go haywire with `static meshes`
 
-For Static meshes youll want to just keep your models size in check since if you wont, yxou might end up causing unwanted clipping the the game when youll be testing your mod.
+For Static meshes you will want to just keep your models size in check, if you wont you might end up causing unwanted clipping in the game when you will be testing your mod.
 
 For skeletal meshes you will want to also keep the size in check but on top of that you will need to also setup naming of your model and the skeleton in blender correctly for it to transfer well when imporitng into the editor.
 
@@ -48,7 +48,7 @@ image::SkeletalMesh-BlenderSetup.png[Skeletal mesh project setup Setup, width=60
 
 [NOTE]
 ====
-This is an example your desired mesh name will be possibly different
+This is an example, your desired mesh name will be possibly different
 ====
 
 == Export Settings
@@ -78,7 +78,7 @@ When you Export your model as `.fbx` you will want to make sure its named the sa
 
 == Importing the model into UE Editor
 
-When importing your edited model into UE first drag and drop your `.fbx` into your mods folder (if youre importing a skeletal mesh make sure you also select the correct skeleton in the import settings)
+When importing your edited model into UE first drag and drop your `.fbx` into your mods folder (if you are importing a skeletal mesh make sure you also select the correct skeleton in the import settings)
 
 [WARNING]
 ====
