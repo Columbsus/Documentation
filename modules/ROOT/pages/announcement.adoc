@@ -53,6 +53,17 @@ image::widget.png[Widgets, width=1000]
 This editor does not include any source code for the game. Uncooking blueprints or widgets does not include code, and opening levels does not allow you to view the heist code.
 ====
 
+=== Texture Baking & Editing 
+
+Bake a weapon or a character's suit texture with ease and have it be in a format ready to be retextured or modded/ported to other games. No longer will you need to edit RGB values in the materials to recolor your suit or weapon. 
+
+image::BakingTextures.png[Bake Textures, width=1000]
+
+[NOTE]
+====
+Accessory textures for outfits are not included in the material bake, you will need to get those on your own, but they are already color textures. Some materials are also not properly displayed from how they visually appear in-game.
+====
+
 == CrimeForge
 
 Tired of needing a thousand different command-line tools just to package your mods? Want a way to easily find and organize your mods in the editor? CrimeForge does both.
