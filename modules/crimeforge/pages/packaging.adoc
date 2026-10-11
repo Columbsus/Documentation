@@ -132,8 +132,23 @@ Useful places to check include:
 
 When Unreal Automation Tool fails, look upward in the log for the first relevant validation, compile, cook, or packaging error rather than relying only on the final failure line.
 
+=== Missing PackagePlugin.cs
+
+If the error says it cannot find `PackagePlugin.cs`, delete the `Saved/CrimeForge/Setup/` folder inside your modkit project, then run *Forge* again.
+
+This forces CrimeForge to repeat its first-time setup and should resolve the missing-file error.
+
 == Forge versus package
 
 In general Unreal terminology, Forge performs the cook/package stage of the build process.
 
-In CrimeForge documentation and UI, use the word *Forge* for this action.
+== Distributing your mod
+
+After a successful Forge, CrimeForge automatically packages the mod into a ZIP archive in the modkit's:
+
+[source,text]
+----
+Saved\ArchivedPlugins\Windows\
+----
+
+Use the ZIP archives from this directory when uploading your mods to ModWorkshop or any other mod hosting site.

@@ -14,3 +14,9 @@ Common causes include:
 * Commandlet-incompatible editor plugins.
 
 A successful Forge should package only the assets intended for the selected mod.
+
+== Missing PackagePlugin.cs
+
+If the error says it cannot find `PackagePlugin.cs`, delete the `Saved/CrimeForge/Setup/` folder inside your modkit project, then run *Forge* again.
+
+This forces CrimeForge to repeat its first-time setup and should resolve the missing-file error.
