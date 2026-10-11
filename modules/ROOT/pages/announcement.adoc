@@ -128,7 +128,7 @@ For users, we hope you enjoy everyone's mods soon!
 * https://modworkshop.net/user/flamingfury1000[FlamingFury1000]: Concept UI for the main menu and Mod Manager screen
 * https://modworkshop.net/user/lawsfercapcake[Capcake]: Custom heist documentation and testing
 * https://modworkshop.net/user/113369[Pinki_Ninja]: Documentation and testing
-* https://modworkshop.net/user/55826[Columbus]: Documentation and testing
+* https://modworkshop.net/user/55826[Columbus]: Material baking, Documentation and testing
 * https://modworkshop.net/user/drprotogen[DrProtogen]: Testing
 * https://modworkshop.net/user/braidy08[Braidy08]: Testing
 * https://modworkshop.net/user/averageengineerenjoyer[Gordon Greedman]: Xbox/Microsoft Store compatibility and testing
